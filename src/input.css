@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+  .App{
+    @apply w-screen h-screen font-mainFont 
+  }
+  .navBar{
+    @apply flex items-center px-6 py-5 w-full h-16 gap-6 shadow-navBarBox !important
+  }
+  .logoHolder{
+    @apply flex items-center md:w-[32%] justify-between
+  }
+  .boardName{
+    @apply text-lg font-medium -tracking-[.035em]
+  }
+  .line{
+    @apply hidden md:block h-[180%] border border-solid border-borderColor !important
+  }
+  .searchSettings{
+    @apply flex flex-col gap-4 md:gap-0 bg-white 
+    md:bg-none h-screen md:h-fit shadow-navBarBox 
+    md:shadow-none px-2 
+    md:px-0 top-4 right-0 md:top-0 w-[60%] md:flex-row 
+    absolute md:relative md:items-center 
+    md:justify-between md:w-[65%] !important
+  }
+  .boardSelection{
+    @apply cursor-pointer w-[140px] md:w-fit flex items-center px-4 py-2 rounded-lg gap-[13px] text-selectionBoardColor bg-selectionBoardBg text-[12px]
+  }
+  .searchHolder{
+    @apply flex items-center gap-3 w-[60%] !important
+  }
+  .searcher{
+    @apply flex md:items-center w-full flex-col md:flex-row gap-11 !important
+  }
+  .format{
+    @apply flex items-center bg-white rounded-lg w-[150%] md:w-fit shadow-searchBox h-[46px] px-2 py-1 !important
+  }
+  .searchInput{
+    @apply border-none outline-none w-full  h-full px-1 !important
+  }
+  .searchBtn{
+    @apply hidden md:flex right-5 md:right-0 text-white cursor-pointer
+    bg-searchBtnBg h-full px-2 py-[2px] text-sm rounded-lg 
+    -tracking-[.03em] font-medium !important
+  }
+  .userData{
+    @apply flex items-center gap-[11px] cursor-pointer
+  }
+  .userImage{
+    @apply h-12 w-12 rounded-lg
+  }
+  .username{
+    @apply font-bold text-sm
+  }
+  .userInfo{
+    @apply flex items-center justify-between  gap-8
+  }
+  .userDrop{
+    @apply absolute flex justify-center px-2 py-2 gap-3 flex-col h-[110px] w-[11.5%] rounded-lg bg-white shadow-navBarBox top-[70px] right-[30px] !important ; 
+  }
+  .account {
+    @apply w-full rounded-xl cursor-pointer h-10 duration-300 ease-in-out px-3 hover:text-white flex items-center gap-2 !important
+  }
+  .githubAccount{
+    @apply hover:bg-gray-300
+  }
+  .LogOut{
+    @apply hover:bg-red-400 !important
+  }
+
+  .file{
+    @apply flex items-center px-6 py-9
+  }
+}
