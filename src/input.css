@@ -21,13 +21,16 @@
   .searchSettings{
     @apply flex flex-col gap-4 md:gap-0 bg-white 
     md:bg-none h-screen md:h-fit shadow-navBarBox 
-    md:shadow-none px-2 
-    md:px-0 top-4 right-0 md:top-0 w-[60%] md:flex-row 
-    absolute md:relative md:items-center 
-    md:justify-between md:w-[65%] !important
+    md:shadow-none px-2 md:px-0 top-4 right-0 
+    md:top-0 w-[60%] md:flex-row absolute md:relative
+    md:items-center md:justify-between md:w-[65%] 
+    !important
   }
   .boardSelection{
-    @apply cursor-pointer w-[140px] md:w-fit flex items-center px-4 py-2 rounded-lg gap-[13px] text-selectionBoardColor bg-selectionBoardBg text-[12px]
+    @apply cursor-pointer w-[140px] md:w-fit flex 
+    items-center px-4 py-2 rounded-lg gap-[13px] 
+    text-selectionBoardColor bg-selectionBoardBg
+    text-[12px] ; 
   }
   .searchHolder{
     @apply flex items-center gap-3 w-[60%] !important
@@ -36,7 +39,8 @@
     @apply flex md:items-center w-full flex-col md:flex-row gap-11 !important
   }
   .format{
-    @apply flex items-center bg-white rounded-lg w-[150%] md:w-fit shadow-searchBox h-[46px] px-2 py-1 !important
+    @apply flex items-center bg-white rounded-lg w-[150%] md:w-fit 
+    shadow-searchBox h-[46px] px-2 py-1 !important
   }
   .searchInput{
     @apply border-none outline-none w-full  h-full px-1 !important
@@ -45,6 +49,11 @@
     @apply hidden md:flex right-5 md:right-0 text-white cursor-pointer
     bg-searchBtnBg h-full px-2 py-[2px] text-sm rounded-lg 
     -tracking-[.03em] font-medium !important
+  }
+  .closeBtn{
+    @apply flex absolute md:relative right-5 md:right-0 text-white 
+    cursor-pointer bg-searchBtnBg h-fit w-fit p-[2px]
+    text-sm rounded -tracking-[.03em] font-medium !important
   }
   .userData{
     @apply flex items-center gap-[11px] cursor-pointer
@@ -59,10 +68,13 @@
     @apply flex items-center justify-between  gap-8
   }
   .userDrop{
-    @apply absolute flex justify-center px-2 py-2 gap-3 flex-col h-[110px] w-[11.5%] rounded-lg bg-white shadow-navBarBox top-[70px] right-[30px] !important ; 
+    @apply absolute flex justify-center px-2 py-2 gap-3 flex-col 
+    h-[110px] w-[11.5%] rounded-lg bg-white shadow-navBarBox top-[70px] 
+    right-[30px] !important ; 
   }
   .account {
-    @apply w-full rounded-xl cursor-pointer h-10 duration-300 ease-in-out px-3 hover:text-white flex items-center gap-2 !important
+    @apply w-full rounded-xl cursor-pointer h-10 duration-300 
+    ease-in-out px-3 hover:text-white flex items-center gap-2 !important
   }
   .githubAccount{
     @apply hover:bg-gray-300
@@ -72,6 +84,56 @@
   }
 
   .file{
-    @apply flex items-center px-6 py-9
+    @apply flex items-center justify-between w-full px-6 py-9
+  }
+  .fileSettings {
+    @apply flex items-center gap-[18px]
+  }
+  .usersTable{
+    @apply flex items-center gap-4
+  }
+  .usersConatiner{
+    @apply flex items-center gap-[15px]
+  }
+  .image{
+    @apply h-9 w-9 
+  }
+  .addUsersBtn{
+    @apply flex items-center justify-center h-9 w-9 
+    rounded-lg bg-searchBtnBg text-white cursor-pointer
+  }
+  .visibility{
+    @apply relative -top-3 left-[23px] border border-solid
+     border-borderColor h-fit bg-white md:bg-transparent
+     w-fit rounded-xl shadow-fileBox px-3 py-[9px] !important
+  }
+  .selection {
+    @apply mb-4 !important
+  }
+  .tableTitle{
+    @apply text-tableVisibility flex items-center gap-x-2 
+    font-semibold -tracking-[.035em] !important  ; 
+  }
+  .choser{
+    @apply flex flex-col gap-y-3 h-fit w-full cursor-image p-[13px] 
+    duration-200 ease-in-out rounded-lg hover:bg-selectionBoardBg
+  }
+  .adjust-description{
+    @apply text-selectionBoardColor text-sm
+  }
+  .addUsers{
+    @apply absolute top-[150px] left-[300px] h-fit w-fit px-3 py-[9px] rounded-xl border-borderColor border 
+    border-solid shadow-fileBox !important ; 
+  }
+  .userList{
+    @apply mt-[10px] border border-solid border-borderColor shadow-fileBox 
+    flex flex-col gap-y-[16px] p-[11px] rounded-lg !important ; 
+  }
+  .userToAdd{
+    @apply cursor-pointer flex items-center gap-[13px] h-fit w-fit p-2
+  }
+  .userImg{
+    @apply flex items-center justify-center h-8 w-8 rounded-lg
+     bg-userToAddBg text-white text-sm -tracking-[.035em]
   }
 }

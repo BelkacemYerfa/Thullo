@@ -763,6 +763,36 @@ video {
     }
   }
 
+  .closeBtn {
+    position: absolute !important;
+    right: 1.25rem !important;
+    display: flex !important;
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    width: -webkit-fit-content !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    cursor: pointer !important;
+    border-radius: 0.25rem !important;
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(47 128 237 / var(--tw-bg-opacity)) !important;
+    padding: 2px !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 500 !important;
+    letter-spacing: -.03em !important;
+    --tw-text-opacity: 1 !important;
+    color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+  }
+
+  @media (min-width: 768px) {
+    .closeBtn {
+      position: relative !important;
+      right: 0px !important;
+    }
+  }
+
   .userData {
     display: flex;
     cursor: pointer;
@@ -842,10 +872,193 @@ video {
 
   .file {
     display: flex;
+    width: 100%;
     align-items: center;
+    justify-content: space-between;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     padding-top: 2.25rem;
     padding-bottom: 2.25rem;
+  }
+
+  .fileSettings {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .usersTable {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .usersConatiner {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .image {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+
+  .addUsersBtn {
+    display: flex;
+    height: 2.25rem;
+    width: 2.25rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(47 128 237 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .visibility {
+    position: relative !important;
+    top: -0.75rem !important;
+    left: 23px !important;
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    width: -webkit-fit-content !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    border-radius: 0.75rem !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    --tw-border-opacity: 1 !important;
+    border-color: rgb(224 224 224 / var(--tw-border-opacity)) !important;
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+    --tw-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05)  !important;
+    --tw-shadow-colored: 0px 2px 4px var(--tw-shadow-color) !important;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+  }
+
+  @media (min-width: 768px) {
+    .visibility {
+      background-color: transparent !important;
+    }
+  }
+
+  .selection {
+    margin-bottom: 1rem !important;
+  }
+
+  .tableTitle {
+    display: flex !important;
+    align-items: center !important;
+    -webkit-column-gap: 0.5rem !important;
+            column-gap: 0.5rem !important;
+    font-weight: 600 !important;
+    letter-spacing: -.035em !important;
+    --tw-text-opacity: 1 !important;
+    color: rgb(79 79 79 / var(--tw-text-opacity)) !important;
+  }
+
+  .choser {
+    display: flex;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 100%;
+    cursor: url('https://www.freeiconspng.com/thumbs/cursor-png/hand-cursor-png-click-cursor-hand-icon-13.png') , pointer ;
+    flex-direction: column;
+    row-gap: 0.75rem;
+    border-radius: 0.5rem;
+    padding: 13px;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .choser:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(242 242 242 / var(--tw-bg-opacity));
+  }
+
+  .adjust-description {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    --tw-text-opacity: 1;
+    color: rgb(130 130 130 / var(--tw-text-opacity));
+  }
+
+  .addUsers {
+    position: absolute !important;
+    top: 150px !important;
+    left: 300px !important;
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    width: -webkit-fit-content !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    border-radius: 0.75rem !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    --tw-border-opacity: 1 !important;
+    border-color: rgb(224 224 224 / var(--tw-border-opacity)) !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+    --tw-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05)  !important;
+    --tw-shadow-colored: 0px 2px 4px var(--tw-shadow-color) !important;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+  }
+
+  .userList {
+    margin-top: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    row-gap: 16px !important;
+    border-radius: 0.5rem !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    --tw-border-opacity: 1 !important;
+    border-color: rgb(224 224 224 / var(--tw-border-opacity)) !important;
+    padding: 11px !important;
+    --tw-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05)  !important;
+    --tw-shadow-colored: 0px 2px 4px var(--tw-shadow-color) !important;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+  }
+
+  .userToAdd {
+    display: flex;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    cursor: pointer;
+    align-items: center;
+    gap: 13px;
+    padding: 0.5rem;
+  }
+
+  .userImg {
+    display: flex;
+    height: 2rem;
+    width: 2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(189 189 189 / var(--tw-bg-opacity));
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: -.035em;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }

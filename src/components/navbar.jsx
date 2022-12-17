@@ -1,24 +1,42 @@
 import logo from '../images/Logo.svg' ; 
 import { motion } from 'framer-motion'
 import { useState } from 'react';
+import { SearchBar } from './search';
 
 export const NavBar = ()=>{
  const SelectedBoard = 'All Board';
  const username = 'Kratos' ; 
- const [dropDown , setDropDown] = useState(false) ; 
- const handleToggle = ()=>{
-  setDropDown(!dropDown) ; 
- }
+ const [dropDown , setDropDown] = useState(false) ;
+ const [ toggle , setToggle ] = useState(false)  ; 
+ const [toggleData , setToggleData] = useState(true)
+  const handleToggle = ()=>{
+   setDropDown(!dropDown) ; 
+  }
+  
  return (
-  <nav className="navBar" >
+  <motion.nav className="navBar" id='nav' >
     <div className='logoHolder' >
       <img src={logo} alt="" />
       <p className='boardName' >
        Devchallenges Board
       </p>
     </div>
+    {
+      toggleData && (
+        <div className='closeBtn' onClick={()=>{
+          setToggle(true) ; 
+          setToggleData(false)
+        }} >
+          <span class="material-symbols-rounded">
+           menu
+          </span>
+        </div>
+      )
+    }
     <div className='line'></div>
-    <div className='searchSettings' >
+    {
+      toggle && (
+        <div className='searchSettings' >
       <motion.div
        whileTap={{
         scale : .9 
@@ -36,16 +54,23 @@ export const NavBar = ()=>{
         {SelectedBoard}
         </span>
       </motion.div>
+      {
+        !toggleData && (
+          <div className='closeBtn' onClick={
+            ()=>{
+              setToggle(false) ; 
+              setToggleData(true)
+            }
+          } >
+            <span class="material-symbols-rounded">
+            close
+            </span>
+          </div>
+        )
+      }
       <div className='searchHolder' >
         <div className='searcher'>
-        <form action=""  className='format' >
-          <input className='searchInput' type="search" placeholder='Search...' />
-          <motion.input
-          whileTap={{
-           scale : .9 
-          }}
-          className='searchBtn' type="submit" value="search" />
-        </form>
+        <SearchBar placeholder='Search' />
         <div className='userData' 
          onClick={handleToggle}
         >
@@ -62,6 +87,8 @@ export const NavBar = ()=>{
         </div>
       </div>
     </div>
+      )
+    }
     {
      dropDown && (
       <motion.div 
@@ -79,6 +106,7 @@ export const NavBar = ()=>{
       className='userDrop' >
        <motion.a 
         className='account githubAccount'
+        target='_blank'
         href="https://github.com/BelkacemYerfa"
         whileTap={{
          scale : .9
@@ -106,6 +134,6 @@ export const NavBar = ()=>{
       </motion.div>
      )
     }
-  </nav>
+  </motion.nav>
  );
 }
