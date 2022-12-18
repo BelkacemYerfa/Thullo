@@ -7,8 +7,7 @@ export const NavBar = ()=>{
  const SelectedBoard = 'All Board';
  const username = 'Kratos' ; 
  const [dropDown , setDropDown] = useState(false) ;
- const [ toggle , setToggle ] = useState(false)  ; 
- const [toggleData , setToggleData] = useState(true)
+ const [ toggle , setToggle ] = useState(true)  ; 
   const handleToggle = ()=>{
    setDropDown(!dropDown) ; 
   }
@@ -21,18 +20,13 @@ export const NavBar = ()=>{
        Devchallenges Board
       </p>
     </div>
-    {
-      toggleData && (
-        <div className='closeBtn' onClick={()=>{
-          setToggle(true) ; 
-          setToggleData(false)
-        }} >
-          <span class="material-symbols-rounded">
-           menu
-          </span>
-        </div>
-      )
-    }
+      <div className='closeBtn' onClick={()=>{
+        setToggle(true)
+      }} >
+        <span class="material-symbols-rounded">
+          menu
+        </span>
+      </div>
     <div className='line'></div>
     {
       toggle && (
@@ -54,20 +48,15 @@ export const NavBar = ()=>{
         {SelectedBoard}
         </span>
       </motion.div>
-      {
-        !toggleData && (
-          <div className='closeBtn' onClick={
-            ()=>{
-              setToggle(false) ; 
-              setToggleData(true)
-            }
-          } >
-            <span class="material-symbols-rounded">
-            close
-            </span>
-          </div>
-        )
-      }
+        <div className='closeBtn' onClick={
+          ()=>{
+            setToggle(false)
+          }
+        } >
+          <span class="material-symbols-rounded">
+          close
+          </span>
+        </div>
       <div className='searchHolder' >
         <div className='searcher'>
         <SearchBar placeholder='Search' />

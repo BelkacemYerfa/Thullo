@@ -2,26 +2,33 @@ import { useState } from "react";
 import { motion } from 'framer-motion'
 import { SearchBar } from "./search";
 import { UserList } from "./userList";
+import { BoardInfo } from "./boarddescription";
 
 export const File = ()=>{
  const [visibility , setVisbility] = useState({
   name : 'Private' , 
   codeIcon : 'lock'
  }) ; 
+ const [toggleshow , setToggleShow] = useState(false)
+ const toggleShow = (toggleState)=>{
+  setToggleShow(toggleState)
+ }
  const [users , setUsers] = useState([
   {
     photoURL : null , 
+    job : 'admin' , 
     id : 'random' , 
     username :'Belkacem'
   } , 
   {
     photoURL : null , 
     id : 'random2' , 
+    job : 'member' , 
     username :'Aktham'
   }
  ])
  const [FileSettings , setFileSetting] = useState(false) ; 
- const [usertoAdd , setUserToAdd] = useState(false)
+ const [usertoAdd , setUserToAdd] = useState(false) ; 
  /*
   others account will be an object contain :
   username && profilePic.
@@ -137,6 +144,9 @@ export const File = ()=>{
     whileTap={{
       scale : .9
     }}
+    onClick={()=>{
+      setToggleShow(true)
+    }}
    className="boardSelection" >
     <span class="material-symbols-rounded">
       more_horiz
@@ -198,6 +208,11 @@ export const File = ()=>{
            </div>
          </div>
       </motion.div>
+    )
+   }
+   {
+    toggleshow && (
+      <BoardInfo users={users} toggleShow = {toggleShow} />
     )
    }
   </>

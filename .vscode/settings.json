@@ -1,0 +1,10 @@
+{
+ "editor.fontSize": 20,
+ "background.fullscreen": {
+  "image": "https://images7.alphacoders.com/714/thumb-1920-714040.jpg",
+  "opacity":0.91,
+  "size": "cover",
+  "position": "center",
+  "interval": 0
+ }
+}

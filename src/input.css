@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 @layer {
+  body{
+    @apply h-screen w-screen overflow-x-hidden !important
+  }
   .App{
     @apply w-screen h-screen font-mainFont 
   }
+  /*navBar section*/
   .navBar{
     @apply flex items-center px-6 py-5 w-full h-16 gap-6 shadow-navBarBox !important
   }
@@ -51,7 +55,7 @@
     -tracking-[.03em] font-medium !important
   }
   .closeBtn{
-    @apply flex absolute md:relative right-5 md:right-0 text-white 
+    @apply flex md:hidden absolute md:relative right-5 md:right-0 text-white 
     cursor-pointer bg-searchBtnBg h-fit w-fit p-[2px]
     text-sm rounded -tracking-[.03em] font-medium !important
   }
@@ -59,13 +63,13 @@
     @apply flex items-center gap-[11px] cursor-pointer
   }
   .userImage{
-    @apply h-12 w-12 rounded-lg
+    @apply h-12 w-12 rounded-xl
   }
   .username{
     @apply font-bold text-sm
   }
   .userInfo{
-    @apply flex items-center justify-between  gap-8
+    @apply flex items-center gap-8
   }
   .userDrop{
     @apply absolute flex justify-center px-2 py-2 gap-3 flex-col 
@@ -82,7 +86,7 @@
   .LogOut{
     @apply hover:bg-red-400 !important
   }
-
+  /*file section*/
   .file{
     @apply flex items-center justify-between w-full px-6 py-9
   }
@@ -90,10 +94,10 @@
     @apply flex items-center gap-[18px]
   }
   .usersTable{
-    @apply flex items-center gap-4
+    @apply hidden md:flex items-center gap-4
   }
   .usersConatiner{
-    @apply flex items-center gap-[15px]
+    @apply hidden md:flex items-center gap-[15px]
   }
   .image{
     @apply h-9 w-9 
@@ -129,11 +133,69 @@
     @apply mt-[10px] border border-solid border-borderColor shadow-fileBox 
     flex flex-col gap-y-[16px] p-[11px] rounded-lg !important ; 
   }
+  .user{
+    @apply flex items-center w-full h-fit justify-between
+  }
   .userToAdd{
-    @apply cursor-pointer flex items-center gap-[13px] h-fit w-fit p-2
+    @apply cursor-pointer flex items-center gap-[13px] h-full p-2
   }
   .userImg{
     @apply flex items-center justify-center h-8 w-8 rounded-lg
      bg-userToAddBg text-white text-sm -tracking-[.035em]
+  }
+  .admin{
+    @apply cursor-pointer text-selectionBoardColor text-sm
+  }
+  .member{
+    @apply cursor-pointer flex border-removeBtn border-solid border text-sm
+    text-removeBtn rounded-lg px-[11.5px] py-[4.5px] !important
+  }
+
+  .board{
+    @apply absolute right-0 top-16 h-[90%] w-[25%] overflow-y-scroll
+    px-5 py-[23px] bg-white shadow-descriptionBox !important
+  }
+  .Title{
+    @apply flex items-center justify-between w-full 
+  }
+  .closebtn{
+    @apply cursor-pointer
+  }
+  .userCreator{
+    @apply flex items-center gap-x-2 h-fit w-fit px-1 py-2 
+    text-userToAddBg text-[12px] font-semibold
+  }
+  .User{
+    @apply flex items-center gap-x-3 h-fit w-fit px-1 
+  }
+  .userCreatorInfo{
+    @apply flex flex-col justify-center gap-y-2 h-fit w-fit py-1
+  }
+  .userCreatorName{
+    @apply text-userCreatorColor text-sm -tracking-[.035em] 
+    font-semibold !important
+  }
+  .userCreationDate{
+    @apply text-userToAddBg font-semibold text-[12px] -tracking-[.035em]
+  } 
+  .Description{
+    @apply px-1
+  }
+  .textarea{
+    @apply border-userToAddBg border border-solid outline-none 
+    resize-none rounded-lg p-[13px] w-full !important
+  }
+  .desciptionBtns{
+    @apply  px-1 flex items-center gap-x-3
+  }
+  .btn{
+    @apply cursor-pointer flex items-center justify-center w-16 h-8 
+    rounded-lg font-medium text-sm -tracking-[.035em]
+  }
+  .Btn1{
+    @apply bg-saveBtn text-white
+  }
+  .Btn2{
+    @apply text-selectionBoardColor 
   }
 }

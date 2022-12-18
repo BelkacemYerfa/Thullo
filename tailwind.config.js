@@ -10,6 +10,9 @@ module.exports = {
         searchBtnBg : '#2F80ED' , 
         tableVisibility : '#4F4F4F' ,
         userToAddBg : '#BDBDBD' , 
+        userCreatorColor : '#333333' , 
+        saveBtn : '#219653',
+        removeBtn : '#EB5757' , 
       } , 
       cursor : {
         image : "url('https://www.freeiconspng.com/thumbs/cursor-png/hand-cursor-png-click-cursor-hand-icon-13.png') , pointer "
@@ -17,7 +20,8 @@ module.exports = {
       boxShadow : {
         navBarBox : ' 0px 2px 2px rgba(0, 0, 0, 0.05)' , 
         searchBox : ' 0px 2px 10px rgba(0, 0, 0, 0.05)' , 
-        fileBox : '0px 2px 4px rgba(0, 0, 0, 0.05) '
+        fileBox : '0px 2px 4px rgba(0, 0, 0, 0.05) ' , 
+        descriptionBox : '0px 4px 12px rgba(0, 0, 0, 0.05)'
       },
       fontFamily : {
         mainFont : 'Poppins, sans-serif'
