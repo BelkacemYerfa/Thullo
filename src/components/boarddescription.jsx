@@ -1,11 +1,23 @@
 import { useState } from "react";
 import { UserList } from "./userList";
-
+import { motion } from 'framer-motion'
 
 export const BoardInfo = ({users , toggleShow})=>{
   const [toggle , setToggle] = useState(false) ; 
  return(
-  <div className="board" >
+  <motion.div 
+   initial={{
+    opacity : 0 , 
+    x : 70 , 
+  }}
+  whileInView={{
+    opacity : 1 , 
+    x : 0
+  }} 
+  transition={{
+    duration : .5
+  }}
+  className="board" >
     <div className="Title" >
      <h3>
        Menu
@@ -79,6 +91,6 @@ export const BoardInfo = ({users , toggleShow})=>{
          }
        </div>
     </div>
-  </div>
+  </motion.div>
  );
 }

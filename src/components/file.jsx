@@ -212,7 +212,10 @@ export const File = ()=>{
    }
    {
     toggleshow && (
-      <BoardInfo users={users} toggleShow = {toggleShow} />
+      <BoardInfo
+      users={users} 
+      toggleShow = {toggleShow}
+      />
     )
    }
   </>
