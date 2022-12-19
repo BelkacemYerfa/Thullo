@@ -59,7 +59,7 @@ export const NavBar = ()=>{
         </div>
       <div className='searchHolder' >
         <div className='searcher'>
-        <SearchBar placeholder='Search' />
+        <SearchBar placeholder='Search' users={null} />
         <div className='userData' 
          onClick={handleToggle}
         >

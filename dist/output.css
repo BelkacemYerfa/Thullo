@@ -591,6 +591,7 @@ video {
 
   .logoHolder {
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: space-between;
   }
@@ -1120,7 +1121,7 @@ video {
     right: 0px !important;
     top: 4rem !important;
     height: 90% !important;
-    width: 25% !important;
+    width: 100% !important;
     overflow-y: scroll !important;
     --tw-bg-opacity: 1 !important;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
@@ -1131,6 +1132,18 @@ video {
     --tw-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05) !important;
     --tw-shadow-colored: 0px 4px 12px var(--tw-shadow-color) !important;
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+  }
+
+  @media (min-width: 640px) {
+    .board {
+      width: 50% !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .board {
+      width: 25% !important;
+    }
   }
 
   .Title {

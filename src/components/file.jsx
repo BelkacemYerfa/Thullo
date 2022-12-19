@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from 'framer-motion'
 import { SearchBar } from "./search";
-import { UserList } from "./userList";
 import { BoardInfo } from "./boarddescription";
 
 export const File = ()=>{
@@ -25,6 +24,12 @@ export const File = ()=>{
     id : 'random2' , 
     job : 'member' , 
     username :'Aktham'
+  } , 
+  {
+    photoURL : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' , 
+    id : 'random3' , 
+    job : 'member' , 
+    username :'kratos'
   }
  ])
  const [FileSettings , setFileSetting] = useState(false) ; 
@@ -55,11 +60,6 @@ export const File = ()=>{
  }
  const handleAddToggle = ()=>{
   setUserToAdd(!usertoAdd)
-  if(usertoAdd === true){
-    setTimeout(()=>{
-      document.getElementById('adduser').style.display='none'
-    }, 10000)
-  }
  }
  return(
   <>
@@ -123,18 +123,7 @@ export const File = ()=>{
             <p className="selection adjust-description" >
                Search users you want to invite to
             </p>
-            <SearchBar Icon='search' placeholder='User' />
-            <div className="userList" >
-              {
-               users.map(user => (
-                 <UserList id={user?.id} 
-                 photoURL={user?.photoURL} 
-                 username={user?.username} 
-                 key={user?.id}
-                 />
-               ))
-              }
-            </div>
+            <SearchBar Icon='search' placeholder='User' users={users} />
          </motion.div>
           )
          }

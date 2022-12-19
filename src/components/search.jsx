@@ -1,22 +1,31 @@
 import {motion} from 'framer-motion' ; 
 import { useState } from 'react';
+import { UserList } from './userList';
 
 
-export const SearchBar = ({Icon , placeholder})=>{
- const [searchElements , setSearchElements] = useState([])
+export const SearchBar = ({Icon , placeholder , users })=>{
+ const [searchElements , setSearchElements] = useState([]);
+ const [toggle , setToggle] = useState(false)
  return(
-  <form action=""  className='format' >
+  <>
+   <form action=""  className='format' >
     <input className='searchInput'
      type="search" placeholder={placeholder + '...'}
      onChange={(e)=>{
       e.preventDefault()
-      setSearchElements(searchElements => 
-        [...searchElements , e.target.value]
-        )
+      users?.forEach(user=> {
+       const visibility = user?.username?.toLowerCase().includes(e.target.value);
+       if(visibility){
+        setSearchElements([user])
+       } 
+      })
      }} 
      />
     {
       Icon ? (<motion.div 
+        onClick={()=>{
+          setToggle(true)
+        }}
         whileTap={{
           scale : .9 
          }}
@@ -37,6 +46,23 @@ export const SearchBar = ({Icon , placeholder})=>{
     )
          
     }
-  </form>
+    </form>
+    {
+      users ? (
+        <div className="userList" >
+         {
+          searchElements.map(user => (
+            <UserList 
+            id={user?.id} 
+            photoURL={user?.photoURL} 
+            username={user?.username} 
+            key={user?.id}
+            />
+          ))
+         }
+        </div>
+      ) : null
+    }
+  </>
  );
 }

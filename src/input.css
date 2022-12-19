@@ -14,7 +14,7 @@
     @apply flex items-center px-6 py-5 w-full h-16 gap-6 shadow-navBarBox !important
   }
   .logoHolder{
-    @apply flex items-center md:w-[32%] justify-between
+    @apply cursor-pointer flex items-center md:w-[32%] justify-between
   }
   .boardName{
     @apply text-lg font-medium -tracking-[.035em]
@@ -152,7 +152,7 @@
   }
 
   .board{
-    @apply absolute right-0 top-16 h-[90%] w-[25%] overflow-y-scroll
+    @apply absolute right-0 top-16 h-[90%] w-full sm:w-[50%] md:w-[25%] overflow-y-scroll
     px-5 py-[23px] bg-white shadow-descriptionBox !important
   }
   .Title{

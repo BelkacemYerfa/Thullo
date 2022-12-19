@@ -15,7 +15,8 @@ export const BoardInfo = ({users , toggleShow})=>{
     x : 0
   }} 
   transition={{
-    duration : .5
+    duration : .5 , 
+    
   }}
   className="board" >
     <div className="Title" >
@@ -64,9 +65,11 @@ export const BoardInfo = ({users , toggleShow})=>{
         <textarea className="textarea" name="" placeholder="Description..." id="textraea" rows={10} ></textarea>
       </div>
       <div className="desciptionBtns" >
-        <div className="btn Btn1">
+        <motion.div 
+         whileTap={{scale : .9}}
+        className="btn Btn1">
           Save
-        </div>
+        </motion.div>
         <div className="btn Btn2">
           Cancel
         </div>
