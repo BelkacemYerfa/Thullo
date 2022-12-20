@@ -28,7 +28,7 @@ export const BoardInfo = ({users , toggleShow})=>{
         toggleShow(setToggle(!toggle))
       }}
      >
-      <span class="material-symbols-rounded">
+      <span className="material-symbols-rounded">
        close
       </span>
      </div>
@@ -36,7 +36,7 @@ export const BoardInfo = ({users , toggleShow})=>{
     <hr />
     <div className="creator" >
       <div className="userCreator" >
-       <span class="material-symbols-rounded">
+       <span className="material-symbols-rounded">
         account_circle
        </span>
        Made By
@@ -56,7 +56,7 @@ export const BoardInfo = ({users , toggleShow})=>{
     <br />
     <div className="tableDescription" > 
       <div className="userCreator" >
-       <span class="material-symbols-rounded">
+       <span className="material-symbols-rounded">
         description
        </span>
        Description
@@ -78,7 +78,7 @@ export const BoardInfo = ({users , toggleShow})=>{
     <br />
     <div className="usersAcces" >
        <div className="userCreator" >
-        <span class="material-symbols-rounded">
+        <span className="material-symbols-rounded">
           group
         </span>
         Team

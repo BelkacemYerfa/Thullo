@@ -190,12 +190,66 @@
   }
   .btn{
     @apply cursor-pointer flex items-center justify-center w-16 h-8 
-    rounded-lg font-medium text-sm -tracking-[.035em]
+    rounded-lg font-medium text-sm -tracking-[.035em] 
   }
   .Btn1{
     @apply bg-saveBtn text-white
   }
   .Btn2{
     @apply text-selectionBoardColor 
+  }
+
+  .toDo{
+    @apply p-0 md:px-6 md:pt-6 w-screen
+  }
+  /*tasksHolder Component*/
+  .tasksHolder{
+    @apply flex items-start flex-col
+    gap-7 bg-tableTasks h-[50%] 
+    overflow-x-auto rounded-t-3xl px-6 py-[28px] 
+    overflow-y-hidden md:overflow-auto
+    !important
+  }
+  
+  .taskcolumn{
+    @apply w-full px-[13px] py-2
+  }
+  .addList{
+    @apply bg-addListBg text-sm
+    text-searchBtnBg rounded-lg cursor-pointer 
+    !important
+  }
+  .tag{
+    @apply flex items-center justify-between w-full
+  }
+  .tagname{
+    @apply text-sm font-medium text-userCreatorColor
+    !important
+  }
+  .spred{
+    @apply cursor-pointer rounded-md flex items-center 
+    justify-center h-9 w-9 duration-200 ease-in-out
+    hover:bg-slate-200
+  }
+  .toDoCards{
+    @apply w-full grid grid-cols-1 gap-6 py-3
+  }
+  .taskCard{
+    @apply snap-center w-full cursor-pointer flex flex-col p-3 rounded-xl 
+    bg-white shadow-descriptionBox !important
+  }
+  .taskImage{
+    @apply rounded-xl
+  }
+  .taskTitle{
+    @apply my-2 text-base -tracking-[.035em] font-medium
+    !important ; 
+  }
+  .tags{
+    @apply flex items-center flex-wrap gap-x-3 gap-y-2 mb-2
+  }
+  .tagNameTable{
+    @apply px-[9px] py-[2px] text-xs font-medium 
+    rounded-lg !important 
   }
 }
