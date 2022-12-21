@@ -96,7 +96,6 @@ export const reducer = (state , action)=>{
     ...state , 
     toDoList : action.toDoList 
    }
-  
    default : return state 
   }
 }

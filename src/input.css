@@ -204,13 +204,12 @@
   }
   /*tasksHolder Component*/
   .tasksHolder{
-    @apply flex items-start flex-col
-    gap-7 bg-tableTasks h-[50%] 
-    overflow-x-auto rounded-t-3xl px-6 py-[28px] 
-    overflow-y-hidden md:overflow-auto
+    @apply flex items-start flex-col md:flex-row
+    gap-7 bg-tableTasks h-[50%] overflow-x-auto 
+    rounded-t-3xl px-6 py-[28px] overflow-y-hidden 
+    md:overflow-auto
     !important
   }
-  
   .taskcolumn{
     @apply w-full px-[13px] py-2
   }

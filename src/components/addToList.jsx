@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 
-
 export const AddToList = ()=>{
  return(
   <motion.div 

@@ -1,8 +1,25 @@
 import { motion } from 'framer-motion'
+import { useDrag, useDrop } from 'react-dnd';
 import { useDataLayervValue } from '../config/dataLayer';
+import { itemTypes } from '../utils/itemTypes';
 import { AddToList } from './addToList';
+import { NewTaskCard } from './newTaskCard';
+import { TaskCard } from './taskCard';
 export const ToDoTag = ({tag , task })=>{
- const [{toDoList} , dispatch ] = useDataLayervValue()
+ const [{toDoList} , dispatch ] = useDataLayervValue();
+ const [{ isDragging }, drag] = useDrag({
+    type : itemTypes.CARD ,
+    item : {
+      title : itemTypes.title , 
+      image : itemTypes.image , 
+      tags : itemTypes.tags , 
+      users : itemTypes.users,
+    },
+    collect : (monitor) => ({
+      isDragging : monitor.isDragging()
+    }) 
+ })
+ 
  return(
   <div className='taskcolumn' >
     <div className="tag" >
@@ -25,54 +42,15 @@ export const ToDoTag = ({tag , task })=>{
     <div className='toDoCards' >
        {
         task?.map(task => (
-         <div className="taskCard" >
-            {
-             task.image !== null || undefined ?
-             (<img className='taskImage' src={task?.image} alt='pic' />)
-             : null
-            }       
-            {
-             task.title !== null || undefined ?
-             (<h2 className='taskTitle' >{task.title}</h2>)
-             : null
-            } 
-            <div className="tags" >
-            {
-             task.tags?.map(tag => (
-              <div className="tagNameTable" style={{
-                color : tag.bg , 
-                backgroundColor : tag.fontColor
-              }} >
-                {
-                 tag.tagName
-                }
-              </div>
-             ))
-            }
-          </div>
-          <div className="users" >
-            {
-             task.users?.map(user=>( 
-               <div className="imageHolder" >
-                 {
-                  user?.image !== null || undefined || '' ?
-                  (
-                    <img 
-                    className="userImage image" 
-                    src={user?.image}
-                    height={70} width={70}
-                    alt="userImage" 
-                    />
-                  ) 
-                  : null
-                 }
-               </div>
-             ))
-            }
-          </div>
-        </div>
+         <TaskCard 
+          title={task.title}
+          image={task.image}
+          tags={task.tags}
+          users={task.users}
+         />
         ))
        }
+       <NewTaskCard />
        <AddToList />
     </div>
   </div>

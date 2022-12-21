@@ -1313,6 +1313,7 @@ video {
 
   @media (min-width: 768px) {
     .tasksHolder {
+      flex-direction: row !important;
       overflow: auto !important;
     }
   }
