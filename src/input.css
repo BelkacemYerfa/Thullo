@@ -23,10 +23,10 @@
     @apply hidden md:block h-[180%] border border-solid border-borderColor !important
   }
   .searchSettings{
-    @apply flex flex-col gap-4 md:gap-0 bg-white 
+    @apply flex flex-col py-2 md:py-0 gap-4 md:gap-0 bg-white 
     md:bg-none h-screen md:h-fit shadow-navBarBox 
-    md:shadow-none px-2 md:px-0 top-4 right-0 
-    md:top-0 w-[60%] md:flex-row absolute md:relative
+    md:shadow-none px-2 md:px-0 top-0 right-0 
+    md:top-0 w-[60%] md:flex-row fixed md:relative
     md:items-center md:justify-between md:w-[65%] 
     !important
   }
@@ -107,7 +107,7 @@
     rounded-lg bg-searchBtnBg text-white cursor-pointer
   }
   .visibility{
-    @apply relative -top-3 left-[23px] border border-solid
+    @apply absolute top-[23%] left-[23px] border border-solid
      border-borderColor h-fit bg-white md:bg-transparent
      w-fit rounded-xl shadow-fileBox px-3 py-[9px] !important
   }
@@ -152,7 +152,8 @@
   }
 
   .board{
-    @apply absolute right-0 top-16 h-[90%] w-full sm:w-[50%] md:w-[25%] overflow-y-scroll
+    @apply fixed md:absolute right-0 top-0 md:top-16 h-screen 
+    md:h-[90%] w-full sm:w-[50%] md:w-[25%] overflow-y-scroll
     px-5 py-[23px] bg-white shadow-descriptionBox !important
   }
   .Title{

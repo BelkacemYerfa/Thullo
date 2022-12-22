@@ -625,8 +625,8 @@ video {
   }
 
   .searchSettings {
-    position: absolute !important;
-    top: 1rem !important;
+    position: fixed !important;
+    top: 0px !important;
     right: 0px !important;
     display: flex !important;
     height: 100vh !important;
@@ -635,6 +635,8 @@ video {
     gap: 1rem !important;
     --tw-bg-opacity: 1 !important;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
     --tw-shadow:  0px 2px 2px rgba(0, 0, 0, 0.05) !important;
@@ -655,6 +657,8 @@ video {
       justify-content: space-between !important;
       gap: 0px !important;
       background-image: none !important;
+      padding-top: 0px !important;
+      padding-bottom: 0px !important;
       padding-left: 0px !important;
       padding-right: 0px !important;
       --tw-shadow: 0 0 #0000 !important;
@@ -942,8 +946,8 @@ video {
   }
 
   .visibility {
-    position: relative !important;
-    top: -0.75rem !important;
+    position: absolute !important;
+    top: 23% !important;
     left: 23px !important;
     height: -webkit-fit-content !important;
     height: -moz-fit-content !important;
@@ -1117,10 +1121,10 @@ video {
   }
 
   .board {
-    position: absolute !important;
+    position: fixed !important;
     right: 0px !important;
-    top: 4rem !important;
-    height: 90% !important;
+    top: 0px !important;
+    height: 100vh !important;
     width: 100% !important;
     overflow-y: scroll !important;
     --tw-bg-opacity: 1 !important;
@@ -1142,6 +1146,9 @@ video {
 
   @media (min-width: 768px) {
     .board {
+      position: absolute !important;
+      top: 4rem !important;
+      height: 90% !important;
       width: 25% !important;
     }
   }

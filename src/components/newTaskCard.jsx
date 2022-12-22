@@ -6,15 +6,19 @@ export const NewTaskCard = ({image , title , users , tags })=>{
  const [{toDoList} , dispatch ] = useDataLayervValue();
  const [{isOver} , drop] = useDrop({
   accept : itemTypes.CARD , 
+  drop : ()=>{
+    alert('new card') 
+  } , 
   collect : monitor => ({
     isOver : monitor.isOver()
   })
  })
  return(
-  <div ref={drop}  className="taskCard"
-  style={{
-   backgroundColor : isOver ? 'red' : "blue"
-  }}
+  <div ref={drop}  
+    className="taskCard"
+    style={{
+    backgroundColor : isOver ? 'red' : "blue"
+    }}
   >
    {
     image !== null || undefined ?

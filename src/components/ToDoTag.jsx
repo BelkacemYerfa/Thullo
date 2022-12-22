@@ -7,21 +7,17 @@ import { NewTaskCard } from './newTaskCard';
 import { TaskCard } from './taskCard';
 export const ToDoTag = ({tag , task })=>{
  const [{toDoList} , dispatch ] = useDataLayervValue();
- const [{ isDragging }, drag] = useDrag({
-    type : itemTypes.CARD ,
-    item : {
-      title : itemTypes.title , 
-      image : itemTypes.image , 
-      tags : itemTypes.tags , 
-      users : itemTypes.users,
-    },
-    collect : (monitor) => ({
-      isDragging : monitor.isDragging()
-    }) 
+ const [{isOver} , drop] = useDrop({
+  accept : itemTypes.CARD , 
+  DropFunc : ()=>{
+    alert('card')
+  },
+  collect : monitor => ({
+    isOver : monitor.isOver()
+  })
  })
- 
  return(
-  <div className='taskcolumn' >
+  <div ref={drop} className='taskcolumn' >
     <div className="tag" >
       <p className="tagname" >
         {tag}
