@@ -4,16 +4,28 @@
 
 
 ::-webkit-scrollbar{
-  width:8px;
+  width:10px;
+  height: 8px;
 }
 
-::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb{
   background-color: #DAE4FD;
-  border-radius: 7px;
 }
-::-webkit-scrollbar-track{
+
+.tasksHolder::-webkit-scrollbar-thumb{
+  background-color: #DAE4FD;
+  border-top-right-radius: 24px;
+}
+
+.tasksHolder::-webkit-scrollbar-track{
   background-color: #E0E0E0;
+  border-top-right-radius: 24px;
 }
+
+::-webkit-scrollbar-track:hover{
+  background-color: #BDBDBD;
+}
+
 body:is(.tasksHolder){
   overflow: scroll;
 }
@@ -225,8 +237,8 @@ body:is(.tasksHolder){
   .tasksHolder{
     @apply flex items-start w-screen md:w-[96.6vw] snap-x
     gap-7 bg-tableTasks h-screen shadow-tableBox
-    md:max-h-[50%] px-6 py-[28px] overflow-scroll 
-    rounded-3xl !important
+    md:max-h-[50%] px-6 py-[28px] overflow-auto 
+    rounded-t-3xl !important
   }
   .taskcolumn{
     @apply snap-center w-full px-[13px] py-2 !important

@@ -26,28 +26,6 @@ export const initialState = {
           }
         ] , 
       } , 
-      {
-        image : 'https://images6.alphacoders.com/607/thumb-1920-607771.jpg' ,
-        title : 'Ocean' , 
-        tags : [
-          {
-            tagName : 'Design' , 
-            bg:'#219653' , 
-            fontColor : '#D3EADD'  , 
-          },
-          {
-            tagName : 'concept' , 
-            bg:'#9B51E0' , 
-            fontColor : '#D3EADD'  , 
-          }
-        ] , 
-        users : [
-          {
-            name : 'kratos',
-            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg'
-          }
-        ] , 
-      }
     ] , 
   },
   {
