@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #DAE4FD;
+  border-radius: 7px;
+}
+::-webkit-scrollbar-track{
+  background-color: #E0E0E0;
+}
+body:is(.tasksHolder){
+  overflow: scroll;
+}
+
 @layer {
   body{
     @apply h-screen w-screen overflow-x-hidden !important
@@ -11,7 +27,8 @@
   }
   /*navBar section*/
   .navBar{
-    @apply flex items-center px-6 py-5 w-full h-16 gap-6 shadow-navBarBox !important
+    @apply flex items-center sticky left-0 top-0 bg-white px-6 py-5 w-full h-16 gap-6 
+    shadow-navBarBox !important
   }
   .logoHolder{
     @apply cursor-pointer flex items-center md:w-[32%] justify-between
@@ -20,7 +37,8 @@
     @apply text-lg font-medium -tracking-[.035em]
   }
   .line{
-    @apply hidden md:block h-[180%] border border-solid border-borderColor !important
+    @apply hidden md:block h-[180%] border border-solid
+    border-borderColor !important
   }
   .searchSettings{
     @apply flex flex-col py-2 md:py-0 gap-4 md:gap-0 bg-white 
@@ -201,18 +219,17 @@
   }
 
   .toDo{
-    @apply p-0 md:px-6 md:pt-6 w-screen
+    @apply pt-3 md:px-6 px-0
   }
   /*tasksHolder Component*/
   .tasksHolder{
-    @apply flex items-start flex-col md:flex-row
-    gap-7 bg-tableTasks h-[50%] overflow-x-auto 
-    rounded-t-3xl px-6 py-[28px] overflow-y-hidden 
-    md:overflow-auto
-    !important
+    @apply flex items-start w-screen md:w-[96.6vw] snap-x
+    gap-7 bg-tableTasks h-screen shadow-tableBox
+    md:max-h-[50%] px-6 py-[28px] overflow-scroll 
+    rounded-3xl !important
   }
   .taskcolumn{
-    @apply w-full px-[13px] py-2
+    @apply snap-center w-full px-[13px] py-2 !important
   }
   .addList{
     @apply bg-addListBg text-sm
@@ -232,10 +249,10 @@
     hover:bg-slate-200
   }
   .toDoCards{
-    @apply w-full grid grid-cols-1 gap-6 py-3
+    @apply w-[350px] grid grid-cols-1 gap-6 py-3
   }
   .taskCard{
-    @apply snap-center w-full cursor-pointer flex flex-col p-3 rounded-xl 
+    @apply w-full cursor-pointer flex flex-col p-3 rounded-xl 
     bg-white shadow-descriptionBox !important
   }
   .taskImage{

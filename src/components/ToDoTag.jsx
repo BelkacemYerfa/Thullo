@@ -1,23 +1,11 @@
 import { motion } from 'framer-motion'
-import { useDrag, useDrop } from 'react-dnd';
 import { useDataLayervValue } from '../config/dataLayer';
-import { itemTypes } from '../utils/itemTypes';
 import { AddToList } from './addToList';
-import { NewTaskCard } from './newTaskCard';
 import { TaskCard } from './taskCard';
 export const ToDoTag = ({tag , task })=>{
  const [{toDoList} , dispatch ] = useDataLayervValue();
- const [{isOver} , drop] = useDrop({
-  accept : itemTypes.CARD , 
-  DropFunc : ()=>{
-    alert('card')
-  },
-  collect : monitor => ({
-    isOver : monitor.isOver()
-  })
- })
  return(
-  <div ref={drop} className='taskcolumn' >
+  <div  className='taskcolumn' >
     <div className="tag" >
       <p className="tagname" >
         {tag}
@@ -46,7 +34,6 @@ export const ToDoTag = ({tag , task })=>{
          />
         ))
        }
-       <NewTaskCard />
        <AddToList />
     </div>
   </div>

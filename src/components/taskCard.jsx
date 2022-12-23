@@ -1,21 +1,8 @@
-import { useDrag } from 'react-dnd';
-import { itemTypes } from '../utils/itemTypes';
-
 
 export const TaskCard = ({image , title , tags, users})=>{
 
- const [{ isDragging }, drag] = useDrag({
-  type : itemTypes.CARD ,
-  collect : (monitor) => ({
-    isDragging : monitor.isDragging()
-  }) , 
-})
  return(
   <div 
-   ref={drag}
-   style={{
-     opacity : isDragging ? .5 : 1
-   }}
    className="taskCard" >
      {
       image !== null || undefined ?

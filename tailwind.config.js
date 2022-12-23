@@ -25,6 +25,7 @@ module.exports = {
         searchBox : ' 0px 2px 10px rgba(0, 0, 0, 0.05)' , 
         fileBox : '0px 2px 4px rgba(0, 0, 0, 0.05) ' , 
         descriptionBox : '0px 4px 12px rgba(0, 0, 0, 0.05)' , 
+        tableBox : '10px 4px 12px rgba(0, 0, 0, 0.05)' , 
       },
       fontFamily : {
         mainFont : 'Poppins, sans-serif'

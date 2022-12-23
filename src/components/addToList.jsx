@@ -6,7 +6,10 @@ export const AddToList = ()=>{
    whileTap={{
      scale : .9
    }}
-   className='taskcolumn addList ' >
+   style={{
+    width : 300 
+   }}
+   className='taskcolumn addList' >
      <div className="tag" >
        <p className="addText" >
          Add another List

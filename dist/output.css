@@ -559,6 +559,23 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #DAE4FD;
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: #E0E0E0;
+}
+
+body:is(.tasksHolder){
+  overflow: scroll;
+}
+
 @layer {
   body {
     height: 100vh !important;
@@ -575,11 +592,17 @@ video {
   /*navBar section*/
 
   .navBar {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    left: 0px !important;
+    top: 0px !important;
     display: flex !important;
     height: 4rem !important;
     width: 100% !important;
     align-items: center !important;
     gap: 1.5rem !important;
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
     padding-top: 1.25rem !important;
@@ -1286,15 +1309,15 @@ video {
   }
 
   .toDo {
-    width: 100vw;
-    padding: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0.75rem;
   }
 
   @media (min-width: 768px) {
     .toDo {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
-      padding-top: 1.5rem;
     }
   }
 
@@ -1302,35 +1325,38 @@ video {
 
   .tasksHolder {
     display: flex !important;
-    height: 50% !important;
-    flex-direction: column !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    scroll-snap-type: x var(--tw-scroll-snap-strictness) !important;
     align-items: flex-start !important;
     gap: 1.75rem !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    border-top-left-radius: 1.5rem !important;
-    border-top-right-radius: 1.5rem !important;
+    overflow: scroll !important;
+    border-radius: 1.5rem !important;
     --tw-bg-opacity: 1 !important;
     background-color: rgb(248 249 253 / var(--tw-bg-opacity)) !important;
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
     padding-top: 28px !important;
     padding-bottom: 28px !important;
+    --tw-shadow: 10px 4px 12px rgba(0, 0, 0, 0.05) !important;
+    --tw-shadow-colored: 10px 4px 12px var(--tw-shadow-color) !important;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
   }
 
   @media (min-width: 768px) {
     .tasksHolder {
-      flex-direction: row !important;
-      overflow: auto !important;
+      max-height: 50% !important;
+      width: 96.6vw !important;
     }
   }
 
   .taskcolumn {
-    width: 100%;
-    padding-left: 13px;
-    padding-right: 13px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    width: 100% !important;
+    scroll-snap-align: center !important;
+    padding-left: 13px !important;
+    padding-right: 13px !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
   }
 
   .addList {
@@ -1378,7 +1404,7 @@ video {
 
   .toDoCards {
     display: grid;
-    width: 100%;
+    width: 350px;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 1.5rem;
     padding-top: 0.75rem;
@@ -1389,7 +1415,6 @@ video {
     display: flex !important;
     width: 100% !important;
     cursor: pointer !important;
-    scroll-snap-align: center !important;
     flex-direction: column !important;
     border-radius: 0.75rem !important;
     --tw-bg-opacity: 1 !important;
