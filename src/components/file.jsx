@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from 'framer-motion'
-import { SearchBar } from "./search";
 import { BoardInfo } from "./boarddescription";
+import { SearchBar } from "./search";
 
 export const File = ()=>{
  const [visibility , setVisbility] = useState({

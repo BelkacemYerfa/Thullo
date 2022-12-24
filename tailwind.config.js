@@ -15,7 +15,7 @@ module.exports = {
         removeBtn : '#EB5757' , 
         tableTasks : '#F8F9FD' ,  
         addListBg : '#DAE4FD' , 
-        
+        commentData : '#BDBDBD' , 
       } , 
       cursor : {
         image : "url('https://www.freeiconspng.com/thumbs/cursor-png/hand-cursor-png-click-cursor-hand-icon-13.png') , pointer "
@@ -26,6 +26,7 @@ module.exports = {
         fileBox : '0px 2px 4px rgba(0, 0, 0, 0.05) ' , 
         descriptionBox : '0px 4px 12px rgba(0, 0, 0, 0.05)' , 
         tableBox : '10px 4px 12px rgba(0, 0, 0, 0.05)' , 
+        closeBox : ' 0px 4px 12px rgba(0, 0, 0, 0.1);'
       },
       fontFamily : {
         mainFont : 'Poppins, sans-serif'

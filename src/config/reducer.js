@@ -25,6 +25,12 @@ export const initialState = {
             image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg'
           }
         ] , 
+        comments : [
+          {
+            username:'' , 
+            comment : '' ,
+          }
+        ]
       } , 
     ] , 
   },
@@ -33,7 +39,7 @@ export const initialState = {
     task : [
       {
         image : null ,
-        title : '' , 
+        title : 'Working' , 
         tags : [
           {
             tagName : 'Technical' , 
@@ -52,6 +58,12 @@ export const initialState = {
             image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg'
           }
         ] , 
+        comments : [
+          {
+            username:'' , 
+            comment : '' , 
+          }
+        ]
       }
     ] , 
   },
@@ -60,7 +72,7 @@ export const initialState = {
     task : [
       {
         image : null ,
-        title : '' , 
+        title : 'Gym' , 
         tags : [
           {
             tagName : 'Front-End' , 
@@ -79,6 +91,12 @@ export const initialState = {
             image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg'
           }
         ] , 
+        comments : [
+          {
+            username:'' , 
+            comment : '' , 
+          }
+        ]
       }
     ] , 
   },
@@ -87,7 +105,7 @@ export const initialState = {
     task : [
       {
         image : null ,
-        title : '' , 
+        title : 'Study' , 
         tags : [
           {
             tagName : 'Front-End' , 
@@ -106,6 +124,12 @@ export const initialState = {
             image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg'
           }
         ] , 
+        comments : [
+          {
+            username:'' , 
+            comment : '' , 
+          }
+        ]
       }
     ] , 
   },

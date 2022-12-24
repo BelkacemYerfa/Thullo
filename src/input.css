@@ -39,8 +39,9 @@ body:is(.tasksHolder){
   }
   /*navBar section*/
   .navBar{
-    @apply flex items-center sticky left-0 top-0 bg-white px-6 py-5 w-full h-16 gap-6 
-    shadow-navBarBox !important
+    @apply flex items-center sticky left-0 top-0
+    bg-white px-6 py-5 w-full h-16 gap-6 
+    shadow-navBarBox z-20 !important
   }
   .logoHolder{
     @apply cursor-pointer flex items-center md:w-[32%] justify-between
@@ -134,10 +135,10 @@ body:is(.tasksHolder){
   }
   .addUsersBtn{
     @apply flex items-center justify-center h-9 w-9 
-    rounded-lg bg-searchBtnBg text-white cursor-pointer
+    rounded-xl bg-searchBtnBg text-white cursor-pointer
   }
   .visibility{
-    @apply absolute top-[23%] left-[23px] border border-solid
+    @apply z-20 absolute top-[23%] left-[23px] border border-solid
      border-borderColor h-fit bg-white md:bg-transparent
      w-fit rounded-xl shadow-fileBox px-3 py-[9px] !important
   }
@@ -156,7 +157,8 @@ body:is(.tasksHolder){
     @apply text-selectionBoardColor text-sm
   }
   .addUsers{
-    @apply absolute top-[150px] left-[300px] h-fit w-fit px-3 py-[9px] rounded-xl border-borderColor border 
+    @apply absolute top-[150px] left-[300px] h-fit w-fit px-3 py-[9px]
+    rounded-xl border-borderColor border z-20
     border-solid shadow-fileBox !important ; 
   }
   .userList{
@@ -182,8 +184,8 @@ body:is(.tasksHolder){
   }
 
   .board{
-    @apply fixed md:absolute right-0 top-0 md:top-16 h-screen 
-    md:h-[90%] w-full sm:w-[50%] md:w-[25%] overflow-y-scroll
+    @apply fixed z-20 right-0 top-0 md:top-16 h-screen md:h-[90%] 
+    w-full sm:w-[50%] md:w-[25%] overflow-y-scroll
     px-5 py-[23px] bg-white shadow-descriptionBox !important
   }
   .Title{
@@ -249,7 +251,7 @@ body:is(.tasksHolder){
     !important
   }
   .tag{
-    @apply flex items-center justify-between w-full
+    @apply relative flex items-center justify-between w-full
   }
   .tagname{
     @apply text-sm font-medium text-userCreatorColor
@@ -260,8 +262,18 @@ body:is(.tasksHolder){
     justify-center h-9 w-9 duration-200 ease-in-out
     hover:bg-slate-200
   }
+  .taskColumnSettings{
+    @apply absolute -right-[25%] w-fit h-fit top-7 flex flex-col gap-y-2 
+    px-3 py-3 bg-white text-selectionBoardColor text-sm
+    -tracking-[.035em] rounded-xl shadow-fileBox !important
+  }
+  .SettingInfo{
+    @apply cursor-pointer w-full h-9 flex items-center px-1 py-[2px] 
+    duration-200 ease-in-out hover:bg-tableVisibility rounded-md
+    hover:text-white
+  }
   .toDoCards{
-    @apply w-[350px] grid grid-cols-1 gap-6 py-3
+    @apply w-[320px] grid grid-cols-1 gap-6 py-3
   }
   .taskCard{
     @apply w-full cursor-pointer flex flex-col p-3 rounded-xl 
@@ -280,5 +292,40 @@ body:is(.tasksHolder){
   .tagNameTable{
     @apply px-[9px] py-[2px] text-xs font-medium 
     rounded-lg !important 
+  }
+  .users{
+    @apply w-full flex items-center justify-between
+  }
+  .usersHolder{
+    @apply flex items-center gap-x-2
+  }
+  .comments{
+    @apply flex items-center gap-x-2 text-commentData text-xl
+  }
+
+  .CardHolder{
+    @apply absolute z-20 top-0 left-0 flex items-center justify-center
+    bg-gray-500/50 h-[130vh] w-screen
+  }
+  .CardDataDescription{
+    @apply relative p-3 md:px-6 md:py-5 h-fit w-full md:w-[50%] bg-white 
+    shadow-fileBox rounded-lg !important
+  }
+  .CloseBtn{
+    @apply absolute top-[6px] right-2 flex items-center justify-center 
+    h-10 w-10 shadow-closeBox bg-searchBtnBg rounded-xl text-white 
+    cursor-pointer !important ; 
+  }
+  .cardImage{
+    @apply h-[190px] w-full rounded-xl !important
+  }
+  .Details{
+    @apply flex items-start justify-start
+  }
+  .Content{
+    @apply basis-[70%] 
+  }
+  .Settings{
+    @apply basis-[30%]
   }
 }
