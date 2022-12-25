@@ -591,6 +591,7 @@ body:is(.tasksHolder){
     height: 100vh !important;
     width: 100vw !important;
     overflow-x: hidden !important;
+    letter-spacing: -.035em !important;
   }
 
   .App {
@@ -1359,7 +1360,7 @@ body:is(.tasksHolder){
 
   @media (min-width: 768px) {
     .tasksHolder {
-      max-height: 50% !important;
+      height: 80vh !important;
       width: 96.6vw !important;
     }
   }
@@ -1564,6 +1565,12 @@ body:is(.tasksHolder){
     background-color: rgb(107 114 128 / 0.5);
   }
 
+  @media (min-width: 768px) {
+    .CardHolder {
+      height: 110vh;
+    }
+  }
+
   .CardDataDescription {
     position: relative !important;
     height: -webkit-fit-content !important;
@@ -1616,14 +1623,87 @@ body:is(.tasksHolder){
   }
 
   .Details {
-    margin-top: 1.5rem;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    -webkit-column-gap: 1.25rem;
+            column-gap: 1.25rem;
   }
 
   .Content {
     flex-basis: 70%;
+  }
+
+  .CardDestailTitle {
+    margin-bottom: 0.25rem !important;
+    font-size: 1.125rem !important;
+    line-height: 1.75rem !important;
+    font-weight: 400 !important;
+  }
+
+  .CardList {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    --tw-text-opacity: 1;
+    color: rgb(189 189 189 / var(--tw-text-opacity));
+  }
+
+  .listId {
+    --tw-text-opacity: 1 !important;
+    color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
+  }
+
+  .desciptionDetails {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .sectionTitle {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  .editFile {
+    display: flex !important;
+    height: 2.25rem !important;
+    width: -webkit-fit-content !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    cursor: pointer !important;
+    align-items: center !important;
+    justify-content: center !important;
+    -webkit-column-gap: 0.5rem !important;
+            column-gap: 0.5rem !important;
+    border-radius: 0.5rem !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    --tw-border-opacity: 1 !important;
+    border-color: rgb(189 189 189 / var(--tw-border-opacity)) !important;
+    padding-left: 13.5px !important;
+    padding-right: 13.5px !important;
+    padding-top: 7.5 !important;
+    padding-bottom: 7.5 !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 500 !important;
+    --tw-text-opacity: 1 !important;
+    color: rgb(189 189 189 / var(--tw-text-opacity)) !important;
+    transition-duration: 200ms !important;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .editFile:hover {
+    --tw-border-opacity: 1 !important;
+    border-color: rgb(79 79 79 / var(--tw-border-opacity)) !important;
+    --tw-text-opacity: 1 !important;
+    color: rgb(51 51 51 / var(--tw-text-opacity)) !important;
+  }
+
+  .Description {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 
   .Settings {

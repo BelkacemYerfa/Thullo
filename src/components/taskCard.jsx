@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { CardDataDescription } from './CardDescription';
 
-export const TaskCard = ({image , title , tags, users , comments})=>{
+export const TaskCard = ({image , tag , description , title , tags, users , comments})=>{
  const [CardDescription , setCardDescription] = useState(false) ; 
  const handleCardDescription = ()=>{
   setCardDescription(!CardDescription)
@@ -86,7 +86,13 @@ export const TaskCard = ({image , title , tags, users , comments})=>{
    </div>
    {
     CardDescription && (
-      <CardDataDescription image={image} handleToggle={handleToggle} />
+      <CardDataDescription 
+        image={image} 
+        title={title} 
+        handleToggle={handleToggle} 
+        tag={tag}
+        description={description}
+      />
     )
    }
   </>

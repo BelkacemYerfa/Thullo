@@ -14,8 +14,7 @@ module.exports = {
         saveBtn : '#219653',
         removeBtn : '#EB5757' , 
         tableTasks : '#F8F9FD' ,  
-        addListBg : '#DAE4FD' , 
-        commentData : '#BDBDBD' , 
+        addListBg : '#DAE4FD' ,  
       } , 
       cursor : {
         image : "url('https://www.freeiconspng.com/thumbs/cursor-png/hand-cursor-png-click-cursor-hand-icon-13.png') , pointer "

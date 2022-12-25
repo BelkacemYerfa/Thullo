@@ -32,7 +32,7 @@ body:is(.tasksHolder){
 
 @layer {
   body{
-    @apply h-screen w-screen overflow-x-hidden !important
+    @apply h-screen w-screen overflow-x-hidden -tracking-[.035em] !important
   }
   .App{
     @apply w-screen h-screen font-mainFont 
@@ -239,7 +239,7 @@ body:is(.tasksHolder){
   .tasksHolder{
     @apply flex items-start w-screen md:w-[96.6vw] snap-x
     gap-7 bg-tableTasks h-screen shadow-tableBox
-    md:max-h-[50%] px-6 py-[28px] overflow-auto 
+    md:h-[80vh] px-6 py-[28px] overflow-auto 
     rounded-t-3xl !important
   }
   .taskcolumn{
@@ -300,12 +300,12 @@ body:is(.tasksHolder){
     @apply flex items-center gap-x-2
   }
   .comments{
-    @apply flex items-center gap-x-2 text-commentData text-xl
+    @apply flex items-center gap-x-2 text-userToAddBg text-xl
   }
 
   .CardHolder{
     @apply absolute z-20 top-0 left-0 flex items-center justify-center
-    bg-gray-500/50 h-[130vh] w-screen
+    bg-gray-500/50 h-[130vh] md:h-[110vh] w-screen
   }
   .CardDataDescription{
     @apply relative p-3 md:px-6 md:py-5 h-fit w-full md:w-[50%] bg-white 
@@ -320,10 +320,35 @@ body:is(.tasksHolder){
     @apply h-[190px] w-full rounded-xl !important
   }
   .Details{
-    @apply flex items-start justify-start
+    @apply flex items-start justify-start gap-x-5
   }
   .Content{
     @apply basis-[70%] 
+  }
+  .CardDestailTitle{
+    @apply font-normal text-lg mb-1 !important
+  }
+  .CardList{
+    @apply font-semibold text-sm text-userToAddBg
+  }
+  .listId{
+    @apply text-black !important
+  }
+  .desciptionDetails{
+    @apply flex items-center gap-3
+  }
+  .sectionTitle{
+    @apply px-0 !important
+  }
+  .editFile{
+    @apply cursor-pointer flex justify-center items-center gap-x-2 
+    h-9 w-fit px-[13.5px] py-[7.5] border border-solid border-userToAddBg
+    duration-200 ease-in-out hover:border-tableVisibility
+    hover:text-userCreatorColor rounded-lg text-sm font-medium
+    text-userToAddBg !important
+  }
+  .Description{
+    @apply text-sm
   }
   .Settings{
     @apply basis-[30%]

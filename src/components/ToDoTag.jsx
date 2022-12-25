@@ -61,6 +61,8 @@ export const ToDoTag = ({tag , task })=>{
           tags={task.tags}
           users={task.users}
           comments={task.comments}
+          description = {task.description}
+          tag={tag}
          />
         ))
        }
