@@ -5,7 +5,7 @@ export const CardDataDescription = ({image , description , tag , title , handleT
   const CloseData = ()=>{
     handleToggle(false)
   }
-  const [DescriptionData , setCardDescription] = useState(false) ; 
+  const [DescriptionData , setCardDescription] = useState(true) ; 
   const handleCardDescription = ()=>{
     setCardDescription(!DescriptionData);
   }
@@ -87,7 +87,7 @@ export const CardDataDescription = ({image , description , tag , title , handleT
                <textarea 
                 className="textarea" name="" 
                 placeholder="Description..."
-                id="textarea" rows={10} >
+                id="textarea" rows={7} >
                   {
                     description
                   }
@@ -98,13 +98,40 @@ export const CardDataDescription = ({image , description , tag , title , handleT
                   className="btn Btn1">
                     Save
                   </motion.div>
-                  <div className="btn Btn2">
+                  <div className="btn Btn2"
+                   onClick={handleCardDescription}
+                  >
                     Cancel
                   </div>
                </div>
               </>
             )
           }
+          <br />
+          <div className='commentUser' >
+            <div className='Comments' >
+              <img 
+              className='userImage'
+              src='https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' 
+              alt="user pic" />
+              <div className='comment' >
+                <textarea 
+                  className="textarea commentData" name="" 
+                  placeholder="Write a comment..."
+                  id="textarea" rows={4}
+                ></textarea>
+              </div>
+            </div>
+            <div className='CommentBtnHolder' >
+              <motion.div 
+              whileTap={{
+                scale : .9
+              }}
+              className='commentBtn' >
+                Comment
+              </motion.div>
+            </div>
+          </div>
         </div>
         <div className="Settings" >
           data

@@ -23,6 +23,7 @@ module.exports = {
         navBarBox : ' 0px 2px 2px rgba(0, 0, 0, 0.05)' , 
         searchBox : ' 0px 2px 10px rgba(0, 0, 0, 0.05)' , 
         fileBox : '0px 2px 4px rgba(0, 0, 0, 0.05) ' , 
+        commentBox : ' 0px 2px 8px rgba(0, 0, 0, 0.1)' , 
         descriptionBox : '0px 4px 12px rgba(0, 0, 0, 0.05)' , 
         tableBox : '10px 4px 12px rgba(0, 0, 0, 0.05)' , 
         closeBox : ' 0px 4px 12px rgba(0, 0, 0, 0.1);'

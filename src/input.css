@@ -350,6 +350,25 @@ body:is(.tasksHolder){
   .Description{
     @apply text-sm
   }
+  .commentUser{
+    @apply bg-white shadow-commentBox px-[13px] py-3 rounded-xl !important
+  }
+  .Comments{
+    @apply flex w-full items-start gap-x-3
+  }
+  .comment{
+    @apply w-full
+  }
+  .commentData{
+    @apply border-none !important
+  }
+  .CommentBtnHolder{
+    @apply flex justify-end w-full 
+  }
+  .commentBtn{
+    @apply bg-searchBtnBg rounded-lg text-sm text-white
+    px-[12.75px] py-[4.5px] w-fit cursor-pointer 
+  }
   .Settings{
     @apply basis-[30%]
   }

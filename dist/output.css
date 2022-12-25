@@ -1706,6 +1706,59 @@ body:is(.tasksHolder){
     line-height: 1.25rem;
   }
 
+  .commentUser {
+    border-radius: 0.75rem !important;
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+    padding-left: 13px !important;
+    padding-right: 13px !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    --tw-shadow:  0px 2px 8px rgba(0, 0, 0, 0.1) !important;
+    --tw-shadow-colored: 0px 2px 8px var(--tw-shadow-color) !important;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+  }
+
+  .Comments {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    -webkit-column-gap: 0.75rem;
+            column-gap: 0.75rem;
+  }
+
+  .comment {
+    width: 100%;
+  }
+
+  .commentData {
+    border-style: none !important;
+  }
+
+  .CommentBtnHolder {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .commentBtn {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(47 128 237 / var(--tw-bg-opacity));
+    padding-left: 12.75px;
+    padding-right: 12.75px;
+    padding-top: 4.5px;
+    padding-bottom: 4.5px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
   .Settings {
     flex-basis: 30%;
   }
