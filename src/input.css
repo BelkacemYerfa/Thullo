@@ -308,8 +308,8 @@ body:is(.tasksHolder){
     bg-gray-500/50 h-[130vh] md:h-[110vh] w-screen
   }
   .CardDataDescription{
-    @apply relative p-3 md:px-6 md:py-5 h-fit w-full md:w-[50%] bg-white 
-    shadow-fileBox rounded-lg !important
+    @apply relative p-3 md:px-6 md:py-5 h-[90vh] overflow-y-auto
+    w-full md:w-[50%] bg-white shadow-fileBox rounded-lg !important
   }
   .CloseBtn{
     @apply absolute top-[6px] right-2 flex items-center justify-center 
@@ -368,6 +368,28 @@ body:is(.tasksHolder){
   .commentBtn{
     @apply bg-searchBtnBg rounded-lg text-sm text-white
     px-[12.75px] py-[4.5px] w-fit cursor-pointer 
+  }
+  .commentsHolder{
+    @apply w-full !important 
+  }
+  .commentOfUser{
+    @apply w-full !important
+  }
+  .headComment{
+    @apply flex w-full items-center justify-between 
+  }
+  .commentLeftSide{
+    @apply flex items-center gap-x-3
+  }
+  .UserCommentName{
+    @apply text-base font-medium !important
+  }
+  .CreationDate{
+    @apply font-medium text-sm text-userToAddBg !important
+  }
+  .BtnSettings{
+    @apply cursor-pointer h-fit w-fit p-2 bg-red-500/90 rounded-lg capitalize
+    font-medium text-white !important
   }
   .Settings{
     @apply basis-[30%]

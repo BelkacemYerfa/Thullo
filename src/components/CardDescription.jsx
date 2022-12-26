@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion' ; 
 import { useState } from 'react';
 
-export const CardDataDescription = ({image , description , tag , title , handleToggle})=>{
+export const CardDataDescription = ({image , comments , description , tag , title , handleToggle})=>{
   const CloseData = ()=>{
     handleToggle(false)
   }
@@ -118,7 +118,7 @@ export const CardDataDescription = ({image , description , tag , title , handleT
                 <textarea 
                   className="textarea commentData" name="" 
                   placeholder="Write a comment..."
-                  id="textarea" rows={4}
+                  id="textarea" rows={3}
                 ></textarea>
               </div>
             </div>
@@ -131,6 +131,43 @@ export const CardDataDescription = ({image , description , tag , title , handleT
                 Comment
               </motion.div>
             </div>
+          </div>
+          <br />
+          <div className='commentsHolder' >
+              {
+                comments.map(comment => (
+                  <>
+                   <div className='commentOfUser' >
+                    <div className='headComment' >
+                      <div className='commentLeftSide' >
+                        <img className='userImage' src={comment?.image} alt="" />
+                        <div className='UserInfo' >
+                          <p className='UserCommentName' >
+                            {comment?.username}
+                          </p>
+                          <p className='CreationDate' >
+                            {comment?.createDate}
+                          </p>
+                        </div>
+                      </div>
+                      <motion.div
+                       whileTap={{
+                        scale : .9
+                       }}
+                      className='BtnSettings' >
+                        delete
+                      </motion.div>
+                    </div>
+                    <br />
+                    <div className='CommentData' >
+                        {comment?.comment}
+                    </div>
+                    </div>
+                    <br />
+                    <hr />
+                  </>
+                ))
+              }
           </div>
         </div>
         <div className="Settings" >

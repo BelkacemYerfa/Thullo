@@ -23,12 +23,18 @@ export const initialState = {
           {
             name : 'kratos',
             image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg'
+          } , 
+          {
+            name : '' , 
+            image : 'https://w0.peakpx.com/wallpaper/331/150/HD-wallpaper-sad-boy-hotaro-art-cartoon-sadboy-dark-hotarooreki-feeling-anime-thumbnail.jpg'
           }
         ] , 
         comments : [
           {
-            username:'' , 
-            comment : '' ,
+            username:'kratos' ,
+            createDate : '26 december 2022' , 
+            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
+            comment : '“The gladdest moment in human life, methinks, is a departure into unknown lands.” – Sir Richard Burton' ,
           }
         ] , 
         description : 'Just A random Data for some Cases'
@@ -61,8 +67,10 @@ export const initialState = {
         ] , 
         comments : [
           {
-            username:'' , 
-            comment : '' , 
+            username:'kratos' ,
+            createDate : '26 december 2022' , 
+            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
+            comment : '“The gladdest moment in human life, methinks, is a departure into unknown lands.” – Sir Richard Burton' ,
           }
         ] , 
         description : 'Just A random Data for some Cases'
@@ -95,10 +103,12 @@ export const initialState = {
         ] , 
         comments : [
           {
-            username:'' , 
-            comment : '' , 
+            username:'kratos' ,
+            createDate : '26 december 2022' , 
+            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
+            comment : '“The gladdest moment in human life, methinks, is a departure into unknown lands.” – Sir Richard Burton' ,
           }
-        ], 
+        ] , 
         description : 'Just A random Data for some Cases'
       }
     ] , 
@@ -125,14 +135,20 @@ export const initialState = {
           {
             name : 'kratos',
             image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg'
+          } ,
+          {
+            name : 'Long Zu',
+            image : 'https://e1.pxfuel.com/desktop-wallpaper/147/865/desktop-wallpaper-anime-profile-pic-anime-profile.jpg'
           }
         ] , 
-        comments : [
+       comments : [
           {
-            username:'' , 
-            comment : '' , 
+            username:'kratos' ,
+            createDate : '26 december 2022' , 
+            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
+            comment : '“The gladdest moment in human life, methinks, is a departure into unknown lands.” – Sir Richard Burton' ,
           }
-        ], 
+        ] , 
         description : 'Just A random Data for some Cases'
       }
     ] , 

@@ -1573,10 +1573,9 @@ body:is(.tasksHolder){
 
   .CardDataDescription {
     position: relative !important;
-    height: -webkit-fit-content !important;
-    height: -moz-fit-content !important;
-    height: fit-content !important;
+    height: 90vh !important;
     width: 100% !important;
+    overflow-y: auto !important;
     border-radius: 0.5rem !important;
     --tw-bg-opacity: 1 !important;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
@@ -1757,6 +1756,59 @@ body:is(.tasksHolder){
     line-height: 1.25rem;
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .commentsHolder {
+    width: 100% !important;
+  }
+
+  .commentOfUser {
+    width: 100% !important;
+  }
+
+  .headComment {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .commentLeftSide {
+    display: flex;
+    align-items: center;
+    -webkit-column-gap: 0.75rem;
+            column-gap: 0.75rem;
+  }
+
+  .UserCommentName {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 500 !important;
+  }
+
+  .CreationDate {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 500 !important;
+    --tw-text-opacity: 1 !important;
+    color: rgb(189 189 189 / var(--tw-text-opacity)) !important;
+  }
+
+  .BtnSettings {
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    width: -webkit-fit-content !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    cursor: pointer !important;
+    border-radius: 0.5rem !important;
+    background-color: rgb(239 68 68 / 0.9) !important;
+    padding: 0.5rem !important;
+    font-weight: 500 !important;
+    text-transform: capitalize !important;
+    --tw-text-opacity: 1 !important;
+    color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
   }
 
   .Settings {
