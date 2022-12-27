@@ -1,14 +1,67 @@
 import { motion } from 'framer-motion' ; 
 import { useState } from 'react';
+import { AddToList } from './addToList';
 
-export const CardDataDescription = ({image , comments , description , tag , title , handleToggle})=>{
+export const CardDataDescription = ({ tags , users , image , comments , description , tag , title , handleToggle})=>{
   const CloseData = ()=>{
     handleToggle(false)
   }
   const [DescriptionData , setCardDescription] = useState(true) ; 
+  const [Members , setMembers] = useState(false);
+  const [Labels , setLabels] = useState(false);
+  const [Cover , setCover] = useState(false);
+
   const handleCardDescription = ()=>{
     setCardDescription(!DescriptionData);
   }
+  const handleUsers = ()=>{
+    setMembers(!Members)
+    setCover(false) ; 
+    setLabels(false) ; 
+    console.log(Members)
+  }
+  const handleLabels = ()=>{
+    setLabels(!Labels) ; 
+    setMembers(false) ; 
+    setCover(false) ; 
+    console.log(Labels) ; 
+  }
+  const handleCover = ()=>{
+    setCover(!Cover);
+    setMembers(false) ; 
+    setLabels(false) ; 
+    console.log(Cover)
+  }
+  const handleCardToggle = (id)=>{
+    switch(id){
+      case 1 : return handleUsers
+      case 2 : return handleLabels
+      case 3 :return handleCover
+      default : return [setCover(false) , setLabels(false) , setMembers(false)]
+    }
+  }
+  /*
+    we need to have some arg :
+      users , tags , image.
+  */
+  const CardSettings = [
+    {
+      icon : 'group'  ,
+      name : 'members' , 
+      id : 1 ,
+    },
+    {
+      icon : 'label'  ,
+      name : 'labels' , 
+      id : 2 ,
+    },
+    {
+      icon : 'image'  ,
+      name : 'cover' , 
+      id : 3 ,
+    }
+  ]
+
  return(
   <motion.div
    initial={{
@@ -171,7 +224,55 @@ export const CardDataDescription = ({image , comments , description , tag , titl
           </div>
         </div>
         <div className="Settings" >
-          data
+           <div className='userCreator' >
+             <span class="material-symbols-rounded">
+              account_circle
+             </span>
+             Actions
+           </div>
+           <div className='Cardactions' >
+            {
+              CardSettings.map(action => (
+                <>
+                 <motion.div
+                  whileTap={{
+                    scale : .9
+                  }}
+                  id={action.id}
+                  onClick={handleCardToggle(action.id)}
+                  className='actionData' >
+                    <span class="material-symbols-rounded">
+                    {action.icon}
+                    </span>
+                    {action.name}
+                  </motion.div>
+                  {
+                    Members && action.id === 1 && (
+                      <>
+                       <div className='MembersDetails' >
+                          {
+                            users.map(user => (
+                              <div className='userHolder' >
+                                <img 
+                                  className='userImage' 
+                                  src={user.image} 
+                                  alt="userImage"
+                                />
+                                <p className='UserCommentName' >
+                                  {user.name}
+                                </p>
+                              </div>
+                            ))
+                          }
+                        </div>
+                        <AddToList holder='Assign a member' />
+                      </>
+                    )
+                  }
+                </>
+              ))
+            }
+           </div>
         </div>
        </div>
     </div>

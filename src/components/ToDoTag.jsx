@@ -66,7 +66,7 @@ export const ToDoTag = ({tag , task })=>{
          />
         ))
        }
-       <AddToList />
+       <AddToList holder='Add to list' />
     </div>
   </div>
  );

@@ -25,7 +25,7 @@ export const initialState = {
             image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg'
           } , 
           {
-            name : '' , 
+            name : 'bylka' , 
             image : 'https://w0.peakpx.com/wallpaper/331/150/HD-wallpaper-sad-boy-hotaro-art-cartoon-sadboy-dark-hotarooreki-feeling-anime-thumbnail.jpg'
           }
         ] , 

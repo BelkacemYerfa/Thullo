@@ -309,7 +309,7 @@ body:is(.tasksHolder){
   }
   .CardDataDescription{
     @apply relative p-3 md:px-6 md:py-5 h-[90vh] overflow-y-auto
-    w-full md:w-[50%] bg-white shadow-fileBox rounded-lg !important
+    w-full md:w-[65%] bg-white shadow-fileBox rounded-lg !important
   }
   .CloseBtn{
     @apply absolute top-[6px] right-2 flex items-center justify-center 
@@ -392,6 +392,20 @@ body:is(.tasksHolder){
     font-medium text-white !important
   }
   .Settings{
-    @apply basis-[30%]
+    @apply basis-[30%] px-1 py-[2px]
+  }
+  .Cardactions{
+    @apply flex flex-col gap-y-3
+  }
+  .actionData{
+    @apply flex justify-start items-center gap-x-2 h-10 w-full
+    bg-selectionBoardBg capitalize font-medium text-sm
+    px-3 py-2 text-selectionBoardColor rounded-lg cursor-pointer
+  }
+  .MembersDetails{
+    @apply flex flex-col items-start gap-y-[18px]
+  }
+  .userHolder{
+    @apply cursor-pointer w-full flex items-center gap-x-4
   }
 }

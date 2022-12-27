@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export const AddToList = ()=>{
+export const AddToList = ({holder})=>{
  return(
   <motion.div 
    whileTap={{
@@ -12,7 +12,7 @@ export const AddToList = ()=>{
    className='taskcolumn addList' >
      <div className="tag" >
        <p className="addText" >
-         Add another List
+         {holder}
        </p>
        <motion.div 
        whileTap={{

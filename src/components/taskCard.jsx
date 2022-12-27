@@ -92,6 +92,8 @@ export const TaskCard = ({image , tag , description , title , tags, users , comm
         handleToggle={handleToggle} 
         tag={tag}
         description={description}
+        tagss={tags}
+        users={users}
         comments={comments}
       />
     )
