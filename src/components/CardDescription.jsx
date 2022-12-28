@@ -36,8 +36,8 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
   const handleCardToggle = (id)=>{
     switch(id){
       case 1 : return handleUsers
-      case 2 : return handleLabels
-      case 3 :return handleCover
+      case 2 : return handleCover
+      case 3 :return handleLabels
       default : return [setCover(false) , setLabels(false) , setMembers(false)]
     }
   }
@@ -52,13 +52,13 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
       id : 1 ,
     },
     {
-      icon : 'label'  ,
-      name : 'labels' , 
+      icon : 'image'  ,
+      name : 'cover' , 
       id : 2 ,
     },
     {
-      icon : 'image'  ,
-      name : 'cover' , 
+      icon : 'label'  ,
+      name : 'labels' , 
       id : 3 ,
     }
   ]
@@ -281,7 +281,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                     )
                   }
                   {
-                    Labels && action.id === 2 && (
+                    Cover && action.id === 2 && (
                       <div className='Labels' >
                         <h2 className='photoTitle' >
                           Photo Search
@@ -302,6 +302,13 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                             ))
                           }
                         </div>
+                      </div>
+                    )
+                  }
+                  {
+                    Labels && action.id === 3 && (
+                      <div className='LabelDetails' >
+
                       </div>
                     )
                   }
