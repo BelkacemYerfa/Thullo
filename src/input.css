@@ -392,20 +392,44 @@ body:is(.tasksHolder){
     font-medium text-white !important
   }
   .Settings{
-    @apply basis-[30%] px-1 py-[2px]
+    @apply relative basis-[30%] px-1 py-[2px]
   }
   .Cardactions{
-    @apply flex flex-col gap-y-3
+    @apply relative flex flex-col gap-y-3
   }
   .actionData{
     @apply flex justify-start items-center gap-x-2 h-10 w-full
     bg-selectionBoardBg capitalize font-medium text-sm
     px-3 py-2 text-selectionBoardColor rounded-lg cursor-pointer
   }
+  .MembersHolder{
+    @apply absolute right-0 top-12 md:top-0 w-[50vw]  
+    md:p-0 border-solid border md:w-full md:relative 
+    border-borderColor rounded-xl px-3 py-2 md:border-none md:rounded-none 
+    shadow-fileBox bg-white md:shadow-none !important
+  }
   .MembersDetails{
-    @apply flex flex-col items-start gap-y-[18px]
+    @apply flex flex-col items-start gap-y-3 md:gap-y-[18px] mb-5
   }
   .userHolder{
     @apply cursor-pointer w-full flex items-center gap-x-4
+  }
+  .Labels{
+    @apply absolute top-[100px] h-[40vh] w-[60vw] right-0 sm:w-[40vw]
+    md:w-fit overflow-y-auto rounded-xl px-3 py-2 bg-white shadow-fileBox 
+    border border-solid border-borderColor !important
+  }
+  .photoTitle{
+    @apply font-semibold text-sm text-tableVisibility !important
+  }
+  .LabelDetails{
+    @apply text-selectionBoardColor text-sm font-normal mb-2 !important
+  }
+  .imagesHolder{
+    @apply flex items-center justify-center flex-wrap gap-x-2 
+    gap-y-3 mt-3 ; 
+  }
+  .imageHolder{
+    @apply cursor-pointer h-10 w-10 rounded !important
   }
 }

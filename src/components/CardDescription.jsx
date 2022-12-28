@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion' ; 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AddToList } from './addToList';
+import { SearchBar } from './search';
 
 export const CardDataDescription = ({ tags , users , image , comments , description , tag , title , handleToggle})=>{
   const CloseData = ()=>{
@@ -61,7 +62,17 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
       id : 3 ,
     }
   ]
-
+  const imageUrl = `https://picsum.photos/v2/list?page=2&limit=20` ; 
+  const [images , setImages] = useState([]) ;
+  useEffect(()=>{
+    const fetchImages = async ()=>{
+      const response = await fetch(imageUrl) ; 
+      const data = await response.json() ; 
+      setImages(data) ; 
+      console.log(images)
+    }
+    fetchImages() ; 
+  } , [])
  return(
   <motion.div
    initial={{
@@ -248,7 +259,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                   </motion.div>
                   {
                     Members && action.id === 1 && (
-                      <>
+                      <div className='MembersHolder' >
                        <div className='MembersDetails' >
                           {
                             users.map(user => (
@@ -266,7 +277,32 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                           }
                         </div>
                         <AddToList holder='Assign a member' />
-                      </>
+                      </div>
+                    )
+                  }
+                  {
+                    Labels && action.id === 2 && (
+                      <div className='Labels' >
+                        <h2 className='photoTitle' >
+                          Photo Search
+                        </h2>
+                        <p className='LabelDetails' >
+                          Search Unsplash for photos
+                        </p>
+                        <SearchBar Icon='search' placeholder='picture' />
+                        <div className='imagesHolder' >
+                          {
+                            images.map(image => (
+                             <img   
+                              className='imageHolder'
+                              id={image?.id}
+                              src={image?.download_url} 
+                              alt="pic" 
+                              />
+                            ))
+                          }
+                        </div>
+                      </div>
                     )
                   }
                 </>
