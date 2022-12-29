@@ -1,10 +1,18 @@
 import { useState } from "react";
 import { UserList } from "./userList";
 import { motion } from 'framer-motion'
+import { useDataLayervValue } from "../config/dataLayer";
 
 export const BoardInfo = ({users , toggleShow})=>{
   const [toggle , setToggle] = useState(false) ; 
- return(
+  const [DescriptionData , setCardDescription] = useState(true) ; 
+  const boardDescription = 'Just A random Data for some Cases' ;
+
+  const handleCardDescription = ()=>{
+    setCardDescription(!DescriptionData);
+  }
+
+  return(
   <motion.div 
    initial={{
     opacity : 0 , 
@@ -55,15 +63,46 @@ export const BoardInfo = ({users , toggleShow})=>{
     </div>
     <br />
     <div className="tableDescription" > 
-      <div className="userCreator" >
-       <span className="material-symbols-rounded">
-        description
-       </span>
-       Description
+      <div className="desciptionDetails" >
+        <div className="userCreator" >
+        <span className="material-symbols-rounded">
+          description
+        </span>
+        Description
+        </div>
+        <motion.div
+          whileTap={{
+          scale : .9
+          }}
+        className='editFile'
+        onClick={handleCardDescription}
+        >
+          <span class="material-symbols-rounded">
+            edit
+          </span>
+          Edit
+        </motion.div>
       </div>
-      <div className="Description" >
-        <textarea className="textarea" name="" placeholder="Description..." id="textraea" rows={10} ></textarea>
-      </div>
+      <br />
+       {
+        boardDescription && DescriptionData ? (
+          <div className='Description' id='description' >
+            { boardDescription }
+          </div>
+        ) : (
+        <div className="Description" >
+            <textarea 
+            className="textarea" 
+            name="" 
+            placeholder="Description..." 
+            id="textraea" 
+            rows={10} >
+              { boardDescription }
+            </textarea>
+        </div>
+        )
+       }
+       <br />
       <div className="desciptionBtns" >
         <motion.div 
          whileTap={{scale : .9}}
