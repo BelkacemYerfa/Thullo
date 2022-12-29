@@ -31,7 +31,7 @@ export const TaskCard = ({image , tag , description , title , tags, users , comm
         tags?.map(tag => (
         <div className="tagNameTable" style={{
           color : tag.bg , 
-          backgroundColor : tag.fontColor
+          backgroundColor : tag.fontColor 
         }} >
           {
             tag.tagName
@@ -92,7 +92,7 @@ export const TaskCard = ({image , tag , description , title , tags, users , comm
         handleToggle={handleToggle} 
         tag={tag}
         description={description}
-        tagss={tags}
+        tags={tags}
         users={users}
         comments={comments}
       />

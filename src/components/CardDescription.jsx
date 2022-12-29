@@ -62,6 +62,11 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
       id : 3 ,
     }
   ]
+  const ColorsArray = [
+    '#219653' , '#F2C94C' , '#F2994A' , '#EB5757' ,
+    '#2F80ED' , '#56CCF2' , '#6FCF97' , '#333333' , 
+    '#4F4F4F' , '#828282' , '#BDBDBD' , '#E0E0E0' ,
+  ]
   const imageUrl = `https://picsum.photos/v2/list?page=2&limit=20` ; 
   const [images , setImages] = useState([]) ;
   useEffect(()=>{
@@ -282,11 +287,11 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                   }
                   {
                     Cover && action.id === 2 && (
-                      <div className='Labels' >
+                      <div className='Cover' >
                         <h2 className='photoTitle' >
                           Photo Search
                         </h2>
-                        <p className='LabelDetails' >
+                        <p className='coverDetails' >
                           Search Unsplash for photos
                         </p>
                         <SearchBar Icon='search' placeholder='picture' />
@@ -307,8 +312,48 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                   }
                   {
                     Labels && action.id === 3 && (
-                      <div className='LabelDetails' >
-
+                      <div className='Cover Labels' >
+                        <h2 className='photoTitle' >
+                         Label
+                        </h2>
+                        <p className='coverDetails' >
+                         Select a name and a color
+                        </p>
+                        <form action="" className='format' >
+                          <input className='searchInput' type="text" placeholder='Label'  />
+                        </form>
+                        <div className='imagesHolder' >
+                          {
+                            ColorsArray.map(color => (
+                              <div 
+                              id={color}
+                              style={{backgroundColor : color}}
+                              className='imageHolder' ></div>
+                            ))
+                          }
+                        </div>
+                        <div className='MainLabel' >
+                            <h3 className='LabelsTitle' >
+                              <span class="material-symbols-rounded">
+                               label
+                              </span>
+                              Available 
+                            </h3>
+                            <div className="tags" >
+                              {
+                                tags?.map(tag => (
+                                <div className="tagNameTable" style={{
+                                  color : tag.bg , 
+                                  backgroundColor : tag.fontColor
+                                }} >
+                                  {
+                                    tag.tagName
+                                  }
+                                </div>
+                                ))
+                              }
+                            </div>
+                        </div>
                       </div>
                     )
                   }

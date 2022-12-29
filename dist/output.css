@@ -1517,6 +1517,7 @@ body:is(.tasksHolder){
   }
 
   .tagNameTable {
+    cursor: pointer !important;
     border-radius: 0.5rem !important;
     padding-left: 9px !important;
     padding-right: 9px !important;
@@ -1909,7 +1910,7 @@ body:is(.tasksHolder){
             column-gap: 1rem;
   }
 
-  .Labels {
+  .Cover {
     position: absolute !important;
     top: 100px !important;
     right: 0px !important;
@@ -1933,13 +1934,13 @@ body:is(.tasksHolder){
   }
 
   @media (min-width: 640px) {
-    .Labels {
+    .Cover {
       width: 40vw !important;
     }
   }
 
   @media (min-width: 768px) {
-    .Labels {
+    .Cover {
       width: -webkit-fit-content !important;
       width: -moz-fit-content !important;
       width: fit-content !important;
@@ -1954,7 +1955,7 @@ body:is(.tasksHolder){
     color: rgb(79 79 79 / var(--tw-text-opacity)) !important;
   }
 
-  .LabelDetails {
+  .coverDetails {
     margin-bottom: 0.5rem !important;
     font-size: 0.875rem !important;
     line-height: 1.25rem !important;
@@ -1979,5 +1980,23 @@ body:is(.tasksHolder){
     width: 2.5rem !important;
     cursor: pointer !important;
     border-radius: 0.25rem !important;
+  }
+
+  .Labels {
+    top: 150px !important;
+  }
+
+  .LabelsTitle {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    -webkit-column-gap: 6px !important;
+            column-gap: 6px !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 600 !important;
+    --tw-text-opacity: 1 !important;
+    color: rgb(189 189 189 / var(--tw-text-opacity)) !important;
   }
 }

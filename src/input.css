@@ -291,7 +291,7 @@ body:is(.tasksHolder){
   }
   .tagNameTable{
     @apply px-[9px] py-[2px] text-xs font-medium 
-    rounded-lg !important 
+    rounded-lg cursor-pointer !important 
   }
   .users{
     @apply w-full flex items-center justify-between
@@ -414,7 +414,7 @@ body:is(.tasksHolder){
   .userHolder{
     @apply cursor-pointer w-full flex items-center gap-x-4
   }
-  .Labels{
+  .Cover{
     @apply absolute top-[100px] h-[40vh] w-[60vw] right-0 sm:w-[40vw]
     md:w-fit overflow-y-auto rounded-xl px-3 py-2 bg-white shadow-fileBox 
     border border-solid border-borderColor !important
@@ -422,7 +422,7 @@ body:is(.tasksHolder){
   .photoTitle{
     @apply font-semibold text-sm text-tableVisibility !important
   }
-  .LabelDetails{
+  .coverDetails{
     @apply text-selectionBoardColor text-sm font-normal mb-2 !important
   }
   .imagesHolder{
@@ -431,5 +431,12 @@ body:is(.tasksHolder){
   }
   .imageHolder{
     @apply cursor-pointer h-10 w-10 rounded !important
+  }
+  .Labels{
+    @apply top-[150px] !important
+  }
+  .LabelsTitle{
+    @apply flex items-center gap-x-[6px] text-sm font-semibold
+    text-userToAddBg my-2 !important
   }
 }
