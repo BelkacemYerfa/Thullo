@@ -264,7 +264,14 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                   </motion.div>
                   {
                     Members && action.id === 1 && (
-                      <div className='MembersHolder' >
+                      <motion.div 
+                      initial={{ y: -20 , opacity : 0}}
+                      whileInView={{
+                       y : 0  ,
+                       opacity : 1
+                      }}
+                       transition={{ duration : .5}}
+                      className='MembersHolder' >
                        <div className='MembersDetails' >
                           {
                             users.map(user => (
@@ -282,12 +289,19 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                           }
                         </div>
                         <AddToList holder='Assign a member' />
-                      </div>
+                      </motion.div>
                     )
                   }
                   {
                     Cover && action.id === 2 && (
-                      <div className='Cover' >
+                      <motion.div 
+                      initial={{ y: -20 , opacity : 0}}
+                      whileInView={{
+                       y : 0  ,
+                       opacity : 1
+                      }}
+                       transition={{ duration : .5}} 
+                      className='Cover' >
                         <h2 className='photoTitle' >
                           Photo Search
                         </h2>
@@ -307,12 +321,19 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                             ))
                           }
                         </div>
-                      </div>
+                      </motion.div>
                     )
                   }
                   {
                     Labels && action.id === 3 && (
-                      <div className='Cover Labels' >
+                      <motion.div 
+                       initial={{ y: -20 , opacity : 0}}
+                       whileInView={{
+                        y : 0  ,
+                        opacity : 1
+                       }}
+                        transition={{ duration : .5}}
+                      className='Cover Labels' >
                         <h2 className='photoTitle' >
                          Label
                         </h2>
@@ -325,10 +346,12 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                         <div className='imagesHolder' >
                           {
                             ColorsArray.map(color => (
-                              <div 
+                              <motion.div 
+                              whileTap={{scale : .9}}
                               id={color}
                               style={{backgroundColor : color}}
-                              className='imageHolder' ></div>
+                              className='imageHolder' >
+                              </motion.div>
                             ))
                           }
                         </div>
@@ -354,7 +377,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                               }
                             </div>
                         </div>
-                      </div>
+                      </motion.div>
                     )
                   }
                 </>

@@ -90,7 +90,8 @@ export const BoardInfo = ({users , toggleShow})=>{
             { boardDescription }
           </div>
         ) : (
-        <div className="Description" >
+        <>
+         <div className="Description" >
             <textarea 
             className="textarea" 
             name="" 
@@ -99,20 +100,23 @@ export const BoardInfo = ({users , toggleShow})=>{
             rows={10} >
               { boardDescription }
             </textarea>
-        </div>
+          </div>
+          <br />
+          <div className="desciptionBtns" >
+            <motion.div 
+            whileTap={{scale : .9}}
+            className="btn Btn1">
+              Save
+            </motion.div>
+            <div 
+             onClick={handleCardDescription}
+            className="btn Btn2">
+              Cancel
+            </div>
+          </div>
+        </>
         )
-       }
-       <br />
-      <div className="desciptionBtns" >
-        <motion.div 
-         whileTap={{scale : .9}}
-        className="btn Btn1">
-          Save
-        </motion.div>
-        <div className="btn Btn2">
-          Cancel
-        </div>
-      </div>
+        }
     </div>
     <br />
     <div className="usersAcces" >
