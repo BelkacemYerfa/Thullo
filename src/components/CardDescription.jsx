@@ -234,6 +234,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                     </div>
                     <br />
                     <hr />
+                    <br />
                   </>
                 ))
               }

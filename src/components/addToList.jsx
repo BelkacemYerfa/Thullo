@@ -9,7 +9,7 @@ export const AddToList = ({holder})=>{
    style={{
     width : 300 
    }}
-   className='taskcolumn addList' >
+   className='addList' >
      <div className="tag" >
        <p className="addText" >
          {holder}

@@ -65,7 +65,7 @@ body:is(.tasksHolder){
     @apply cursor-pointer w-[140px] md:w-fit flex 
     items-center px-4 py-2 rounded-lg gap-[13px] 
     text-selectionBoardColor bg-selectionBoardBg
-    text-[12px] ; 
+    text-[12px] !important ; 
   }
   .searchHolder{
     @apply flex items-center gap-3 w-[60%] !important
@@ -233,20 +233,25 @@ body:is(.tasksHolder){
   }
 
   .toDo{
-    @apply pt-3 md:px-6 px-0
+    @apply w-screen pt-3 md:px-6 px-0
   }
   /*tasksHolder Component*/
   .tasksHolder{
-    @apply flex items-start w-screen md:w-[96.6vw] snap-x
+    @apply flex items-start md:w-[96.6vw] snap-x
     gap-7 bg-tableTasks h-screen shadow-tableBox
     md:h-[80vh] px-6 py-[28px] overflow-auto 
-    rounded-t-3xl !important
+    rounded-t-3xl w-full !important
   }
   .taskcolumn{
-    @apply snap-center w-full px-[13px] py-2 !important
+    @apply snap-center px-[13px] py-2 !important
   }
   .addList{
-    @apply bg-addListBg text-sm
+    @apply bg-addListBg text-sm w-full px-[13px] py-2
+    text-searchBtnBg rounded-lg cursor-pointer 
+    !important
+  }
+  .addanotherList{
+    @apply w-[300px] bg-addListBg text-sm px-[13px] py-2
     text-searchBtnBg rounded-lg cursor-pointer 
     !important
   }
@@ -320,7 +325,8 @@ body:is(.tasksHolder){
     @apply h-[190px] w-full rounded-xl !important
   }
   .Details{
-    @apply flex items-start justify-start gap-x-5
+    @apply relative flex items-start flex-col-reverse gap-y-2 md:flex-row 
+    justify-start gap-x-5 w-full
   }
   .Content{
     @apply basis-[70%] 
@@ -392,10 +398,11 @@ body:is(.tasksHolder){
     font-medium text-white !important
   }
   .Settings{
-    @apply relative basis-[30%] px-1 py-[2px]
+    @apply relative w-full basis-[30%] p-0 md:px-1 md:py-[2px]
   }
   .Cardactions{
-    @apply relative flex flex-col gap-y-3
+    @apply flex gap-x-2 items-center 
+    relative w-full md:flex-col md:gap-y-3
   }
   .actionData{
     @apply flex justify-start items-center gap-x-2 h-10 w-full
@@ -415,7 +422,7 @@ body:is(.tasksHolder){
     @apply cursor-pointer w-full flex items-center gap-x-4
   }
   .Cover{
-    @apply absolute top-[100px] h-[40vh] w-[60vw] right-0 sm:w-[40vw]
+    @apply absolute top-[50px] md:top-[100px] h-[40vh] w-[60vw] right-0 sm:w-[40vw]
     md:w-fit overflow-y-auto rounded-xl px-3 py-2 bg-white shadow-fileBox 
     border border-solid border-borderColor !important
   }
@@ -433,7 +440,7 @@ body:is(.tasksHolder){
     @apply cursor-pointer h-10 w-10 rounded !important
   }
   .Labels{
-    @apply top-[150px] !important
+    @apply top-[50px] md:top-[150px] !important
   }
   .LabelsTitle{
     @apply flex items-center gap-x-[6px] text-sm font-semibold

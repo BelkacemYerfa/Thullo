@@ -11,8 +11,8 @@ export const ToDos = ()=>{
         toDoList?.map(tag => (
           <ToDoTag tag={tag?.tag} task={tag?.task}  />
         ))
-       }
-       <AddToList holder='Add another List' />
+      }
+      <AddToList holder='Add another List' />
     </div>
    </div>
  );

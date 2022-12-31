@@ -54,9 +54,6 @@ export const File = ()=>{
  ]) ; 
  const handleToggle = ()=>{
   setFileSetting(!FileSettings)
-  setTimeout(()=>{
-    document.getElementById('reference').style.display='none'
-  }, 10000)
  }
  const handleAddToggle = ()=>{
   setUserToAdd(!usertoAdd)
