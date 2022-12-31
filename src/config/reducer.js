@@ -50,7 +50,7 @@ export const initialState = {
     tag : 'In Progress',
     task : [
       {
-        image : null ,
+        image : 'https://149695847.v2.pressablecdn.com/wp-content/uploads/2019/06/chris-ried-512801-unsplash.jpg' ,
         title : 'Working' , 
         tags : [
           {
@@ -86,7 +86,7 @@ export const initialState = {
     tag : 'In Reviews' ,
     task : [
       {
-        image : null ,
+        image : 'https://cdn.pixabay.com/photo/2017/08/07/14/02/man-2604149__340.jpg' ,
         title : 'Gym' , 
         tags : [
           {
@@ -122,7 +122,7 @@ export const initialState = {
     tag : 'In Reviews' ,
     task : [
       {
-        image : null ,
+        image : 'https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg?cs=srgb&dl=pexels-pixabay-301920.jpg&fm=jpg' ,
         title : 'Study' , 
         tags : [
           {

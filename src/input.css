@@ -71,17 +71,23 @@ body:is(.tasksHolder){
     @apply flex items-center gap-3 w-[60%] !important
   }
   .searcher{
-    @apply flex md:items-center w-full flex-col md:flex-row gap-11 !important
+    @apply flex md:items-center w-[150%] flex-col md:flex-row gap-11 !important
   }
   .format{
-    @apply flex items-center bg-white rounded-lg w-[150%] md:w-fit 
+    @apply absolute md:relative top-20 md:top-0 flex items-center bg-white 
+    rounded-lg w-[95%] md:w-fit 
+    shadow-searchBox h-[46px] px-2 py-1 !important
+  }
+  .CardFormat{
+    @apply flex items-center bg-white 
+    rounded-lg w-full md:w-fit 
     shadow-searchBox h-[46px] px-2 py-1 !important
   }
   .searchInput{
-    @apply border-none outline-none w-full  h-full px-1 !important
+    @apply border-none outline-none w-full h-full px-1 !important
   }
   .searchBtn{
-    @apply hidden md:flex right-5 md:right-0 text-white cursor-pointer
+    @apply flex right-5 md:right-0 text-white cursor-pointer
     bg-searchBtnBg h-full px-2 py-[2px] text-sm rounded-lg 
     -tracking-[.03em] font-medium !important
   }
@@ -91,16 +97,19 @@ body:is(.tasksHolder){
     text-sm rounded -tracking-[.03em] font-medium !important
   }
   .userData{
-    @apply flex items-center gap-[11px] cursor-pointer
+    @apply flex items-center
+    gap-[11px] cursor-pointer absolute bottom-3 
+    md:relative md:top-0 w-fit
   }
   .userImage{
     @apply h-12 w-12 rounded-xl
   }
-  .username{
-    @apply font-bold text-sm
-  }
   .userInfo{
-    @apply flex items-center gap-8
+    @apply flex items-center gap-8 w-[90%]
+    justify-between md:justify-start !important
+  }
+  .username{
+    @apply font-bold text-sm 
   }
   .userDrop{
     @apply absolute flex justify-center px-2 py-2 gap-3 flex-col 
@@ -138,9 +147,9 @@ body:is(.tasksHolder){
     rounded-xl bg-searchBtnBg text-white cursor-pointer
   }
   .visibility{
-    @apply z-20 absolute top-[23%] left-[23px] border border-solid
-     border-borderColor h-fit bg-white md:bg-transparent
-     w-fit rounded-xl shadow-fileBox px-3 py-[9px] !important
+    @apply z-20 absolute top-[9.5em] left-[23px] border border-solid
+     border-borderColor h-fit bg-white w-fit rounded-xl 
+     shadow-fileBox px-3 py-[9px] !important
   }
   .selection {
     @apply mb-4 !important
@@ -166,7 +175,7 @@ body:is(.tasksHolder){
     flex flex-col gap-y-[16px] p-[11px] rounded-lg !important ; 
   }
   .user{
-    @apply flex items-center w-full h-fit justify-between
+    @apply relative flex items-center w-full h-fit justify-between
   }
   .userToAdd{
     @apply cursor-pointer flex items-center gap-[13px] h-full p-2
@@ -179,12 +188,14 @@ body:is(.tasksHolder){
     @apply cursor-pointer text-selectionBoardColor text-sm
   }
   .member{
-    @apply cursor-pointer flex border-removeBtn border-solid border text-sm
-    text-removeBtn rounded-lg px-[11.5px] py-[4.5px] !important
+    @apply cursor-pointer flex items-center border-removeBtn
+    border-solid border text-sm relative duration-500 ease-in-out
+    text-removeBtn rounded-lg px-[11.5px] py-[4.5px]
+    hover:text-white hover:bg-removeBtn 
+    !important
   }
-
   .board{
-    @apply fixed z-20 right-0 top-0 md:top-16 h-screen md:h-[90%] 
+    @apply fixed z-10 right-0 top-14 md:top-16 h-[90%]
     w-full sm:w-[50%] md:w-[25%] overflow-y-scroll
     px-5 py-[23px] bg-white shadow-descriptionBox !important
   }
@@ -285,7 +296,7 @@ body:is(.tasksHolder){
     bg-white shadow-descriptionBox !important
   }
   .taskImage{
-    @apply rounded-xl
+    @apply rounded-xl w-[300px] h-auto !important
   }
   .taskTitle{
     @apply my-2 text-base -tracking-[.035em] font-medium
@@ -445,5 +456,12 @@ body:is(.tasksHolder){
   .LabelsTitle{
     @apply flex items-center gap-x-[6px] text-sm font-semibold
     text-userToAddBg my-2 !important
+  }
+  .addNewTag{
+    @apply w-full h-10 flex items-center justify-center
+  }
+  .addBtn{
+    @apply text-white text-sm px-6 py-2 bg-searchBtnBg 
+    rounded-xl !important
   }
 }

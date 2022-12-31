@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 
 export const UserList = ({photoURL , id , username , job})=>{
  return(
@@ -17,9 +18,14 @@ export const UserList = ({photoURL , id , username , job})=>{
     </p>
     </div>
     {
-      job ? (<p className={job === 'admin' ? 'admin' : 'member'} >
+      job ? 
+      (<motion.p 
+       whileTap={{
+        scale : .9
+       }}
+       className={job === 'admin' ? 'admin' : 'member'} >
         {job === 'admin' ? ('Admin') : ('Remove')}
-       </p>) : null
+       </motion.p>) : null
     }
   </div>
  );

@@ -341,7 +341,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                         <p className='coverDetails' >
                          Select a name and a color
                         </p>
-                        <form action="" className='format' >
+                        <form action="" className='CardFormat' >
                           <input className='searchInput' type="text" placeholder='Label'  />
                         </form>
                         <div className='imagesHolder' >
@@ -377,6 +377,16 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                                 ))
                               }
                             </div>
+                        </div>
+                        <div className='addNewTag' >
+                          <motion.button
+                           whileTap={{
+                            scale : .9
+                           }}
+                           type='submit'
+                           className='addBtn' >
+                            Add
+                          </motion.button>
                         </div>
                       </motion.div>
                     )
