@@ -122,7 +122,7 @@ export const initialState = {
     tag : 'In Reviews' ,
     task : [
       {
-        image : 'https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg?cs=srgb&dl=pexels-pixabay-301920.jpg&fm=jpg' ,
+        image : null ,
         title : 'Study' , 
         tags : [
           {

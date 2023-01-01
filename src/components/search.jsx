@@ -4,7 +4,7 @@ import { UserList } from './userList';
 
 
 export const SearchBar = ({Icon , placeholder , users })=>{
- const [searchElements , setSearchElements] = useState([]);
+ const [searchElements , setSearchElements] = useState(users);
  const [toggle , setToggle] = useState(false)
  return(
   <>
@@ -19,6 +19,9 @@ export const SearchBar = ({Icon , placeholder , users })=>{
         setSearchElements([user])
        } 
       })
+      if(e.target.value === '' || null || e.target.value.includes(' ') ){
+        setSearchElements(users) 
+      }
      }} 
      />
     {

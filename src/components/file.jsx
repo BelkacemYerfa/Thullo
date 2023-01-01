@@ -30,28 +30,36 @@ export const File = ()=>{
     id : 'random3' , 
     job : 'member' , 
     username :'kratos'
+  },
+  {
+    photoURL : 'https://e1.pxfuel.com/desktop-wallpaper/147/865/desktop-wallpaper-anime-profile-pic-anime-profile.jpg' , 
+    id : 'random4' , 
+    job : 'member' , 
+    username :'Long Zu'
+  }
+ ])
+ const [accounts , setAccounts] = useState([
+  {
+    photoURL : null , 
+    job : 'admin' , 
+    id : 'random' , 
+    username :'Belkacem'
+  } ,
+  {
+    photoURL : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' , 
+    id : 'random3' , 
+    job : 'member' , 
+    username :'kratos'
+  },
+  {
+    photoURL : 'https://e1.pxfuel.com/desktop-wallpaper/147/865/desktop-wallpaper-anime-profile-pic-anime-profile.jpg' , 
+    id : 'random4' , 
+    job : 'member' , 
+    username :'Long Zu'
   }
  ])
  const [FileSettings , setFileSetting] = useState(false) ; 
  const [usertoAdd , setUserToAdd] = useState(false) ; 
- /*
-  others account will be an object contain :
-  username && profilePic.
- */
- const [accounts , setAccounts] = useState([
-  {
-    name : 'Kratos' , 
-    photoURL : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg'
-  } , 
-  {
-    name : 'Kratos' , 
-    photoURL : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg'
-  } , 
-  {
-    name : 'Kratos' , 
-    photoURL : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg'
-  }
- ]) ; 
  const handleToggle = ()=>{
   setFileSetting(!FileSettings)
  }
@@ -78,12 +86,33 @@ export const File = ()=>{
       <div className="usersTable" >
         <div className="usersConatiner" >
             {
-              accounts.map(user => (
+              users.slice(0,3).map(user => (
                 <div className="imageHolder" >
-                  <img className="userImage image" 
-                  src={user?.photoURL}
-                   height={70} width={70}
-                  alt="userImage" />
+                  {
+                    user.photoURL ? (
+                    <>
+                     <img className="userImage image" 
+                      src={user?.photoURL}
+                      height={70} width={70}
+                      alt="userImage" />
+                     {
+                      user?.id === users[2]?.id
+                       && users?.length - 3 >= 1 
+                       && (
+                      <div className="dataUserOverlay" 
+                       onClick={toggleShow}
+                      >
+                        +{users?.length - 3}
+                      </div>
+                      )
+                     }
+                    </>
+                    ) : (
+                    <div className="userImg" >
+                       {user?.username.slice(0 , 2)}
+                    </div>
+                   )
+                  }
                 </div>
               ))
             }
@@ -120,7 +149,17 @@ export const File = ()=>{
             <p className="selection adjust-description" >
                Search users you want to invite to
             </p>
-            <SearchBar Icon='search' placeholder='User' users={users} />
+            <SearchBar Icon='search' placeholder='User' users={accounts} />
+            <div className='addNewTag' >
+              <motion.button
+                whileTap={{
+                scale : .9
+                }}
+                type='submit'
+                className='addBtn' >
+                Add
+              </motion.button>
+            </div>
          </motion.div>
           )
          }

@@ -22,6 +22,18 @@ body::-webkit-scrollbar-thumb{
   border-top-right-radius: 24px;
 }
 
+.userList::-webkit-scrollbar-thumb{
+  background-color: #DAE4FD;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.userList::-webkit-scrollbar-track{
+  background-color: #E0E0E0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
 ::-webkit-scrollbar-track:hover{
   background-color: #BDBDBD;
 }
@@ -74,7 +86,8 @@ body:is(.tasksHolder){
     @apply flex md:items-center w-[150%] flex-col md:flex-row gap-11 !important
   }
   .format{
-    @apply absolute md:relative top-20 md:top-0 flex items-center bg-white 
+    @apply absolute md:relative top-20 md:top-0 
+    flex items-center bg-white
     rounded-lg w-[95%] md:w-fit 
     shadow-searchBox h-[46px] px-2 py-1 !important
   }
@@ -102,7 +115,7 @@ body:is(.tasksHolder){
     md:relative md:top-0 w-fit
   }
   .userImage{
-    @apply h-12 w-12 rounded-xl
+    @apply relative h-10 w-10 rounded-xl
   }
   .userInfo{
     @apply flex items-center gap-8 w-[90%]
@@ -137,7 +150,7 @@ body:is(.tasksHolder){
     @apply hidden md:flex items-center gap-4
   }
   .usersConatiner{
-    @apply hidden md:flex items-center gap-[15px]
+    @apply hidden md:flex items-center gap-x-3
   }
   .image{
     @apply h-9 w-9 
@@ -166,22 +179,25 @@ body:is(.tasksHolder){
     @apply text-selectionBoardColor text-sm
   }
   .addUsers{
-    @apply absolute top-[150px] left-[300px] h-fit w-fit px-3 py-[9px]
+    @apply absolute top-[150px] left-[300px] h-fit 
+    w-fit px-3 py-[9px]
     rounded-xl border-borderColor border z-20
-    border-solid shadow-fileBox !important ; 
+    border-solid shadow-fileBox bg-white !important ; 
   }
   .userList{
-    @apply mt-[10px] border border-solid border-borderColor shadow-fileBox 
-    flex flex-col gap-y-[16px] p-[11px] rounded-lg !important ; 
+    @apply mt-[10px] border border-solid h-fit max-h-[200px] 
+    overflow-x-auto border-borderColor shadow-fileBox 
+    flex flex-col gap-y-2 p-[11px] rounded-lg !important ; 
   }
   .user{
     @apply relative flex items-center w-full h-fit justify-between
   }
   .userToAdd{
-    @apply cursor-pointer flex items-center gap-[13px] h-full p-2
+    @apply cursor-pointer flex items-center 
+    gap-[13px] h-full p-2 w-full
   }
   .userImg{
-    @apply flex items-center justify-center h-8 w-8 rounded-lg
+    @apply flex items-center justify-center h-9 w-9 rounded-xl
      bg-userToAddBg text-white text-sm -tracking-[.035em]
   }
   .admin{
@@ -296,7 +312,7 @@ body:is(.tasksHolder){
     bg-white shadow-descriptionBox !important
   }
   .taskImage{
-    @apply rounded-xl w-[300px] h-auto !important
+    @apply rounded-xl w-[300px] h-[200px] !important
   }
   .taskTitle{
     @apply my-2 text-base -tracking-[.035em] font-medium
@@ -448,7 +464,11 @@ body:is(.tasksHolder){
     gap-y-3 mt-3 ; 
   }
   .imageHolder{
-    @apply cursor-pointer h-10 w-10 rounded !important
+    @apply relative cursor-pointer h-10 w-10 rounded !important
+  }
+  .dataUserOverlay{
+    @apply absolute top-0 left-0 h-9 w-9 rounded-xl bg-gray-500/50
+    text-base text-white flex items-center justify-center !important
   }
   .Labels{
     @apply top-[50px] md:top-[150px] !important
@@ -462,6 +482,6 @@ body:is(.tasksHolder){
   }
   .addBtn{
     @apply text-white text-sm px-6 py-2 bg-searchBtnBg 
-    rounded-xl !important
+    rounded-xl mt-2 !important
   }
 }
