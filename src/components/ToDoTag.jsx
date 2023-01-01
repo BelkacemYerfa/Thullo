@@ -41,13 +41,19 @@ export const ToDoTag = ({tag , task })=>{
             scale : 0
            }}
           className='taskColumnSettings' >
-            <p className='SettingInfo' >
-            Rename
-            </p>
+            <div className='SettingInfo' >
+              Rename
+              <span className="material-symbols-rounded" >
+                edit 
+              </span>
+            </div>
             <hr />
-            <p className='SettingInfo'>
-            Delete this list
-            </p>
+            <div className='SettingInfo deleteList'>
+              Delete this list
+              <span className="material-symbols-rounded" >
+                delete 
+              </span>
+            </div>
           </motion.div>
         )
       }

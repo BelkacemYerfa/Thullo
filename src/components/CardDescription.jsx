@@ -224,6 +224,9 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                         scale : .9
                        }}
                       className='BtnSettings' >
+                        <span className="material-symbols-rounded" >
+                          delete 
+                        </span>
                         delete
                       </motion.div>
                     </div>

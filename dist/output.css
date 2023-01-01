@@ -1516,15 +1516,13 @@ body:is(.tasksHolder){
 
   .taskColumnSettings {
     position: absolute !important;
-    right: -25% !important;
-    top: 1.75rem !important;
+    right: -2.5% !important;
+    top: 2.5rem !important;
     display: flex !important;
     height: -webkit-fit-content !important;
     height: -moz-fit-content !important;
     height: fit-content !important;
-    width: -webkit-fit-content !important;
-    width: -moz-fit-content !important;
-    width: fit-content !important;
+    width: 75% !important;
     flex-direction: column !important;
     row-gap: 0.5rem !important;
     border-radius: 0.75rem !important;
@@ -1550,6 +1548,7 @@ body:is(.tasksHolder){
     width: 100%;
     cursor: pointer;
     align-items: center;
+    justify-content: space-between;
     border-radius: 0.375rem;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
@@ -1564,6 +1563,11 @@ body:is(.tasksHolder){
     background-color: rgb(79 79 79 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .deleteList:hover {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(235 87 87 / var(--tw-bg-opacity)) !important;
   }
 
   .toDoCards {
@@ -1904,6 +1908,7 @@ body:is(.tasksHolder){
   }
 
   .BtnSettings {
+    display: flex !important;
     height: -webkit-fit-content !important;
     height: -moz-fit-content !important;
     height: fit-content !important;
@@ -1911,6 +1916,9 @@ body:is(.tasksHolder){
     width: -moz-fit-content !important;
     width: fit-content !important;
     cursor: pointer !important;
+    align-items: center !important;
+    -webkit-column-gap: 0.5rem !important;
+            column-gap: 0.5rem !important;
     border-radius: 0.5rem !important;
     background-color: rgb(239 68 68 / 0.9) !important;
     padding: 0.5rem !important;

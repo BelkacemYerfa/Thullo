@@ -157,7 +157,7 @@ export const File = ()=>{
                 }}
                 type='submit'
                 className='addBtn' >
-                Add
+                Invite
               </motion.button>
             </div>
          </motion.div>
