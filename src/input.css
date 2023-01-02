@@ -91,6 +91,11 @@ body:is(.tasksHolder){
     rounded-lg w-[95%] md:w-fit 
     shadow-searchBox h-[46px] px-2 py-1 !important
   }
+  .CoverFormat{
+    @apply flex items-center bg-white
+    rounded-lg w-full md:w-fit 
+    shadow-searchBox h-[46px] px-2 py-1 !important
+  }
   .CardFormat{
     @apply flex items-center bg-white 
     rounded-lg w-full md:w-fit 
@@ -115,7 +120,7 @@ body:is(.tasksHolder){
     md:relative md:top-0 w-fit
   }
   .userImage{
-    @apply relative h-10 w-10 rounded-xl
+    @apply relative h-10 w-10 rounded-xl !important
   }
   .userInfo{
     @apply flex items-center gap-8 w-[90%]
@@ -198,7 +203,7 @@ body:is(.tasksHolder){
   }
   .userImg{
     @apply flex items-center justify-center h-9 w-9 rounded-xl
-     bg-userToAddBg text-white text-sm -tracking-[.035em]
+    bg-userToAddBg text-white text-sm -tracking-[.035em]
   }
   .admin{
     @apply cursor-pointer text-selectionBoardColor text-sm
@@ -456,8 +461,9 @@ body:is(.tasksHolder){
     @apply cursor-pointer w-full flex items-center gap-x-4
   }
   .Cover{
-    @apply absolute top-[50px] md:top-[100px] h-[40vh] w-[60vw] right-0 sm:w-[40vw]
-    md:w-fit overflow-y-auto rounded-xl px-3 py-2 bg-white shadow-fileBox 
+    @apply absolute top-[50px] md:top-[100px] h-[45vh] 
+    w-[60vw] right-0 sm:w-[40vw] md:w-[20vw] overflow-y-auto 
+    rounded-xl px-3 py-2 bg-white shadow-fileBox 
     border border-solid border-borderColor !important
   }
   .photoTitle{
@@ -484,11 +490,41 @@ body:is(.tasksHolder){
     @apply flex items-center gap-x-[6px] text-sm font-semibold
     text-userToAddBg my-2 !important
   }
+  .TagBgHolder{
+    @apply mt-2 w-full flex items-center gap-2 flex-wrap
+  }
+  .TagColor{
+    @apply w-[50px] h-8 rounded-lg cursor-pointer !important
+  }
   .addNewTag{
     @apply w-full h-10 flex items-center justify-center
   }
   .addBtn{
     @apply text-white text-sm px-6 py-2 bg-searchBtnBg 
     rounded-xl mt-2 !important
+  }
+
+  .DeletePopOut{
+    @apply fixed w-screen h-[110vh] z-30
+    bg-gray-500/50 top-0 left-0 flex items-center
+    justify-center !important
+  }
+  .deletePop{
+    @apply h-fit w-fit p-5 flex items-center 
+    justify-center flex-col gap-y-3 rounded-xl shadow-fileBox
+    bg-white !important
+  }
+  .btnHodler{
+    @apply flex items-center gap-x-3 
+  }
+  .CommentBtn{
+    @apply text-white text-sm px-6 py-2 
+    rounded-lg cursor-pointer !important
+  }
+  .YupBtn{
+    @apply bg-removeBtn !important
+  }
+  .NopeBtn{
+    @apply bg-saveBtn !important
   }
 }

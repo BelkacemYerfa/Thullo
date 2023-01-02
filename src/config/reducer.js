@@ -22,21 +22,36 @@ export const initialState = {
         users : [
           {
             name : 'kratos',
-            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg'
+            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg',
+            id : 'user6' , 
           } , 
           {
             name : 'bylka' , 
-            image : 'https://w0.peakpx.com/wallpaper/331/150/HD-wallpaper-sad-boy-hotaro-art-cartoon-sadboy-dark-hotarooreki-feeling-anime-thumbnail.jpg'
-          }
+            image : 'https://w0.peakpx.com/wallpaper/331/150/HD-wallpaper-sad-boy-hotaro-art-cartoon-sadboy-dark-hotarooreki-feeling-anime-thumbnail.jpg',
+            id : 'user5'
+          } , 
+          {
+            name : 'Shido' , 
+            image : 'https://i.pinimg.com/originals/64/5b/c8/645bc8822281de496b8f7110b7568c57.jpg',
+            id : 'user7'
+          } , 
+          {
+            name : 'Toka' , 
+            image : 'https://i.pinimg.com/originals/10/34/3b/10343b907edd76570d58283ebd13555b.jpg',
+            id : 'user8'
+          } , 
+
         ] , 
         comments : [
           {
+            id : 'comment1' , 
             username:'kratos' ,
             createDate : '26 december 2022' , 
             image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
             comment : '“The gladdest moment in human life, methinks, is a departure into unknown lands.” – Sir Richard Burton' ,
           } , 
           {
+            id : 'comment2' , 
             username:'bylka' ,
             createDate : '30 december 2022' , 
             image : 'https://w0.peakpx.com/wallpaper/331/150/HD-wallpaper-sad-boy-hotaro-art-cartoon-sadboy-dark-hotarooreki-feeling-anime-thumbnail.jpg' ,  
@@ -67,11 +82,13 @@ export const initialState = {
         users : [
           {
             name : 'kratos',
-            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg'
+            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' , 
+            id : 'user4'
           }
         ] , 
         comments : [
           {
+            id : 'comment4' , 
             username:'kratos' ,
             createDate : '26 december 2022' , 
             image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
@@ -103,11 +120,13 @@ export const initialState = {
         users : [
           {
             name : 'kratos',
-            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg'
+            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' , 
+            id : 'user3'
           }
         ] , 
         comments : [
           {
+            id : 'comment5' , 
             username:'kratos' ,
             createDate : '26 december 2022' , 
             image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
@@ -139,15 +158,18 @@ export const initialState = {
         users : [
           {
             name : 'kratos',
-            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg'
+            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg',
+            id : 'user1'
           } ,
           {
             name : 'Long Zu',
-            image : 'https://e1.pxfuel.com/desktop-wallpaper/147/865/desktop-wallpaper-anime-profile-pic-anime-profile.jpg'
+            image : 'https://e1.pxfuel.com/desktop-wallpaper/147/865/desktop-wallpaper-anime-profile-pic-anime-profile.jpg',
+            id : 'user2'
           }
         ] , 
        comments : [
           {
+            id : 'comment6' , 
             username:'kratos' ,
             createDate : '26 december 2022' , 
             image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  

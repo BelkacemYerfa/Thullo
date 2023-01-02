@@ -43,32 +43,34 @@ export const TaskCard = ({image , tag , description , title , tags, users , comm
     <div className="users">
       <div className='usersHolder' >
       {
-        users?.map(user=>( 
+        users.slice(0,3).map(user => (
           <div className="imageHolder" >
             {
-            user?.image !== null || undefined || '' ?
-            (
-              <img 
-              className="userImage image" 
-              src={user?.image}
-              height={70} width={70}
-              alt="userImage" 
-              />
-            ) 
-            : null
+              user.image ? (
+              <>
+               <img className="userImage image" 
+                src={user?.image}
+                height={70} width={70}
+                alt="userImage" />
+               {
+                user?.id === users[2]?.id
+                 && users?.length - 3 >= 1 
+                 && (
+                <div className="dataUserOverlay">
+                  +{users?.length - 3}
+                </div>
+                )
+               }
+              </>
+              ) : (
+              <div className="userImg" >
+                 {user?.name.slice(0 , 2)}
+              </div>
+             )
             }
           </div>
         ))
       }
-      <motion.div
-        whileTap={{
-          scale : .9
-        }}
-        className="addUsersBtn" >
-        <span class="material-symbols-rounded">
-          add
-        </span>
-      </motion.div>
       </div>
         {
           comments.length !== 0 ? (

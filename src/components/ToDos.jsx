@@ -12,7 +12,7 @@ export const ToDos = ()=>{
           <ToDoTag tag={tag?.tag} task={tag?.task}  />
         ))
       }
-      <AddToList holder='Add another List' />
+      <AddToList holder='Add List' />
     </div>
    </div>
  );
