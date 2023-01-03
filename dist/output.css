@@ -686,8 +686,8 @@ body:is(.tasksHolder){
     padding-bottom: 0.5rem !important;
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
-    --tw-shadow:  0px 2px 2px rgba(0, 0, 0, 0.05) !important;
-    --tw-shadow-colored: 0px 2px 2px var(--tw-shadow-color) !important;
+    --tw-shadow:  2px 0px 2px rgba(0, 0, 0, 0.05) !important;
+    --tw-shadow-colored: 2px 0px 2px var(--tw-shadow-color) !important;
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
   }
 
@@ -928,8 +928,8 @@ body:is(.tasksHolder){
 
   .userImage {
     position: relative !important;
-    height: 2.5rem !important;
-    width: 2.5rem !important;
+    height: 2.25rem !important;
+    width: 2.25rem !important;
     border-radius: 0.75rem !important;
   }
 
@@ -953,13 +953,28 @@ body:is(.tasksHolder){
     font-weight: 700;
   }
 
+  .addUserToTask {
+    cursor: pointer;
+    padding: 0.25rem;
+  }
+
+  .check {
+    --tw-text-opacity: 1;
+    color: rgb(33 150 83 / var(--tw-text-opacity));
+  }
+
+  .notCheck {
+    --tw-text-opacity: 1;
+    color: rgb(47 128 237 / var(--tw-text-opacity));
+  }
+
   .userDrop {
     position: absolute !important;
-    top: 70px !important;
-    right: 30px !important;
+    top: 73vh !important;
+    left: 41.5% !important;
     display: flex !important;
     height: 110px !important;
-    width: 11.5% !important;
+    width: 150px !important;
     flex-direction: column !important;
     justify-content: center !important;
     gap: 0.75rem !important;
@@ -973,6 +988,13 @@ body:is(.tasksHolder){
     --tw-shadow:  0px 2px 2px rgba(0, 0, 0, 0.05) !important;
     --tw-shadow-colored: 0px 2px 2px var(--tw-shadow-color) !important;
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+  }
+
+  @media (min-width: 768px) {
+    .userDrop {
+      top: 70px !important;
+      left: 85% !important;
+    }
   }
 
   .account {

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { UserList } from './userList';
 
 
-export const SearchBar = ({Icon , placeholder , users })=>{
+export const SearchBar = ({Icon , placeholder , users  })=>{
  const [searchElements , setSearchElements] = useState(users);
  const [toggle , setToggle] = useState(false)
  return(
@@ -56,10 +56,12 @@ export const SearchBar = ({Icon , placeholder , users })=>{
          {
           searchElements.map(user => (
             <UserList 
-            id={user?.id} 
-            photoURL={user?.photoURL} 
-            username={user?.username} 
-            key={user?.id}
+              users={users}
+              addedUser={user?.added}
+              id={user?.id} 
+              photoURL={user?.photoURL} 
+              username={user?.username} 
+              key={user?.id}
             />
           ))
          }

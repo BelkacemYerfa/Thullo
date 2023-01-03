@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from 'framer-motion'
 import { BoardInfo } from "./boarddescription";
 import { SearchBar } from "./search";
+import { useDataLayervValue } from "../config/dataLayer";
 
 export const File = ()=>{
  const [visibility , setVisbility] = useState({
@@ -12,52 +13,7 @@ export const File = ()=>{
  const toggleShow = (toggleState)=>{
   setToggleShow(toggleState)
  }
- const [users , setUsers] = useState([
-  {
-    photoURL : null , 
-    job : 'admin' , 
-    id : 'random' , 
-    username :'Belkacem'
-  } , 
-  {
-    photoURL : null , 
-    id : 'random2' , 
-    job : 'member' , 
-    username :'Aktham'
-  } , 
-  {
-    photoURL : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' , 
-    id : 'random3' , 
-    job : 'member' , 
-    username :'kratos'
-  },
-  {
-    photoURL : 'https://e1.pxfuel.com/desktop-wallpaper/147/865/desktop-wallpaper-anime-profile-pic-anime-profile.jpg' , 
-    id : 'random4' , 
-    job : 'member' , 
-    username :'Long Zu'
-  }
- ])
- const [accounts , setAccounts] = useState([
-  {
-    photoURL : null , 
-    job : 'admin' , 
-    id : 'random' , 
-    username :'Belkacem'
-  } ,
-  {
-    photoURL : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' , 
-    id : 'random3' , 
-    job : 'member' , 
-    username :'kratos'
-  },
-  {
-    photoURL : 'https://e1.pxfuel.com/desktop-wallpaper/147/865/desktop-wallpaper-anime-profile-pic-anime-profile.jpg' , 
-    id : 'random4' , 
-    job : 'member' , 
-    username :'Long Zu'
-  }
- ])
+ const [{ accounts , users } , dispatch]  = useDataLayervValue()
  const [FileSettings , setFileSetting] = useState(false) ; 
  const [usertoAdd , setUserToAdd] = useState(false) ; 
  const handleToggle = ()=>{
@@ -149,7 +105,11 @@ export const File = ()=>{
             <p className="selection adjust-description" >
                Search users you want to invite to
             </p>
-            <SearchBar Icon='search' placeholder='User' users={accounts} />
+            <SearchBar 
+             Icon='search' 
+             placeholder='User' 
+             users={accounts} 
+             />
             <div className='addNewTag' >
               <motion.button
                 whileTap={{

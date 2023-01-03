@@ -129,9 +129,12 @@ export const BoardInfo = ({users , toggleShow})=>{
        <div className="tabelUsers" >
          {
           users?.map(user => (
-            <UserList username={user?.username} 
-            photoURL={user?.photoURL} job={user?.job} 
-            id={user?.id}
+            <UserList 
+              username={user?.username} 
+              photoURL={user?.photoURL} 
+              job={user?.job} 
+              id={user?.id}
+              addedUser={null}
             />
           ))
          }

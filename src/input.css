@@ -66,10 +66,11 @@ body:is(.tasksHolder){
     border-borderColor !important
   }
   .searchSettings{
-    @apply flex flex-col py-2 md:py-0 gap-4 md:gap-0 bg-white 
-    md:bg-none h-screen md:h-fit shadow-navBarBox 
-    md:shadow-none px-2 md:px-0 top-0 right-0 
-    md:top-0 w-[60%] md:flex-row fixed md:relative
+    @apply flex flex-col py-2 md:py-0 gap-4 md:gap-0
+    bg-white md:bg-none h-screen md:h-fit 
+    shadow-phonenavBarBox md:shadow-none px-2 
+    md:px-0 top-0 right-0 md:top-0 w-[60%] md:flex-row 
+    fixed md:relative
     md:items-center md:justify-between md:w-[65%] 
     !important
   }
@@ -120,7 +121,7 @@ body:is(.tasksHolder){
     md:relative md:top-0 w-fit
   }
   .userImage{
-    @apply relative h-10 w-10 rounded-xl !important
+    @apply relative h-9 w-9 rounded-xl !important
   }
   .userInfo{
     @apply flex items-center gap-8 w-[90%]
@@ -129,10 +130,21 @@ body:is(.tasksHolder){
   .username{
     @apply font-bold text-sm 
   }
+  .addUserToTask{
+    @apply p-1 cursor-pointer
+  }
+  .check{
+    @apply text-saveBtn
+  }
+  .notCheck {
+    @apply text-searchBtnBg
+  }
   .userDrop{
-    @apply absolute flex justify-center px-2 py-2 gap-3 flex-col 
-    h-[110px] w-[11.5%] rounded-lg bg-white shadow-navBarBox top-[70px] 
-    right-[30px] !important ; 
+    @apply absolute flex justify-center 
+    px-2 py-2 gap-3 flex-col w-[150px]
+    h-[110px]  rounded-lg 
+    bg-white shadow-navBarBox md:top-[70px] 
+    top-[73vh] left-[41.5%] md:left-[85%] !important ; 
   }
   .account {
     @apply w-full rounded-xl cursor-pointer h-10 duration-300 
