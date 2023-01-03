@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useDataLayervValue  } from '../config/dataLayer';
+import { useDataLayervValue  } from '../../config/dataLayer';
 
 export const UserList = ({photoURL , id , username , job , addedUser })=>{
   const [{ accounts } , dispatch]  = useDataLayervValue()

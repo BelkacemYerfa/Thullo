@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { UserList } from "./userList";
+import { UserList } from "./userListForDetails/userDataList";
 import { motion } from 'framer-motion'
 import { useDataLayervValue } from "../config/dataLayer";
 

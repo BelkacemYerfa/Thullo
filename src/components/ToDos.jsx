@@ -9,7 +9,7 @@ export const ToDos = ()=>{
      <div className="tasksHolder" dir='ltr' >
        {
         toDoList?.map(tag => (
-          <ToDoTag tag={tag?.tag} task={tag?.task}  />
+          <ToDoTag tag={tag?.tag} task={tag?.task} id={tag?.id} />
         ))
       }
       <AddToList holder='Add List' />

@@ -4,9 +4,11 @@ import { CardDataDescription } from './CardDescription';
 
 export const TaskCard = ({image , tag , description , title , tags, users , comments})=>{
  const [CardDescription , setCardDescription] = useState(false) ; 
+
  const handleCardDescription = ()=>{
   setCardDescription(!CardDescription)
  }
+
  const handleToggle = (toggle)=>{
   setCardDescription(toggle)
  }

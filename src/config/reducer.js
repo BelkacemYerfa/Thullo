@@ -58,6 +58,7 @@ export const initialState = {
  ] , 
  toDoList : [
   {
+    id : 'list1' ,
     tag : 'Backlog' , 
     task : [
       {
@@ -118,6 +119,7 @@ export const initialState = {
     ] , 
   },
   {
+    id : 'list2' ,
     tag : 'In Progress',
     task : [
       {
@@ -156,6 +158,7 @@ export const initialState = {
     ] , 
   },
   {
+    id : 'list3' ,
     tag : 'In Reviews' ,
     task : [
       {
@@ -194,6 +197,7 @@ export const initialState = {
     ] , 
   },
   {
+    id : 'list4' ,
     tag : 'In Reviews' ,
     task : [
       {

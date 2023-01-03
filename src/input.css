@@ -526,17 +526,23 @@ body:is(.tasksHolder){
     justify-center flex-col gap-y-3 rounded-xl shadow-fileBox
     bg-white !important
   }
+  .renamePop {
+    @apply w-[25%] !important
+  }
+  .formatRename{
+    @apply w-full !important
+  }
   .btnHodler{
     @apply flex items-center gap-x-3 
   }
   .CommentBtn{
-    @apply text-white text-sm px-6 py-2 
+    @apply text-sm px-6 py-2 
     rounded-lg cursor-pointer !important
   }
   .YupBtn{
-    @apply bg-removeBtn !important
+    @apply bg-removeBtn text-white !important
   }
   .NopeBtn{
-    @apply bg-saveBtn !important
+    @apply bg-saveBtn text-white !important
   }
 }

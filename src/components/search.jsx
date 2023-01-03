@@ -1,6 +1,6 @@
 import {motion} from 'framer-motion' ; 
 import { useState } from 'react';
-import { UserList } from './userList';
+import { UserList } from './userListForDetails/userList';
 
 
 export const SearchBar = ({Icon , placeholder , users  })=>{
