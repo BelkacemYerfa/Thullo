@@ -2299,17 +2299,19 @@ body:is(.tasksHolder){
     padding-bottom: 0.5rem !important;
     font-size: 0.875rem !important;
     line-height: 1.25rem !important;
-    --tw-text-opacity: 1 !important;
-    color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
   }
 
   .YupBtn {
     --tw-bg-opacity: 1 !important;
     background-color: rgb(235 87 87 / var(--tw-bg-opacity)) !important;
+    --tw-text-opacity: 1 !important;
+    color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
   }
 
   .NopeBtn {
     --tw-bg-opacity: 1 !important;
     background-color: rgb(33 150 83 / var(--tw-bg-opacity)) !important;
+    --tw-text-opacity: 1 !important;
+    color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
   }
 }

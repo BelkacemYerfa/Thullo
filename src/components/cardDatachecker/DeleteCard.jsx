@@ -1,9 +1,24 @@
 import { motion } from "framer-motion"
+import { useDataLayervValue } from "../../config/dataLayer"
 
 export const DeleteCard = ({handleToggle , CardId})=>{
+ const [{toDoList} , dispatch] = useDataLayervValue()
  console.log(CardId)
   const ClosePop = ()=>{
     handleToggle(false)
+  }
+  const deleteCard = ()=>{
+    ClosePop();
+    toDoList.map((item)=>{
+      if(item?.id === CardId ){
+        delete toDoList[CardId.slice(4 , 5) - 1]
+        dispatch({
+          type : 'DELETE_TASK' , 
+          toDoList : toDoList
+        })
+      }
+      return true
+    })
   }
  return(
   <motion.div 
@@ -34,7 +49,7 @@ export const DeleteCard = ({handleToggle , CardId})=>{
       whileTap={{scale : .9}}
       type="submit" 
       className="CommentBtn YupBtn"
-      onClick={ClosePop}
+      onClick={deleteCard}
       >
        Yup
       </motion.button>

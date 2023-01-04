@@ -1,4 +1,4 @@
-export const initialState = {
+export let initialState = {
  user : null , 
  users : [
   {
@@ -257,6 +257,10 @@ export const reducer = (state , action)=>{
    case 'ADD_USER_TO_TASK' : return {
     ...state ,
     users : action.users
+   }
+   case 'RENAME_TASK' : return {
+    ...state ,
+    toDoList : action.toDoList
    }
    default : return state 
   }

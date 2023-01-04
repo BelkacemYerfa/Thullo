@@ -1,9 +1,13 @@
 import { motion } from "framer-motion" ;
+import { useDataLayervValue } from '../../config/dataLayer' ;
+
 
 export const RenameCard = ({handleToggle , CardId})=>{
- console.log(CardId)
+ console.log(CardId);
+ const [{toDoList} , dispatch] = useDataLayervValue();
  const ClosePop = ()=>{
   handleToggle(false)
+  return true
  }
  return(
   <motion.div
@@ -29,7 +33,24 @@ export const RenameCard = ({handleToggle , CardId})=>{
      Rename the Card
     </h2>
     <form action="" className="CardFormat formatRename " >
-     <input className="searchInput" placeholder="new Name ..." type="text" name="" id="" />
+     <input 
+      className="searchInput"
+      placeholder="new Name ..." 
+      type="text" name="" 
+      id="" 
+      onChange={(e)=>{
+        toDoList.map((item)=>{
+          if(item?.id === CardId ){
+            item.tag = e.target.value
+            dispatch({
+              type : 'RENAME_CARD' , 
+              toDoList : toDoList
+            })
+          }
+          return true
+        })
+      }}
+      />
     </form>
     <div className="btnHodler" >
       <motion.button
