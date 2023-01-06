@@ -262,6 +262,10 @@ export const reducer = (state , action)=>{
     ...state ,
     toDoList : action.toDoList
    }
+   case 'DELETE_TASK' : return {
+    ...state ,
+    toDoList : action.toDoList
+   }
    default : return state 
   }
 }

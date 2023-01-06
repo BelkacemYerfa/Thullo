@@ -1,14 +1,15 @@
 import { ToDoTag } from './ToDoTag';
 import { useDataLayervValue } from '../config/dataLayer';
-import { AddToList } from './addToList';
 import { useEffect, useState } from 'react';
-
+import { motion } from 'framer-motion';
 export const ToDos = ()=>{
  const [DataLists , setDataLists] = useState(null);
  const [{toDoList} , dispatch ] = useDataLayervValue()
+
  useEffect(()=>{
   setDataLists(toDoList)
- } , [])
+ } , [toDoList])
+
  return(
     <div className="toDo" >
      <div className="tasksHolder" dir='ltr' >
@@ -21,7 +22,32 @@ export const ToDos = ()=>{
           />
         ))
       }
-      <AddToList holder='Add List' />
+      <motion.div 
+      whileTap={{
+        scale : .9
+      }}
+      style={{
+      width : 300 
+      }}
+      className='addList' >
+        <div className="tag" >
+          <p className="addText" >
+            Add another List
+          </p>
+          <motion.div 
+          whileTap={{
+            scale : .9
+          }}
+          transition = {{
+            duration : .1
+          }}
+          className="spred" >
+          <span className="material-symbols-rounded">
+            add
+          </span>
+          </motion.div>
+        </div>
+      </motion.div>
     </div>
    </div>
  );

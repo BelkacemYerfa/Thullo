@@ -456,7 +456,7 @@ body:is(.tasksHolder){
     relative w-full md:flex-col md:gap-y-3
   }
   .actionData{
-    @apply flex justify-start items-center gap-x-2 h-10 w-full
+    @apply flex justify-start items-center gap-x-2 h-10 w-fit
     bg-selectionBoardBg capitalize font-medium text-sm
     px-3 py-2 text-selectionBoardColor rounded-lg cursor-pointer
   }
@@ -522,12 +522,10 @@ body:is(.tasksHolder){
     justify-center !important
   }
   .deletePop{
-    @apply h-fit w-fit p-5 flex items-center 
-    justify-center flex-col gap-y-3 rounded-xl shadow-fileBox
+    @apply relative h-fit w-[25vw] p-5 flex items-center
+    justify-center flex-col gap-y-3 rounded-xl
+    shadow-fileBox
     bg-white !important
-  }
-  .renamePop {
-    @apply w-[25%] !important
   }
   .formatRename{
     @apply w-full !important
@@ -544,5 +542,19 @@ body:is(.tasksHolder){
   }
   .NopeBtn{
     @apply bg-saveBtn text-white !important
+  }
+  .AddListPop{
+    @apply w-[26vw] !important
+  }
+  .BtnFormHolder{
+    @apply flex items-center gap-x-3
+  }
+  .BtnCardHolder{
+    @apply flex items-end justify-end w-full
+  }
+  .BtnAdd{
+    @apply flex items-center gap-x-1 px-3 py-2
+    bg-searchBtnBg rounded-xl text-white text-sm
+    font-medium cursor-pointer !important
   }
 }

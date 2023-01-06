@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
 
-export const AddToList = ({holder})=>{
+export const AddToList = ({holder , handleToggle})=>{
+  const OpenAddCard = ()=>{
+    handleToggle(true);
+  }
  return(
   <motion.div 
+  onClick={OpenAddCard}
    whileTap={{
      scale : .9
    }}

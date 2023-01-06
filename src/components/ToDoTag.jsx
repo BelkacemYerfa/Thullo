@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDataLayervValue } from '../config/dataLayer';
 import { AddToList } from './addToList';
+import { AddCard } from './cardDatachecker/AddCard';
 import { DeleteCard } from './cardDatachecker/DeleteCard';
 import { RenameCard } from './cardDatachecker/RenameCard';
 import { TaskCard } from './taskCard';
@@ -10,12 +11,19 @@ export const ToDoTag = ({tag , task , id })=>{
  const [settToggle , setSettToggle] = useState(false);
  const [CardDelete , setCardDelete] = useState(false) ;
  const [CardRename , setCardRename] = useState(false) ;
+ const [CardAdd , setAddCard] = useState(false);
   const handleRenameCard = (toggle)=>{
     setCardRename(toggle)
   }
  const handleDeleteCard =(toggle)=> {
   setCardDelete(toggle)
  }
+ const handleAddToggle = (toggle)=>{
+  setAddCard(toggle)
+ }
+  const handleAddCard = (toggle)=>{
+    setAddCard(toggle)
+  }
  return(
   <>
    <div  className='taskcolumn' >
@@ -93,7 +101,10 @@ export const ToDoTag = ({tag , task , id })=>{
           />
           ))
         }
-        <AddToList holder='Add to list' />
+        <AddToList 
+         holder='Add to list' 
+         handleToggle={handleAddToggle}
+         />
       </div>
     </div>
     {
@@ -101,6 +112,9 @@ export const ToDoTag = ({tag , task , id })=>{
     }
     {
      CardRename && (<RenameCard handleToggle={handleRenameCard} CardId={id} />)
+    }
+    {
+      CardAdd && (<AddCard handleToggle={handleAddCard} />)
     }
   </>
  );
