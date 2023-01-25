@@ -460,6 +460,9 @@ body:is(.tasksHolder){
     bg-selectionBoardBg capitalize font-medium text-sm
     px-3 py-2 text-selectionBoardColor rounded-lg cursor-pointer
   }
+  .addImage{
+    @apply w-fit !important
+  }
   .MembersHolder{
     @apply absolute right-0 top-12 md:top-0 w-[50vw]  
     md:p-0 border-solid border md:w-full md:relative 

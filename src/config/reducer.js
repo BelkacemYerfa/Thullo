@@ -62,6 +62,7 @@ export let initialState = {
     tag : 'Backlog' , 
     task : [
       {
+        id : 'task1' ,
         image : 'https://images6.alphacoders.com/607/thumb-1920-607771.jpg' ,
         title : 'Ocean' , 
         tags : [
@@ -123,6 +124,7 @@ export let initialState = {
     tag : 'In Progress',
     task : [
       {
+        id : 'task2' ,
         image : 'https://149695847.v2.pressablecdn.com/wp-content/uploads/2019/06/chris-ried-512801-unsplash.jpg' ,
         title : 'Working' , 
         tags : [
@@ -146,7 +148,7 @@ export let initialState = {
         ] , 
         comments : [
           {
-            id : 'comment4' , 
+            id : 'comment1' , 
             username:'kratos' ,
             createDate : '26 december 2022' , 
             image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
@@ -162,6 +164,7 @@ export let initialState = {
     tag : 'In Reviews' ,
     task : [
       {
+        id : 'task3' ,
         image : 'https://cdn.pixabay.com/photo/2017/08/07/14/02/man-2604149__340.jpg' ,
         title : 'Gym' , 
         tags : [
@@ -185,7 +188,7 @@ export let initialState = {
         ] , 
         comments : [
           {
-            id : 'comment5' , 
+            id : 'comment1' , 
             username:'kratos' ,
             createDate : '26 december 2022' , 
             image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
@@ -201,6 +204,7 @@ export let initialState = {
     tag : 'In Reviews' ,
     task : [
       {
+        id : 'task41' ,
         image : null ,
         title : 'Study' , 
         tags : [
@@ -229,7 +233,46 @@ export let initialState = {
         ] , 
        comments : [
           {
-            id : 'comment6' , 
+            id : 'comment1' , 
+            username:'kratos' ,
+            createDate : '26 december 2022' , 
+            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
+            comment : '“The gladdest moment in human life, methinks, is a departure into unknown lands.” – Sir Richard Burton' ,
+          }
+        ] , 
+        description : 'Just A random Data for some Cases'
+      },
+      {
+        id : 'task42' ,
+        image : null ,
+        title : 'Study' , 
+        tags : [
+          {
+            tagName : 'Front-End' , 
+            bg:'#F2C94C' , 
+            fontColor : '#D3EADD'  , 
+          },
+          {
+            tagName : 'concept' , 
+            bg:'#9B51E0' , 
+            fontColor : '#D3EADD'  , 
+          }
+        ] , 
+        users : [
+          {
+            name : 'kratos',
+            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg',
+            id : 'user1'
+          } ,
+          {
+            name : 'Long Zu',
+            image : 'https://e1.pxfuel.com/desktop-wallpaper/147/865/desktop-wallpaper-anime-profile-pic-anime-profile.jpg',
+            id : 'user2'
+          }
+        ] , 
+       comments : [
+          {
+            id : 'comment1' , 
             username:'kratos' ,
             createDate : '26 december 2022' , 
             image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
@@ -264,6 +307,10 @@ export const reducer = (state , action)=>{
    }
    case 'DELETE_TASK' : return {
     ...state ,
+    toDoList : action.toDoList
+   }
+   case 'DELETE_COMMENT' : return {
+    ...state , 
     toDoList : action.toDoList
    }
    default : return state 

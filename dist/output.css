@@ -2010,9 +2010,7 @@ body:is(.tasksHolder){
   .actionData {
     display: flex;
     height: 2.5rem;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+    width: 100%;
     cursor: pointer;
     align-items: center;
     justify-content: flex-start;
@@ -2031,6 +2029,12 @@ body:is(.tasksHolder){
     text-transform: capitalize;
     --tw-text-opacity: 1;
     color: rgb(130 130 130 / var(--tw-text-opacity));
+  }
+
+  .addImage {
+    width: -webkit-fit-content !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
   }
 
   .MembersHolder {

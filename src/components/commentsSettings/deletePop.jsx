@@ -1,10 +1,32 @@
 import { motion } from "framer-motion";
+import { useDataLayervValue } from "../../config/dataLayer";
 
-export const DeletePop = ({handleToggle , CommentId})=>{
+export const DeletePop = ({handleToggle , CommentId , taskId})=>{
+  const [{toDoList} , dispatch] = useDataLayervValue();
   console.log(CommentId)
   const ClosePop = ()=>{
     handleToggle(false)
   }
+   console.log(
+    'task42'.length
+    )
+  const DeleteComment = ()=>{
+      if(taskId.length === 6){
+        delete toDoList[taskId.slice(4,5)-1]
+        .task[taskId[5]-1]
+        .comments[CommentId.slice(7 , 8) - 1]
+      }
+      else{
+        delete toDoList[taskId.slice(4,5)-1]
+        .task[0]
+        .comments[CommentId.slice(7 , 8) - 1]
+      }
+      dispatch({
+        type : 'DELETE_COMMENT' , 
+        toDoList : toDoList
+      })
+    ClosePop()
+    }
   return(
     <motion.div 
     initial={{
@@ -33,7 +55,7 @@ export const DeletePop = ({handleToggle , CommentId})=>{
         whileTap={{scale : .9}}
         type="submit" 
         className="CommentBtn YupBtn"
-        onClick={ClosePop}
+        onClick={DeleteComment}
         >
          Yup
         </motion.button>

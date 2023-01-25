@@ -45,7 +45,7 @@ export const AddCard = ({handleToggle})=>{
         scale : .9
       }}
       id='cover2'
-      className='actionData' >
+      className='actionData addImage ' >
         <span class="material-symbols-rounded">
           image
         </span>
@@ -56,7 +56,7 @@ export const AddCard = ({handleToggle})=>{
         scale : .9
       }}
       id='cover2'
-      className='actionData' >
+      className='actionData addImage ' >
         <span class="material-symbols-rounded">
           add_a_photo
         </span>
@@ -64,7 +64,9 @@ export const AddCard = ({handleToggle})=>{
       </motion.div>
     </div>
     <div className='BtnCardHolder' >
-     <motion.div className='CommentBtn' >
+     <motion.div
+      className='CommentBtn'
+      onClick={ClosePop} >
        Cancel
      </motion.div>
      <motion.div

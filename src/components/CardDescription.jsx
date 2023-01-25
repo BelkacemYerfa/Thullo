@@ -5,7 +5,7 @@ import { LabelCard } from './cardSettingsComponents/LabelCard';
 import { MemberCard } from './cardSettingsComponents/MemberCard';
 import { DeletePop } from './commentsSettings/deletePop';
 
-export const CardDataDescription = ({ tags , users , image , comments , description , tag , title , handleToggle})=>{
+export const CardDataDescription = ({ tags , users , image , comments , description , tag , title , handleToggle , id })=>{
   const CloseData = ()=>{
     handleToggle(false)
   }
@@ -254,6 +254,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                           <DeletePop 
                             handleToggle={handleCommentToggle} 
                             CommentId={comment?.id} 
+                            taskId={id}
                           />
                         )
                       }
