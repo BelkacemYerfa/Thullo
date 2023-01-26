@@ -1,7 +1,17 @@
 import { motion } from 'framer-motion';
-import { SearchBar } from '../search';
-
-export const CoverCard = ({images})=>{
+import { useEffect , useState } from 'react';
+export const CoverCard = ()=>{
+  const imageUrl = `https://picsum.photos/v2/list?page=${Math.round(Math.random()*10)}&limit=20` ; 
+  const [images , setImages] = useState([]) ;
+  useEffect(()=>{
+    const fetchImages = async ()=>{
+      const response = await fetch(imageUrl) ; 
+      const data = await response.json() ; 
+      setImages(data) ; 
+      console.log(images)
+    }
+    fetchImages() ; 
+  } , [])
  return(
   <motion.div 
    initial={{ y: -20 , opacity : 0}}

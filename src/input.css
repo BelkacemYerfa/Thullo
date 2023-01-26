@@ -524,8 +524,19 @@ body:is(.tasksHolder){
     bg-gray-500/50 top-0 left-0 flex items-center
     justify-center !important
   }
+  .DeletePopOutCover{
+    @apply fixed w-screen h-[110vh] z-30
+    bg-gray-500/50 top-0 left-0 flex justify-center !important
+  }
   .deletePop{
     @apply relative h-fit w-[25vw] p-5 flex items-center
+    justify-center flex-col gap-y-3 rounded-xl
+    shadow-fileBox
+    bg-white !important
+  }
+  .deletePopCover{
+    @apply relative h-fit w-[25vw] p-5 
+    top-[20%] flex items-center
     justify-center flex-col gap-y-3 rounded-xl
     shadow-fileBox
     bg-white !important

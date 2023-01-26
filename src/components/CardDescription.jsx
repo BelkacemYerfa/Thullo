@@ -76,17 +76,6 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
     '#2F80ED' , '#56CCF2' , '#6FCF97' , '#333333' , 
     '#4F4F4F' , '#828282' , '#BDBDBD' , '#E0E0E0' ,
   ]
-  const imageUrl = `https://picsum.photos/v2/list?page=${Math.round(Math.random()*10)}&limit=20` ; 
-  const [images , setImages] = useState([]) ;
-  useEffect(()=>{
-    const fetchImages = async ()=>{
-      const response = await fetch(imageUrl) ; 
-      const data = await response.json() ; 
-      setImages(data) ; 
-      console.log(images)
-    }
-    fetchImages() ; 
-  } , [])
  return(
    <motion.div
    initial={{
@@ -293,7 +282,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                     }
                     {
                       Cover && action.id === 2 && (
-                      <CoverCard images={images} />
+                      <CoverCard />
                       )
                     }
                     {

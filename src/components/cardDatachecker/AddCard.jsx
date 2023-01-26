@@ -1,9 +1,14 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { CoverCard } from '../cardSettingsComponents/CoverCard';
 
 export const AddCard = ({handleToggle})=>{
  const ClosePop = ()=>{
   handleToggle(false)
  }
+
+ const [addCover , setAddCover] = useState(false)
+
  return(
   <motion.div
   initial={{
@@ -14,7 +19,7 @@ export const AddCard = ({handleToggle})=>{
    y : 0 , 
    opacity : 1
   }}
-  className="DeletePopOut" >
+  className="DeletePopOutCover" >
    <motion.div 
    initial={{
     scale : 0
@@ -23,7 +28,7 @@ export const AddCard = ({handleToggle})=>{
     scale : 1
    }}
    transition={{delay : .25}}
-   className="deletePop" >
+   className="deletePopCover" >
     <motion.div
       whileTap={{
         scale : .9
@@ -45,7 +50,11 @@ export const AddCard = ({handleToggle})=>{
         scale : .9
       }}
       id='cover2'
-      className='actionData addImage ' >
+      className='actionData addImage ' 
+      onClick={()=>{
+        setAddCover(!addCover)
+      }}
+      >
         <span class="material-symbols-rounded">
           image
         </span>
@@ -63,6 +72,11 @@ export const AddCard = ({handleToggle})=>{
         add your cover
       </motion.div>
     </div>
+    {
+      addCover && (
+        <CoverCard />
+      )
+    }
     <div className='BtnCardHolder' >
      <motion.div
       className='CommentBtn'
