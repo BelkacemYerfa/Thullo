@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect , useState } from 'react';
 export const CoverCard = ()=>{
-  const imageUrl = `https://picsum.photos/v2/list?page=${Math.round(Math.random()*10)}&limit=20` ; 
+  const imageUrl = `https://picsum.photos/v2/list?page=${Math.round(Math.random()*10)}&limit=10` ; 
   const [images , setImages] = useState([]) ;
   useEffect(()=>{
     const fetchImages = async ()=>{

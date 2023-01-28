@@ -12,14 +12,14 @@ export const DeletePop = ({handleToggle , CommentId , taskId})=>{
     )
   const DeleteComment = ()=>{
       if(taskId.length === 6){
-        delete toDoList[taskId.slice(4,5)-1]
+         toDoList[taskId.slice(4,5)-1]
         .task[taskId[5]-1]
-        .comments[CommentId.slice(7 , 8) - 1]
+        .comments.splice(CommentId.slice(7 , 8) - 1 , 1)
       }
       else{
         delete toDoList[taskId.slice(4,5)-1]
         .task[0]
-        .comments[CommentId.slice(7 , 8) - 1]
+        .comments.splice(CommentId.slice(7 , 8) - 1 , 1)
       }
       dispatch({
         type : 'DELETE_COMMENT' , 

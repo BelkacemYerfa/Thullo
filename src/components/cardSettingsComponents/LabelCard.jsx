@@ -1,7 +1,14 @@
 import { motion } from 'framer-motion' ; 
+import { useState , useEffect } from 'react';
 
-
-export const LabelCard = ({ Colors , tags })=>{
+export const LabelCard = ({ tags })=>{
+  const Colors = [
+    '#219653' , '#F2C94C' , '#F2994A' , '#EB5757' ,
+    '#2F80ED' , '#56CCF2' , '#6FCF97' , '#333333' , 
+    '#4F4F4F' , '#828282' , '#BDBDBD' , '#E0E0E0' ,
+  ]
+  const [tagName , setTagName] = useState(null) ;
+  const [tagBg , setTagBg] = useState(null) ;
  return(
   <motion.div 
    initial={{ y: -20 , opacity : 0}}
@@ -18,7 +25,11 @@ export const LabelCard = ({ Colors , tags })=>{
      Select a name and a color
     </p>
     <form action="" className='CardFormat' >
-      <input className='searchInput' type="text" placeholder='Label'  />
+      <input className='searchInput' type="text" placeholder='Label' 
+       onChange={(e)=>{
+        setTagName(e.target.value)
+       }}
+      />
     </form>
     <div className='TagBgHolder' >
       {
@@ -27,7 +38,11 @@ export const LabelCard = ({ Colors , tags })=>{
           whileTap={{scale : .9}}
           id={color}
           style={{backgroundColor : color}}
-          className='TagColor' >
+          className='TagColor' 
+          onClick={()=>{
+            setTagBg(color)
+          }}
+          >
           </motion.div>
         ))
       }

@@ -1,14 +1,25 @@
 import { motion } from 'framer-motion' ; 
 import { useEffect, useState } from 'react';
+import { useDataLayervValue } from '../config/dataLayer';
 import { CoverCard } from './cardSettingsComponents/CoverCard';
 import { LabelCard } from './cardSettingsComponents/LabelCard';
 import { MemberCard } from './cardSettingsComponents/MemberCard';
 import { DeletePop } from './commentsSettings/deletePop';
+import { NonComments } from './commentsSettings/nonComments';
 
 export const CardDataDescription = ({ tags , users , image , comments , description , tag , title , handleToggle , id })=>{
   const CloseData = ()=>{
     handleToggle(false)
   }
+  let [commentsData , setCommentsData] = useState(null) ;
+  useEffect(()=>{
+   if(comments.length === 2){
+    setCommentsData(comments)
+   }
+   else{
+    setCommentsData(null)
+   }
+  },[comments])
   const [DescriptionData , setCardDescription] = useState(true) ; 
   const [Members , setMembers] = useState(false);
   const [Labels , setLabels] = useState(false);
@@ -70,11 +81,6 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
       name : 'labels' , 
       id : 3 ,
     }
-  ]
-  const ColorsArray = [
-    '#219653' , '#F2C94C' , '#F2994A' , '#EB5757' ,
-    '#2F80ED' , '#56CCF2' , '#6FCF97' , '#333333' , 
-    '#4F4F4F' , '#828282' , '#BDBDBD' , '#E0E0E0' ,
   ]
  return(
    <motion.div
@@ -202,7 +208,8 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
             <br />
             <div className='commentsHolder' >
                 {
-                  comments.map(comment => (
+                  commentsData !== null || undefined ?  
+                  commentsData.map(comment => (
                     <>
                     <div className='commentOfUser' >
                       <div className='headComment' >
@@ -248,7 +255,9 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                         )
                       }
                     </>
-                  ))
+                  )) : (
+                    <NonComments />
+                  )
                 }
             </div>
           </div>
@@ -287,7 +296,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                     }
                     {
                       Labels && action.id === 3 && (
-                        <LabelCard Colors={ColorsArray} tags={tags} />
+                        <LabelCard tags={tags} />
                       )
                     }
                   </>

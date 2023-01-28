@@ -356,7 +356,15 @@ body:is(.tasksHolder){
   .comments{
     @apply flex items-center gap-x-2 text-userToAddBg text-xl
   }
-
+  .NoneCommentsHolder{
+    @apply flex justify-center items-center
+    h-full w-full 
+  }
+  .NoneCommentsChild{
+    @apply flex justify-center gap-y-3 flex-col
+    items-center h-full w-fit 
+  }
+  
   .CardHolder{
     @apply absolute z-20 top-0 left-0 flex items-center justify-center
     bg-gray-500/50 h-[130vh] md:h-[110vh] w-screen
@@ -571,4 +579,5 @@ body:is(.tasksHolder){
     bg-searchBtnBg rounded-xl text-white text-sm
     font-medium cursor-pointer !important
   }
+  
 }
