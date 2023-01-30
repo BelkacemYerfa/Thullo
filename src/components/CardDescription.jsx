@@ -296,7 +296,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                     }
                     {
                       Labels && action.id === 3 && (
-                        <LabelCard tags={tags} />
+                        <LabelCard tags={tags} taskId={id} />
                       )
                     }
                   </>

@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion' ; 
 import { useState , useEffect } from 'react';
+import { useDataLayervValue } from '../../config/dataLayer';
 
-export const LabelCard = ({ tags })=>{
+export const LabelCard = ({ tags , taskId })=>{
+  const [{toDoList} , dispatch] = useDataLayervValue();
   const Colors = [
     '#219653' , '#F2C94C' , '#F2994A' , '#EB5757' ,
     '#2F80ED' , '#56CCF2' , '#6FCF97' , '#333333' , 
@@ -75,7 +77,32 @@ export const LabelCard = ({ tags })=>{
         scale : .9
        }}
        type='submit'
-       className='addBtn' >
+       className='addBtn' 
+       onClick={()=>{
+        if(taskId.length === 6){
+          toDoList[taskId.slice(4,5)-1]
+         .task[taskId[5]-1]
+         .tags?.push({
+          tagName : tagName ,
+          bg : tagBg ,
+          fontColor : '#D3EADD'
+         })
+       }
+       else{
+          toDoList[taskId.slice(4,5)-1]
+         .task[0]
+         .tags.push({
+          tagName : tagName ,
+          bg : tagBg ,
+          fontColor : '#D3EADD'
+         })
+       }
+       dispatch({
+          type : 'ADD_ATTRIBUTE' ,
+          toDoList : toDoList
+       })
+       }}
+       >
         Add
       </motion.button>
     </div>

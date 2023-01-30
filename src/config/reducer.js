@@ -313,6 +313,10 @@ export const reducer = (state , action)=>{
     ...state , 
     toDoList : action.toDoList
    }
+   case 'ADD_ATTRIBUTE' : return {
+    ...state ,
+    toDoList : action.toDoList
+   }
    default : return state 
   }
 }
