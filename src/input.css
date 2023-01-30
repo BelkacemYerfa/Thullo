@@ -500,7 +500,7 @@ body:is(.tasksHolder){
     gap-y-3 mt-3 ; 
   }
   .imageHolder{
-    @apply relative cursor-pointer h-10 w-10 rounded !important
+    @apply relative cursor-pointer h-12 w-12 rounded !important
   }
   .dataUserOverlay{
     @apply absolute top-0 left-0 h-9 w-9 rounded-xl bg-gray-500/50

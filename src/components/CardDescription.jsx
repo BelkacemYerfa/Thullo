@@ -13,7 +13,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
   }
   let [commentsData , setCommentsData] = useState(null) ;
   useEffect(()=>{
-   if(comments.length === 2){
+   if(comments.length !== 0){
     setCommentsData(comments)
    }
    else{
@@ -291,7 +291,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                     }
                     {
                       Cover && action.id === 2 && (
-                      <CoverCard />
+                      <CoverCard taskId={id} />
                       )
                     }
                     {
