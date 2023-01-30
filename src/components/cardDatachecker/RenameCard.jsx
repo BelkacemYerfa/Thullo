@@ -9,6 +9,7 @@ export const RenameCard = ({handleToggle , CardId})=>{
   handleToggle(false)
   return true
  }
+ let val
  return(
   <motion.div
   initial={{
@@ -39,16 +40,10 @@ export const RenameCard = ({handleToggle , CardId})=>{
       type="text" name="" 
       id="" 
       onChange={(e)=>{
-        toDoList.map((item)=>{
-          if(item?.id === CardId ){
-            item.tag = e.target.value
-            dispatch({
-              type : 'RENAME_CARD' , 
-              toDoList : toDoList
-            })
-          }
-          return true
-        })
+        val = e.target.value
+        if(val !== '' || undefined || null){
+          toDoList[CardId.slice(4,5)-1].tag = val
+        }
       }}
       />
     </form>
@@ -57,7 +52,13 @@ export const RenameCard = ({handleToggle , CardId})=>{
        whileTap={{scale : .9}}
        type="submit" 
        className="CommentBtn NopeBtn" 
-       onClick={ClosePop}
+       onClick={()=>{
+        ClosePop() ; 
+        dispatch({
+          type : 'RENAME_TASK' ,
+          toDoList : toDoList
+        })
+       }}
        >
        Save
       </motion.button>
