@@ -19,8 +19,10 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
    else{
     setCommentsData(null)
    }
-  },[comments])
+  },[comments]);
+  const [{toDoList} , dispatch] = useDataLayervValue();
   const [DescriptionData , setCardDescription] = useState(true) ; 
+  const [newComment , setNewComment] = useState(null)
   const [Members , setMembers] = useState(false);
   const [Labels , setLabels] = useState(false);
   const [Cover , setCover] = useState(false);
@@ -192,6 +194,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                     className="textarea commentData" name="" 
                     placeholder="Write a comment..."
                     id="textarea" rows={3}
+                    onChange={(e)=>setNewComment(e.target.value)}
                   ></textarea>
                 </div>
               </div>
@@ -200,7 +203,48 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                 whileTap={{
                   scale : .9
                 }}
-                className='commentBtn' >
+                className='commentBtn' 
+                  onClick={()=>{
+                    if(newComment !== '' || null || undefined){
+                      let val
+                      toDoList[id.slice(4,5)-1].task[0].comments.map( comment => {
+                       val = Math.floor(Math.random()*10)
+                        if(comment.id === `comment${val}`){
+                         val = Math.floor(Math.random()*10)
+                        }
+                        return val 
+                      })
+                     if(val !== null || undefined){
+                      if(id.length === 6 ){
+                        toDoList[id.slice(4,5)-1]
+                       .task[id[5]-1]
+                       .comments.push({
+                        id:`comment+${val}` , 
+                        username:'kratos',
+                        createDate : '26 december 2022' , 
+                        image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
+                        comment : newComment ,
+                      })
+                     }
+                     else{
+                        toDoList[id.slice(4,5)-1]
+                       .task[0]
+                       .comments.push({
+                        id:`comment+${val}` , 
+                        username:'kratos',
+                        createDate : '26 december 2022' , 
+                        image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
+                        comment : newComment ,
+                      })
+                     }
+                     }
+                    }
+                    dispatch({
+                      type : 'SET_NEW_COMMENT' ,
+                      toDoList : toDoList
+                    })
+                   }}
+                >
                   Comment
                 </motion.div>
               </div>

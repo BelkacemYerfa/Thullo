@@ -321,6 +321,10 @@ export const reducer = (state , action)=>{
     ...state ,
     toDoList : action.toDoList
    }
+   case 'SET_NEW_COMMENT' : return {
+    ...state ,
+    toDoList : action.toDoList
+   }
    default : return state 
   }
 }

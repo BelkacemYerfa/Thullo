@@ -40,14 +40,15 @@ export const CoverCard = ({ taskId })=>{
      <div className='imagesHolder' >
        {
          images.map(image => (
-          <img   
+          <motion.img  
+           whileTap={{scale : .9}} 
            className='imageHolder'
            id={image?.id}
            src={image?.download_url} 
            alt="pic" 
            key={image?.id}
            onClick={()=>{
-            setNewImage(image?.download_url)
+            setNewImage(image?.download_url);
            }}
            />
          ))
