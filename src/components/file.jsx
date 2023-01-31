@@ -52,8 +52,7 @@ export const File = ()=>{
                       height={70} width={70}
                       alt="userImage" />
                      {
-                      user?.id === users[2]?.id
-                       && users?.length - 3 >= 1 
+                      users?.length - 3 >= 1 
                        && (
                       <div className="dataUserOverlay" 
                        onClick={toggleShow}

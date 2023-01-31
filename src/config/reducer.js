@@ -4,7 +4,7 @@ export let initialState = {
   {
     photoURL : null , 
     job : 'admin' , 
-    id : 'random' , 
+    id : 'random1' , 
     username :'Belkacem' , 
   } , 
   {
@@ -113,7 +113,8 @@ export let initialState = {
             username:'bylka' ,
             createDate : '30 december 2022' , 
             image : 'https://w0.peakpx.com/wallpaper/331/150/HD-wallpaper-sad-boy-hotaro-art-cartoon-sadboy-dark-hotarooreki-feeling-anime-thumbnail.jpg' ,  
-            comment : 'some random data from some cases' ,}
+            comment : 'some random data from some cases' ,
+          }
         ] , 
         description : 'Just A random Data for some Cases'
       } , 
@@ -333,6 +334,10 @@ export const reducer = (state , action)=>{
    case 'SET_NEW_BOARD_DESCRIPTION' : return {
     ...state , 
     boardDescription : action.boardDescription
+   }
+   case 'REMOVE_USER_FROM_BOARD' : return {
+    ...state ,
+    users : action.users
    }
    default : return state 
   }

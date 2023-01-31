@@ -8,18 +8,18 @@ export const DeletePop = ({handleToggle , CommentId , taskId})=>{
     handleToggle(false)
   }
    console.log(
-    'task42'.length
+    'comment2'.slice(7 , 8)
     )
   const DeleteComment = ()=>{
       if(taskId.length === 6){
-         toDoList[taskId.slice(4,5)-1]
+         delete toDoList[taskId.slice(4,5)-1]
         .task[taskId[5]-1]
-        .comments.splice(CommentId.slice(7 , 8) - 1 , 1)
+        .comments[CommentId.slice(7 , 8) - 1]
       }
       else{
         delete toDoList[taskId.slice(4,5)-1]
         .task[0]
-        .comments.splice(CommentId.slice(7 , 8) - 1 , 1)
+        .comments[CommentId.slice(7 , 8) - 1]
       }
       dispatch({
         type : 'DELETE_COMMENT' , 

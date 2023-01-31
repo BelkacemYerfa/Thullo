@@ -4,13 +4,6 @@ import { motion } from 'framer-motion'
 import { useDataLayervValue } from "../config/dataLayer";
 
 export const BoardInfo = ({users , toggleShow})=>{
-  /*
-   functionalities : 
-      card description 
-      board description
-      fixing a bug in the label addition
-      changing the cover component system
-  */
   const [{boardDescription} , dispatch] = useDataLayervValue()
   const [toggle , setToggle] = useState(false) ; 
   const [DescriptionData , setCardDescription] = useState(true) ; 
