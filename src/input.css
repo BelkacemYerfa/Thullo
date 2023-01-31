@@ -161,7 +161,7 @@ body:is(.tasksHolder){
     @apply flex items-center justify-between w-full px-6 py-9
   }
   .fileSettings {
-    @apply flex items-center gap-[18px]
+    @apply flex items-center justify-center gap-[18px]
   }
   .usersTable{
     @apply hidden md:flex items-center gap-4
@@ -500,7 +500,10 @@ body:is(.tasksHolder){
     gap-y-3 mt-3 ; 
   }
   .imageHolder{
-    @apply relative cursor-pointer h-12 w-12 rounded !important
+    @apply relative cursor-pointer rounded !important
+  }
+  .imageHolder2{
+    @apply h-12 w-12 !important
   }
   .dataUserOverlay{
     @apply absolute top-0 left-0 h-9 w-9 rounded-xl bg-gray-500/50

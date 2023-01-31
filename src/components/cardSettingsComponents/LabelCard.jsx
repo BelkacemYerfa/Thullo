@@ -29,7 +29,9 @@ export const LabelCard = ({ tags , taskId })=>{
     <form action="" className='CardFormat' >
       <input className='searchInput' type="text" placeholder='Label' 
        onChange={(e)=>{
-        setTagName(e.target.value)
+        if(e.target.value !== '' || undefined || null){
+          setTagName(e.target.value)
+        }
        }}
       />
     </form>
@@ -79,28 +81,30 @@ export const LabelCard = ({ tags , taskId })=>{
        type='submit'
        className='addBtn' 
        onClick={()=>{
-        if(taskId.length === 6){
-          toDoList[taskId.slice(4,5)-1]
-         .task[taskId[5]-1]
-         .tags?.push({
-          tagName : tagName ,
-          bg : tagBg ,
-          fontColor : '#D3EADD'
+        if(tagName !== null || undefined || '') {
+          if(taskId.length === 6){
+            toDoList[taskId.slice(4,5)-1]
+           .task[taskId[5]-1]
+           .tags?.push({
+            tagName : tagName ,
+            bg : tagBg ,
+            fontColor : '#D3EADD'
+           })
+         }
+         else{
+            toDoList[taskId.slice(4,5)-1]
+           .task[0]
+           .tags.push({
+            tagName : tagName ,
+            bg : tagBg ,
+            fontColor : '#D3EADD'
+           })
+         }
+         dispatch({
+            type : 'ADD_ATTRIBUTE' ,
+            toDoList : toDoList
          })
-       }
-       else{
-          toDoList[taskId.slice(4,5)-1]
-         .task[0]
-         .tags.push({
-          tagName : tagName ,
-          bg : tagBg ,
-          fontColor : '#D3EADD'
-         })
-       }
-       dispatch({
-          type : 'ADD_ATTRIBUTE' ,
-          toDoList : toDoList
-       })
+        }
        }}
        >
         Add

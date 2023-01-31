@@ -42,7 +42,7 @@ export const CoverCard = ({ taskId })=>{
          images.map(image => (
           <motion.img  
            whileTap={{scale : .9}} 
-           className='imageHolder'
+           className='imageHolder imageHolder2'
            id={image?.id}
            src={image?.download_url} 
            alt="pic" 
@@ -63,20 +63,22 @@ export const CoverCard = ({ taskId })=>{
        type='submit'
        className='addBtn' 
        onClick={()=>{
-        if(taskId.length === 6){
-          toDoList[taskId.slice(4,5)-1]
-         .task[taskId[5]-1]
-         .image = image
-       }
-       else{
-          toDoList[taskId.slice(4,5)-1]
-         .task[0]
-         .image = image
-       }
-        dispatch({
-          type : 'SET_NEW_IMAGE' ,
-          toDoList : toDoList
-        })
+        if(image !== null || undefined ) {
+          if(taskId.length === 6){
+            toDoList[taskId.slice(4,5)-1]
+           .task[taskId[5]-1]
+           .image = image
+         }
+         else{
+            toDoList[taskId.slice(4,5)-1]
+           .task[0]
+           .image = image
+         }
+          dispatch({
+            type : 'SET_NEW_IMAGE' ,
+            toDoList : toDoList
+          })
+        }
        }}
        >
         Add

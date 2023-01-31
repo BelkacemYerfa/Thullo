@@ -22,6 +22,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
   },[comments]);
   const [{toDoList} , dispatch] = useDataLayervValue();
   const [DescriptionData , setCardDescription] = useState(true) ; 
+  const [newDescriptionData , setCardNewDescription] = useState(description) ;
   const [newComment , setNewComment] = useState(null)
   const [Members , setMembers] = useState(false);
   const [Labels , setLabels] = useState(false);
@@ -162,7 +163,13 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                 <textarea 
                   className="textarea" name="" 
                   placeholder="Description..."
-                  id="textarea" rows={7} >
+                  id="textarea" rows={7} 
+                  onChange = {(e)=>{
+                    if(e.target.value !== '' || null || undefined){
+                      setCardNewDescription(e.target.value)
+                    }
+                  }}
+                  >
                     {
                       description
                     }
@@ -170,7 +177,25 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                 <div className="desciptionBtns" >
                     <motion.div 
                     whileTap={{scale : .9}}
-                    className="btn Btn1">
+                    className="btn Btn1"
+                    onClick={()=>{
+                      if(id.length === 6 ){
+                        toDoList[id.slice(4,5)-1]
+                        .task[id[5]-1]
+                        .description = newDescriptionData
+                      }
+                      else{
+                        toDoList[id.slice(4,5)-1]
+                        .task[0]
+                        .description = newDescriptionData
+                      }
+                      dispatch({
+                          type : 'SET_NEW_DESCRIPTION' ,
+                          toDoList : toDoList
+                      })
+                      handleCardDescription()
+                     }}
+                    >
                       Save
                     </motion.div>
                     <div className="btn Btn2"

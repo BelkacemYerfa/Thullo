@@ -284,6 +284,7 @@ export let initialState = {
     ] , 
   },
  ] , 
+ boardDescription : 'Just A random Data for some Cases'
 }
 
 export const reducer = (state , action)=>{
@@ -324,6 +325,14 @@ export const reducer = (state , action)=>{
    case 'SET_NEW_COMMENT' : return {
     ...state ,
     toDoList : action.toDoList
+   }
+   case 'SET_NEW_DESCRIPTION' : return {
+    ...state ,
+    toDoList : action.toDoList
+   }
+   case 'SET_NEW_BOARD_DESCRIPTION' : return {
+    ...state , 
+    boardDescription : action.boardDescription
    }
    default : return state 
   }

@@ -4,10 +4,17 @@ import { motion } from 'framer-motion'
 import { useDataLayervValue } from "../config/dataLayer";
 
 export const BoardInfo = ({users , toggleShow})=>{
+  /*
+   functionalities : 
+      card description 
+      board description
+      fixing a bug in the label addition
+      changing the cover component system
+  */
+  const [{boardDescription} , dispatch] = useDataLayervValue()
   const [toggle , setToggle] = useState(false) ; 
   const [DescriptionData , setCardDescription] = useState(true) ; 
-  const boardDescription = 'Just A random Data for some Cases' ;
-
+  const [NewBoardDescription , setNewBoardDescription] = useState(boardDescription)
   const handleCardDescription = ()=>{
     setCardDescription(!DescriptionData);
   }
@@ -97,7 +104,14 @@ export const BoardInfo = ({users , toggleShow})=>{
             name="" 
             placeholder="Description..." 
             id="textraea" 
-            rows={10} >
+            rows={10} 
+            onChange={(e)=>{
+                if(e.target.value !== '' || null || undefined ){
+                  setNewBoardDescription(e.target.value)
+                }
+            }}
+
+            >
               { boardDescription }
             </textarea>
           </div>
@@ -105,7 +119,15 @@ export const BoardInfo = ({users , toggleShow})=>{
           <div className="desciptionBtns" >
             <motion.div 
             whileTap={{scale : .9}}
-            className="btn Btn1">
+            className="btn Btn1"
+            onClick={()=>{
+              dispatch({
+                type : 'SET_NEW_BOARD_DESCRIPTION',
+                boardDescription : NewBoardDescription
+              })
+              handleCardDescription()
+            }}
+            >
               Save
             </motion.div>
             <div 
