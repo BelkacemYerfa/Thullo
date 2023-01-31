@@ -98,7 +98,6 @@ export let initialState = {
             image : 'https://i.pinimg.com/originals/10/34/3b/10343b907edd76570d58283ebd13555b.jpg',
             id : 'user8'
           } , 
-
         ] , 
         comments : [
           {
@@ -108,13 +107,6 @@ export let initialState = {
             image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
             comment : '“The gladdest moment in human life, methinks, is a departure into unknown lands.” – Sir Richard Burton' ,
           } , 
-          {
-            id : 'comment2' , 
-            username:'bylka' ,
-            createDate : '30 december 2022' , 
-            image : 'https://w0.peakpx.com/wallpaper/331/150/HD-wallpaper-sad-boy-hotaro-art-cartoon-sadboy-dark-hotarooreki-feeling-anime-thumbnail.jpg' ,  
-            comment : 'some random data from some cases' ,
-          }
         ] , 
         description : 'Just A random Data for some Cases'
       } , 

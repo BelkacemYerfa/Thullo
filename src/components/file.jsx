@@ -52,14 +52,14 @@ export const File = ()=>{
                       height={70} width={70}
                       alt="userImage" />
                      {
-                      users?.length - 3 >= 1 
-                       && (
-                      <div className="dataUserOverlay" 
-                       onClick={toggleShow}
-                      >
-                        +{users?.length - 3}
-                      </div>
-                      )
+                       users?.length - 3 >= 1 ?
+                        (
+                          <div className="dataUserOverlay" 
+                            onClick={toggleShow}
+                          >
+                            +{users?.length - 3}
+                          </div>
+                        ) : null
                      }
                     </>
                     ) : (

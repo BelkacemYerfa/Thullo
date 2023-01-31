@@ -10,23 +10,6 @@ export const DeletePop = ({handleToggle , CommentId , taskId})=>{
    console.log(
     'comment2'.slice(7 , 8)
     )
-  const DeleteComment = ()=>{
-      if(taskId.length === 6){
-         delete toDoList[taskId.slice(4,5)-1]
-        .task[taskId[5]-1]
-        .comments[CommentId.slice(7 , 8) - 1]
-      }
-      else{
-        delete toDoList[taskId.slice(4,5)-1]
-        .task[0]
-        .comments[CommentId.slice(7 , 8) - 1]
-      }
-      dispatch({
-        type : 'DELETE_COMMENT' , 
-        toDoList : toDoList
-      })
-    ClosePop()
-    }
   return(
     <motion.div 
     initial={{
@@ -55,7 +38,27 @@ export const DeletePop = ({handleToggle , CommentId , taskId})=>{
         whileTap={{scale : .9}}
         type="submit" 
         className="CommentBtn YupBtn"
-        onClick={DeleteComment}
+        onClick={()=>{
+          if(taskId.length === 6){
+             for(let i=0 ; i<toDoList[taskId.slice(4,5)-1].task[taskId[5]-1].comments.length ; i++){
+              if(toDoList[taskId.slice(4,5)-1].task[taskId[5]-1].comments[i].id === CommentId){
+                toDoList[taskId.slice(4,5)-1].task[taskId[5]-1].comments.splice(i , 1)
+              }
+             }
+          }
+          else{
+            for(let i=0 ; i<toDoList[taskId.slice(4,5)-1].task[0].comments.length ; i++){
+              if(toDoList[taskId.slice(4,5)-1].task[0].comments[i].id === CommentId){
+                toDoList[taskId.slice(4,5)-1].task[0].comments.splice(i , 1)
+              }
+             }
+          }
+          dispatch({
+            type : 'DELETE_COMMENT' , 
+            toDoList : toDoList
+          })
+        ClosePop()
+        }}
         >
          Yup
         </motion.button>

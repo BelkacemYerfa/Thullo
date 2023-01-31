@@ -44,12 +44,16 @@ export const UserList = ({photoURL , id , username , job , addedUser })=>{
          scale : .9
        }}
        className={job === 'admin' ? 'admin' : 'member'} onClick={()=>{
-         if(id === users[id.slice(6,7) - 1].id && job === 'member'){
-          delete users[id.slice(6,7) - 1]
-          dispatch({
-            type : 'REMOVE_USER_FROM_BOARD',
-            users : users
-          })
+         if(job === 'member'){
+          for(let i=0 ; i<users.length ; i++){
+            if(users[i].id === id){
+              users.splice(i , 1)
+            }
+          }
+            dispatch({
+              type : 'REMOVE_USER_FROM_BOARD',
+              users : users
+            })
          }
        }} >
          {job === 'admin' ? ('Admin') : ('Remove')}

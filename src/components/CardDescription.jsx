@@ -11,23 +11,20 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
   const CloseData = ()=>{
     handleToggle(false)
   }
-  let [commentsData , setCommentsData] = useState(null) ;
-  useEffect(()=>{
-   if(comments.length !== 0){
-    setCommentsData(comments)
-   }
-   else{
-    setCommentsData(null)
-   }
-  },[comments]);
   const [{toDoList} , dispatch] = useDataLayervValue();
   const [DescriptionData , setCardDescription] = useState(true) ; 
   const [newDescriptionData , setCardNewDescription] = useState(description) ;
+  const [RemoveCounter , setRemoveCounter] = useState(0) ;
   const [newComment , setNewComment] = useState(null)
   const [Members , setMembers] = useState(false);
   const [Labels , setLabels] = useState(false);
   const [Cover , setCover] = useState(false);
   const [Delete , setDelete] = useState(false);
+
+  useEffect(()=>{
+    setRemoveCounter(RemoveCounter+1)
+  } , [comments])
+
   const handleCommentDelete =()=>{
     setDelete(!Delete);
   }
@@ -277,8 +274,8 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
             <br />
             <div className='commentsHolder' >
                 {
-                  commentsData !== null || undefined ?  
-                  commentsData.map(comment => (
+                  (toDoList[id.slice(4,5)-1].task[0].comments !== null || undefined) && RemoveCounter < toDoList[id.slice(4,5)-1].task[0].comments.length ?  
+                  toDoList[id.slice(4,5)-1].task[0].comments.map(comment => (
                     <>
                     <div className='commentOfUser' >
                       <div className='headComment' >
