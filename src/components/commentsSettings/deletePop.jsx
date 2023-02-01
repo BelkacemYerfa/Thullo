@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useDataLayervValue } from "../../config/dataLayer";
 
-export const DeletePop = ({handleToggle , CommentId , taskId})=>{
+export const DeletePop = ({handleToggle , comments , CommentId , taskId})=>{
   const [{toDoList} , dispatch] = useDataLayervValue();
   console.log(CommentId)
   const ClosePop = ()=>{
@@ -40,15 +40,21 @@ export const DeletePop = ({handleToggle , CommentId , taskId})=>{
         className="CommentBtn YupBtn"
         onClick={()=>{
           if(taskId.length === 6){
-             for(let i=0 ; i<toDoList[taskId.slice(4,5)-1].task[taskId[5]-1].comments.length ; i++){
-              if(toDoList[taskId.slice(4,5)-1].task[taskId[5]-1].comments[i].id === CommentId){
+             for(let i=0 ; i<comments.length ; i++){
+              if(comments[0].id === CommentId){
+                toDoList[taskId.slice(4,5)-1].task[taskId[5]-1].comments.shift()
+              }
+              else if(comments[i].id === CommentId){
                 toDoList[taskId.slice(4,5)-1].task[taskId[5]-1].comments.splice(i , 1)
               }
              }
           }
           else{
-            for(let i=0 ; i<toDoList[taskId.slice(4,5)-1].task[0].comments.length ; i++){
-              if(toDoList[taskId.slice(4,5)-1].task[0].comments[i].id === CommentId){
+            for(let i=0 ; i<comments.length ; i++){
+              if(comments[0].id === CommentId){
+                toDoList[taskId.slice(4,5)-1].task[0].comments.shift()
+              }
+              else if(comments[i].id === CommentId){
                 toDoList[taskId.slice(4,5)-1].task[0].comments.splice(i , 1)
               }
              }

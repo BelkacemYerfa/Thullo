@@ -20,7 +20,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
   const [Labels , setLabels] = useState(false);
   const [Cover , setCover] = useState(false);
   const [Delete , setDelete] = useState(false);
-
+  
   useEffect(()=>{
     setRemoveCounter(RemoveCounter+1)
   } , [comments])
@@ -274,8 +274,8 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
             <br />
             <div className='commentsHolder' >
                 {
-                  (toDoList[id.slice(4,5)-1].task[0].comments !== null || undefined) && RemoveCounter < toDoList[id.slice(4,5)-1].task[0].comments.length ?  
-                  toDoList[id.slice(4,5)-1].task[0].comments.map(comment => (
+                  (comments !== null || undefined) && RemoveCounter <= comments.length ?  
+                  comments.map(comment => (
                     <>
                     <div className='commentOfUser' >
                       <div className='headComment' >
@@ -315,6 +315,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                         Delete && (
                           <DeletePop 
                             handleToggle={handleCommentToggle} 
+                            comments={comments}
                             CommentId={comment?.id} 
                             taskId={id}
                           />
