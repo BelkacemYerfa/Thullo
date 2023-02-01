@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect , useState } from 'react';
 import { useDataLayervValue } from '../../config/dataLayer';
+import { Loading } from '@nextui-org/react';
 
 export const CoverCard = ({ taskId })=>{
   const [{toDoList} , dispatch] = useDataLayervValue();
@@ -12,11 +13,13 @@ export const CoverCard = ({ taskId })=>{
     }
   };
   const [image , setNewImage] = useState(null) ;
+  const [loader , setLoader] = useState(true) ; 
   const imageUrl = `https://picsum.photos/v2/list?page=${Math.round(Math.random()*10)}&limit=10` ; 
   const [images , setImages] = useState([]) ;
   const fetchImages = async ()=>{
     const response = await fetch(imageUrl) ; 
     const data = await response.json() ; 
+    setLoader(false) ;
     setImages(data) ;
   }
   useEffect(()=>{
@@ -37,7 +40,10 @@ export const CoverCard = ({ taskId })=>{
      <p className='coverDetails' >
        Search Unsplash for photos
      </p>
-     <div className='imagesHolder' >
+     {
+      loader ? (<div className='loader' >
+        <Loading />
+      </div>) : (<div className='imagesHolder' >
        {
          images.map(image => (
           <motion.img  
@@ -53,7 +59,8 @@ export const CoverCard = ({ taskId })=>{
            />
          ))
        }
-     </div>
+     </div>)
+     }
      <br />
      <div className='addNewTag'>
      <motion.button

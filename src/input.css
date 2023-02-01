@@ -495,6 +495,9 @@ body:is(.tasksHolder){
   .coverDetails{
     @apply text-selectionBoardColor text-sm font-normal mb-2 !important
   }
+  .loader{
+    @apply h-[20vh] w-full flex items-center justify-center !important
+  }
   .imagesHolder{
     @apply flex items-center justify-center flex-wrap gap-x-2 
     gap-y-3 mt-3 ; 
