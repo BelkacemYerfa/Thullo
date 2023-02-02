@@ -75,7 +75,7 @@ export const TaskCard = ({image , id , tag , description , title , tags, users ,
       }
       </div>
         {
-          comments.length !== 0 ? (
+          comments !== null && comments.length !== 0 ? (
             <div className='comments'>
               <span class="material-symbols-rounded">
               comment

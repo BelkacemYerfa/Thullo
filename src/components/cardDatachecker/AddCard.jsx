@@ -1,14 +1,46 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { CoverCard } from '../cardSettingsComponents/CoverCard';
+import { useDataLayervValue } from '../../config/dataLayer'
 
-export const AddCard = ({handleToggle})=>{
+export const AddCard = ({handleToggle , listId})=>{
+ console.log(listId)
+
+ const [{toDoList} , dispatch ] = useDataLayervValue();
+ const [addTitle , setAddTitle] = useState(null)
+ const [addCoverImage , setAddCoverImage] = useState(null)
+ const [addCover , setAddCover] = useState(false)
+
+
  const ClosePop = ()=>{
   handleToggle(false)
  }
-
- const [addCover , setAddCover] = useState(false)
-
+ const HandleCardNewImage = async(newCardCover)=>{
+  setAddCoverImage(newCardCover)
+ }
+  const HandleAddCard = ()=>{
+    toDoList[listId.slice(4,5)-1].task.push({
+      id : `task${toDoList[listId.slice(4,5)-1]
+        .task[toDoList[listId.slice(4,5)-1].task.length-1].id.slice(4,5)+1}` , 
+      image : addCoverImage ,
+      title :addTitle,
+      tags : null , 
+      users : [ 
+        {
+          name : 'kratos',
+          image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg',
+          id : 'user1' , 
+        } , 
+      ],
+      comments : null , 
+      description : null ,
+    })
+    dispatch({
+      type : 'ADD_NEW_CARD' ,
+      toDoList : toDoList
+    })
+    ClosePop()
+  }
  return(
   <motion.div
   initial={{
@@ -42,7 +74,14 @@ export const AddCard = ({handleToggle})=>{
     </motion.div>
     <img className="" src='' alt="" />
     <form action="" className="CardFormat formatRename " >
-     <input className="searchInput" placeholder='Add card title' type="text" id="" />
+     <input className="searchInput" 
+     placeholder='Add card title' type="text" id="" 
+     onChange={(e)=>{
+        if(e.target.value !== '' || undefined || null){
+          setAddTitle(e.target.value)
+        }
+     }}
+     />
     </form>
     <div className="BtnFormHolder" >
      <motion.div
@@ -74,7 +113,10 @@ export const AddCard = ({handleToggle})=>{
     </div>
     {
       addCover && (
-        <CoverCard />
+        <CoverCard 
+         listId={listId} 
+         handleImage={HandleCardNewImage} 
+        />
       )
     }
     <div className='BtnCardHolder' >
@@ -87,7 +129,9 @@ export const AddCard = ({handleToggle})=>{
       whileTap={{
        scale : .9
       }}
-     className='BtnAdd' >
+     className='BtnAdd' 
+      onClick={HandleAddCard}
+     >
       <span class="material-symbols-rounded">
        add
       </span>

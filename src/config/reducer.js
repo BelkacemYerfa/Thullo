@@ -330,6 +330,10 @@ export const reducer = (state , action)=>{
     ...state ,
     toDoList : action.toDoList
    }
+   case 'ADD_NEW_CARD' : return {
+    ...state ,
+    toDoList : action.toDoList
+   }
    case 'SET_NEW_BOARD_DESCRIPTION' : return {
     ...state , 
     boardDescription : action.boardDescription

@@ -523,7 +523,7 @@ body:is(.tasksHolder){
     @apply mt-2 w-full flex items-center gap-2 flex-wrap
   }
   .TagColor{
-    @apply w-[50px] h-8 rounded-lg cursor-pointer !important
+    @apply w-[50px] h-8 rounded cursor-pointer !important
   }
   .addNewTag{
     @apply w-full h-10 flex items-center justify-center

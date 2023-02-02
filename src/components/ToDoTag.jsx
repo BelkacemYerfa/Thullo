@@ -115,7 +115,7 @@ export const ToDoTag = ({tag , task , id })=>{
      CardRename && (<RenameCard handleToggle={handleRenameCard} CardId={id} />)
     }
     {
-      CardAdd && (<AddCard handleToggle={handleAddCard} />)
+      CardAdd && (<AddCard handleToggle={handleAddCard} listId={id} />)
     }
   </>
  );

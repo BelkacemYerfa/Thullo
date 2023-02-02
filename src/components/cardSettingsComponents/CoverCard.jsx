@@ -3,15 +3,8 @@ import { useEffect , useState } from 'react';
 import { useDataLayervValue } from '../../config/dataLayer';
 import { Loading } from '@nextui-org/react';
 
-export const CoverCard = ({ taskId })=>{
+export const CoverCard = ({ taskId , listId , handleImage })=>{
   const [{toDoList} , dispatch] = useDataLayervValue();
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': '8d6796a13fmsh5b6b09d9f9ca34ep1262acjsnbbd1102f05aa',
-      'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
-    }
-  };
   const [image , setNewImage] = useState(null) ;
   const [loader , setLoader] = useState(true) ; 
   const imageUrl = `https://picsum.photos/v2/list?page=${Math.round(Math.random()*10)}&limit=10` ; 
@@ -71,6 +64,9 @@ export const CoverCard = ({ taskId })=>{
        className='addBtn' 
        onClick={()=>{
         if(image !== null || undefined ) {
+          if(listId !== null || undefined){
+            handleImage(image)
+          }
           if(taskId.length === 6){
             toDoList[taskId.slice(4,5)-1]
            .task[taskId[5]-1]
