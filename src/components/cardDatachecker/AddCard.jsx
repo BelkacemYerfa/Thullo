@@ -15,13 +15,12 @@ export const AddCard = ({handleToggle , listId})=>{
  const ClosePop = ()=>{
   handleToggle(false)
  }
- const HandleCardNewImage = async(newCardCover)=>{
+ const HandleCardNewImage = (newCardCover)=>{
   setAddCoverImage(newCardCover)
  }
   const HandleAddCard = ()=>{
     toDoList[listId.slice(4,5)-1].task.push({
-      id : `task${toDoList[listId.slice(4,5)-1]
-        .task[toDoList[listId.slice(4,5)-1].task.length-1].id.slice(4,5)+1}` , 
+      id : `task${crypto.randomUUID()}` , 
       image : addCoverImage ,
       title :addTitle,
       tags : null , 
@@ -32,7 +31,15 @@ export const AddCard = ({handleToggle , listId})=>{
           id : 'user1' , 
         } , 
       ],
-      comments : null , 
+      comments : [
+        {
+          id : 'comment1' , 
+          username:'kratos' ,
+          createDate : '26 december 2022' , 
+          image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
+          comment : '“The gladdest moment in human life, methinks, is a departure into unknown lands.” – Sir Richard Burton' ,
+        }
+      ] , 
       description : null ,
     })
     dispatch({

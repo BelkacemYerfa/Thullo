@@ -228,43 +228,22 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                 className='commentBtn' 
                   onClick={()=>{
                     if(newComment !== '' || null || undefined){
-                      let val
-                      toDoList[id.slice(4,5)-1].task[0].comments.map( comment => {
-                       val = Math.floor(Math.random()*10)
-                        if(comment.id === `comment${val}`){
-                         val = Math.floor(Math.random()*10)
+                      for(let i = 0 ; i < toDoList[id.slice(4,5)-1].task.length ; i++){
+                        if(toDoList[id.slice(4,5)-1].task[i].id === id){
+                          toDoList[id.slice(4,5)-1].task[i].comments.push({
+                            id:`comment+${crypto.randomUUID()}` , 
+                            username:'kratos',
+                            createDate : '26 december 2022' , 
+                            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
+                            comment : newComment ,
+                          })
                         }
-                        return val 
+                      }
+                      dispatch({
+                        type : 'SET_NEW_COMMENT' ,
+                        toDoList : toDoList
                       })
-                     if(val !== null || undefined){
-                      if(id.length === 6 ){
-                        toDoList[id.slice(4,5)-1]
-                       .task[id[5]-1]
-                       .comments.push({
-                        id:`comment+${val}` , 
-                        username:'kratos',
-                        createDate : '26 december 2022' , 
-                        image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
-                        comment : newComment ,
-                      })
-                     }
-                     else{
-                        toDoList[id.slice(4,5)-1]
-                       .task[0]
-                       .comments.push({
-                        id:`comment+${val}` , 
-                        username:'kratos',
-                        createDate : '26 december 2022' , 
-                        image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
-                        comment : newComment ,
-                      })
-                     }
-                     }
                     }
-                    dispatch({
-                      type : 'SET_NEW_COMMENT' ,
-                      toDoList : toDoList
-                    })
                    }}
                 >
                   Comment
