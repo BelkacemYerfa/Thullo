@@ -5,10 +5,6 @@ import { SearchBar } from "./search";
 import { useDataLayervValue } from "../config/dataLayer";
 
 export const File = ()=>{
- const [visibility , setVisbility] = useState({
-  name : 'Private' , 
-  codeIcon : 'lock'
- }) ; 
  const [toggleshow , setToggleShow] = useState(false)
  const toggleShow = (toggleState)=>{
   setToggleShow(toggleState)

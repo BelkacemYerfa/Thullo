@@ -20,7 +20,10 @@ export const UserSettings = ()=>{
      target='_blank'
      href="https://github.com/BelkacemYerfa"
      whileTap={{
-      scale : .9
+      scale : .95
+     }}
+     whileHover={{
+      scale : 1.07
      }}
      >
      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" style={{
@@ -32,8 +35,11 @@ export const UserSettings = ()=>{
     </motion.a>
     <motion.div
     whileTap={{
-     scale : .9
+     scale : .95
     }}
+    whileHover={{
+      scale : 1.07
+     }}
     className='account LogOut' >
      <span class="material-symbols-rounded">
      logout

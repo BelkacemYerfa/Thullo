@@ -3,7 +3,7 @@ import { useDataLayervValue } from '../config/dataLayer';
 import { motion } from 'framer-motion';
 export const ToDos = ()=>{
 
- const [{toDoList} , dispatch ] = useDataLayervValue()
+ const [{toDoList}] = useDataLayervValue()
 
  return(
     <div className="toDo" >

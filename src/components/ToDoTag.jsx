@@ -1,13 +1,11 @@
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react';
-import { useDataLayervValue } from '../config/dataLayer';
+import { useState } from 'react';
 import { AddToList } from './addToList';
 import { AddCard } from './cardDatachecker/AddCard';
 import { DeleteCard } from './cardDatachecker/DeleteCard';
 import { RenameCard } from './cardDatachecker/RenameCard';
 import { TaskCard } from './taskCard';
 export const ToDoTag = ({tag , task , id })=>{
- const [{toDoList} , dispatch ] = useDataLayervValue();
  const [settToggle , setSettToggle] = useState(false);
  const [CardDelete , setCardDelete] = useState(false) ;
  const [CardRename , setCardRename] = useState(false) ;

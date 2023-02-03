@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion' ; 
-import { useState , useEffect } from 'react';
+import { useState } from 'react';
 import { useDataLayervValue } from '../../config/dataLayer';
 
 export const LabelCard = ({ tags , taskId })=>{
