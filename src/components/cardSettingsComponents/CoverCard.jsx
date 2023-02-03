@@ -3,7 +3,7 @@ import { useEffect , useState } from 'react';
 import { useDataLayervValue } from '../../config/dataLayer';
 import { Loading } from '@nextui-org/react';
 
-export const CoverCard = ({ taskId , listId , handleImage })=>{
+export const CoverCard = ({ taskId , listId , handleImage , need })=>{
   const [{toDoList} , dispatch] = useDataLayervValue();
   const [image , setNewImage] = useState(null) ;
   const [loader , setLoader] = useState(true) ; 
@@ -64,19 +64,16 @@ export const CoverCard = ({ taskId , listId , handleImage })=>{
        className='addBtn' 
        onClick={()=>{
         if(image !== null || undefined ) {
-          if(listId !== null || undefined){
+          if((listId !== null || undefined ) && need===true  ){
             handleImage(image)
           }
-          if(taskId.length === 6){
-            toDoList[taskId.slice(4,5)-1]
-           .task[taskId[5]-1]
-           .image = image
-         }
-         else{
-            toDoList[taskId.slice(4,5)-1]
-           .task[0]
-           .image = image
-         }
+          for(let i=0 ; i<toDoList.length ; i++){
+            for(let j=0 ; j<toDoList[i].task.length ; j++){
+              if(toDoList[i].task[j].id === taskId){
+                toDoList[i].task[j].image = image ;
+              }
+            }
+          }
           dispatch({
             type : 'SET_NEW_IMAGE' ,
             toDoList : toDoList

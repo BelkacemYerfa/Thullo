@@ -7,9 +7,7 @@ export const DeletePop = ({handleToggle , comments , CommentId , taskId})=>{
   const ClosePop = ()=>{
     handleToggle(false)
   }
-   console.log(
-    'comment2'.slice(7 , 8)
-    )
+
   return(
     <motion.div 
     initial={{
@@ -39,25 +37,16 @@ export const DeletePop = ({handleToggle , comments , CommentId , taskId})=>{
         type="submit" 
         className="CommentBtn YupBtn"
         onClick={()=>{
-          if(taskId.length === 6){
-             for(let i=0 ; i<comments.length ; i++){
-              if(comments[0].id === CommentId){
-                toDoList[taskId.slice(4,5)-1].task[taskId[5]-1].comments.shift()
+          for(let i = 0 ; i < toDoList.length ; i++){
+            for(let j=0 ; j < toDoList[i].task.length ; j++){
+              if(toDoList[i].task[j].id === taskId){
+                for(let k = 0 ; k < toDoList[i].task[j].comments.length ; k++){
+                  if(toDoList[i].task[j].comments[k].id === CommentId){
+                    toDoList[i].task[j].comments.splice(k , 1)
+                  }
+                }
               }
-              else if(comments[i].id === CommentId){
-                toDoList[taskId.slice(4,5)-1].task[taskId[5]-1].comments.splice(i , 1)
-              }
-             }
-          }
-          else{
-            for(let i=0 ; i<comments.length ; i++){
-              if(comments[0].id === CommentId){
-                toDoList[taskId.slice(4,5)-1].task[0].comments.shift()
-              }
-              else if(comments[i].id === CommentId){
-                toDoList[taskId.slice(4,5)-1].task[0].comments.splice(i , 1)
-              }
-             }
+            }
           }
           dispatch({
             type : 'DELETE_COMMENT' , 

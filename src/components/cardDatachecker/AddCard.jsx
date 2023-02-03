@@ -23,7 +23,7 @@ export const AddCard = ({handleToggle , listId})=>{
       id : `task${crypto.randomUUID()}` , 
       image : addCoverImage ,
       title :addTitle,
-      tags : null , 
+      tags : [] , 
       users : [ 
         {
           name : 'kratos',
@@ -31,16 +31,8 @@ export const AddCard = ({handleToggle , listId})=>{
           id : 'user1' , 
         } , 
       ],
-      comments : [
-        {
-          id : 'comment1' , 
-          username:'kratos' ,
-          createDate : '26 december 2022' , 
-          image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
-          comment : '“The gladdest moment in human life, methinks, is a departure into unknown lands.” – Sir Richard Burton' ,
-        }
-      ] , 
-      description : null ,
+      comments : [] , 
+      description : '' ,
     })
     dispatch({
       type : 'ADD_NEW_CARD' ,
@@ -123,6 +115,7 @@ export const AddCard = ({handleToggle , listId})=>{
         <CoverCard 
          listId={listId} 
          handleImage={HandleCardNewImage} 
+         need={true}
         />
       )
     }

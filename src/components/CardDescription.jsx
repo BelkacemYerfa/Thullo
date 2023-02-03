@@ -162,6 +162,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                   placeholder="Description..."
                   id="textarea" rows={7} 
                   onChange = {(e)=>{
+                    e.preventDefault()
                     if(e.target.value !== '' || null || undefined){
                       setCardNewDescription(e.target.value)
                     }
@@ -176,20 +177,19 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                     whileTap={{scale : .9}}
                     className="btn Btn1"
                     onClick={()=>{
-                      if(id.length === 6 ){
-                        toDoList[id.slice(4,5)-1]
-                        .task[id[5]-1]
-                        .description = newDescriptionData
-                      }
-                      else{
-                        toDoList[id.slice(4,5)-1]
-                        .task[0]
-                        .description = newDescriptionData
-                      }
-                      dispatch({
+                      if(newDescriptionData !== '' || null || undefined){
+                        for(let i = 0 ; i < toDoList.length ; i++){
+                          for(let j = 0 ; j < toDoList[i].task.length ; j++){
+                            if(toDoList[i].task[j].id === id){
+                              toDoList[i].task[j].description = newDescriptionData
+                            }
+                          }
+                        }
+                        dispatch({
                           type : 'SET_NEW_DESCRIPTION' ,
                           toDoList : toDoList
                       })
+                      }
                       handleCardDescription()
                      }}
                     >
@@ -216,7 +216,13 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                     className="textarea commentData" name="" 
                     placeholder="Write a comment..."
                     id="textarea" rows={3}
-                    onChange={(e)=>setNewComment(e.target.value)}
+                    onChange={(e)=>{
+                      e.preventDefault()
+                        if(e.target.value !== '' || null || undefined){
+                          setNewComment(e.target.value)
+                        }
+                    }
+                  }
                   ></textarea>
                 </div>
               </div>
@@ -228,15 +234,17 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                 className='commentBtn' 
                   onClick={()=>{
                     if(newComment !== '' || null || undefined){
-                      for(let i = 0 ; i < toDoList[id.slice(4,5)-1].task.length ; i++){
-                        if(toDoList[id.slice(4,5)-1].task[i].id === id){
-                          toDoList[id.slice(4,5)-1].task[i].comments.push({
-                            id:`comment+${crypto.randomUUID()}` , 
-                            username:'kratos',
-                            createDate : '26 december 2022' , 
-                            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
-                            comment : newComment ,
-                          })
+                      for(let i = 0 ; i < toDoList.length ; i++){
+                        for(let j = 0 ; j < toDoList[i].task.length ; j++){
+                          if(toDoList[i].task[j].id === id){
+                            toDoList[i].task[j].comments.push({
+                              id:`comment+${crypto.randomUUID()}` , 
+                              username:'kratos',
+                              createDate : '26 december 2022' , 
+                              image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
+                              comment : newComment ,
+                            })
+                          }
                         }
                       }
                       dispatch({
@@ -337,7 +345,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                     }
                     {
                       Cover && action.id === 2 && (
-                      <CoverCard taskId={id} />
+                      <CoverCard taskId={id} need={false} />
                       )
                     }
                     {

@@ -81,25 +81,18 @@ export const LabelCard = ({ tags , taskId })=>{
        type='submit'
        className='addBtn' 
        onClick={()=>{
-        if(tagName !== null || undefined || '') {
-          if(taskId.length === 6){
-            toDoList[taskId.slice(4,5)-1]
-           .task[taskId[5]-1]
-           .tags?.push({
-            tagName : tagName ,
-            bg : tagBg ,
-            fontColor : '#D3EADD'
-           })
-         }
-         else{
-            toDoList[taskId.slice(4,5)-1]
-           .task[0]
-           .tags.push({
-            tagName : tagName ,
-            bg : tagBg ,
-            fontColor : '#D3EADD'
-           })
-         }
+        if((tagName !== null || undefined || '') && tagBg !== null  ) {
+          for(let i = 0 ; i < toDoList.length ; i++){
+            for(let j = 0 ; j < toDoList[i].task.length ; j++){
+              if(toDoList[i].task[j].id === taskId){
+                toDoList[i].task[j].tags.push({
+                  tagName : tagName ,
+                  bg : tagBg , 
+                  fontColor : '#D3EADD'
+                })
+              }
+            }
+          }
          dispatch({
             type : 'ADD_ATTRIBUTE' ,
             toDoList : toDoList
