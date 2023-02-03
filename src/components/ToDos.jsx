@@ -1,14 +1,9 @@
 import { ToDoTag } from './ToDoTag';
 import { useDataLayervValue } from '../config/dataLayer';
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 export const ToDos = ()=>{
- const [DataLists , setDataLists] = useState(null);
- const [{toDoList} , dispatch ] = useDataLayervValue()
 
- useEffect(()=>{
-  setDataLists(toDoList)
- } , [toDoList])
+ const [{toDoList} , dispatch ] = useDataLayervValue()
 
  return(
     <div className="toDo" >
@@ -30,7 +25,7 @@ export const ToDos = ()=>{
       width : 300 
       }}
       className='addList' >
-        <div className="tag" >
+        <div className="uniqueTag" >
           <p className="addText" >
             Add another List
           </p>

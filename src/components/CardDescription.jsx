@@ -295,8 +295,14 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
                           {comment?.comment}
                       </div>
                       </div>
-                      <br />
-                      <hr />
+                      {
+                        comment?.id !== comments[comments.length-1].id ? (
+                          <>
+                           <br />
+                           <hr />
+                          </>
+                        ) : null
+                      }
                       <br />
                       {
                         Delete && (

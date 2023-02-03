@@ -13,7 +13,7 @@ export const File = ()=>{
  const toggleShow = (toggleState)=>{
   setToggleShow(toggleState)
  }
- const [{ accounts , users } , dispatch]  = useDataLayervValue()
+ const [{ accounts , users , BoardState } , dispatch]  = useDataLayervValue()
  const [FileSettings , setFileSetting] = useState(false) ; 
  const [usertoAdd , setUserToAdd] = useState(false) ; 
  const handleToggle = ()=>{
@@ -33,10 +33,10 @@ export const File = ()=>{
        onClick = {handleToggle}
        className='boardSelection' >
         <span class="material-symbols-rounded">
-         {visibility.codeIcon}
+         {BoardState?.codeState}
         </span>
         <span>
-        {visibility.name}
+        {BoardState?.state}
         </span>
       </motion.div>
       <div className="usersTable" >
@@ -163,7 +163,12 @@ export const File = ()=>{
          </p>
          <div className="settings" >
           <div className="choser" onClick={()=>{
-            setVisbility({name : 'Public' , codeIcon : 'public'})
+            BoardState.codeState = 'public'
+            BoardState.state = 'Public'
+            dispatch({
+              type : 'SET_BOARD_STATE' ,
+              BoardState : BoardState
+            })
             setFileSetting(false)
           }} >
             <div className="settings tableTitle " >
@@ -177,7 +182,12 @@ export const File = ()=>{
             </p>
            </div>
            <div className="choser" onClick={()=>{
-            setVisbility({name : 'Private' , codeIcon : 'lock'})
+            BoardState.codeState = 'lock'
+            BoardState.state = 'Private'
+            dispatch({
+              type : 'SET_BOARD_STATE' ,
+              BoardState : BoardState
+            })
             setFileSetting(false)
           }}  >
              <div className="settings tableTitle" >

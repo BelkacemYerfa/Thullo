@@ -1,5 +1,9 @@
 export let initialState = {
  user : null , 
+ BoardState : {
+  state : 'Public' , 
+  codeState : 'public' ,
+ } , 
  users : [
   {
     photoURL : null , 
@@ -293,6 +297,10 @@ export const reducer = (state , action)=>{
    case 'SET_USER' : return {
     ...state , 
     user : action.user 
+   }
+   case 'SET_BOARD_STATE' : return {
+    ...state ,
+    boardState : action.boardState
    }
    case 'SET_TODOLIST' : return {
     ...state , 

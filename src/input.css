@@ -302,6 +302,9 @@ body:is(.tasksHolder){
   .tag{
     @apply relative flex items-center justify-between w-full
   }
+  .uniqueTag{
+    @apply flex items-center justify-between w-[300px] !important
+  }
   .tagname{
     @apply text-sm font-medium text-userCreatorColor
     !important
@@ -342,6 +345,7 @@ body:is(.tasksHolder){
   }
   .tags{
     @apply flex items-center flex-wrap gap-x-3 gap-y-2 mb-2
+    max-h-[8vh] overflow-y-auto !important
   }
   .tagNameTable{
     @apply px-[9px] py-[2px] text-xs font-medium 
@@ -479,6 +483,7 @@ body:is(.tasksHolder){
   }
   .MembersDetails{
     @apply flex flex-col items-start gap-y-3 md:gap-y-[18px] mb-5
+    max-h-[21.7vh] overflow-y-auto !important
   }
   .userHolder{
     @apply cursor-pointer w-full flex items-center gap-x-4
@@ -543,13 +548,13 @@ body:is(.tasksHolder){
     bg-gray-500/50 top-0 left-0 flex justify-center !important
   }
   .deletePop{
-    @apply relative h-fit w-[25vw] p-5 flex items-center
-    justify-center flex-col gap-y-3 rounded-xl
-    shadow-fileBox
+    @apply relative h-fit w-[70vw] md:w-[25vw] 
+    p-5 flex items-center justify-center flex-col 
+    gap-y-3 rounded-xl shadow-fileBox
     bg-white !important
   }
   .deletePopCover{
-    @apply relative h-fit w-[25vw] p-5 
+    @apply relative h-fit w-[80vw] md:w-[25vw] p-5 
     top-[20%] flex items-center
     justify-center flex-col gap-y-3 rounded-xl
     shadow-fileBox

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useDataLayervValue } from "../../config/dataLayer";
 
-export const DeletePop = ({handleToggle , comments , CommentId , taskId})=>{
+export const DeletePop = ({handleToggle , CommentId , taskId})=>{
   const [{toDoList} , dispatch] = useDataLayervValue();
   console.log(CommentId)
   const ClosePop = ()=>{
