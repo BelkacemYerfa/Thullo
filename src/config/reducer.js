@@ -298,6 +298,14 @@ export const reducer = (state , action)=>{
     ...state , 
     user : action.user 
    }
+   case 'ADD_NEW_USER' : return {
+    ...state , 
+    accounts : action.accounts
+   }
+   case 'ADD_NEW_USER_TO_BOARD' : return {
+    ...state , 
+    users : action.users
+   }
    case 'SET_BOARD_STATE' : return {
     ...state ,
     boardState : action.boardState

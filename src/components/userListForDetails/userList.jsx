@@ -2,14 +2,27 @@ import { motion } from 'framer-motion'
 import { useDataLayervValue  } from '../../config/dataLayer';
 
 export const UserList = ({photoURL , id , username , job , addedUser })=>{
-  const [{ accounts } , dispatch]  = useDataLayervValue()
+  const [{ accounts , users } , dispatch]  = useDataLayervValue()
   const addUserToTask = ()=>{
    if(
       accounts[id.slice(6,7) - 1]?.id === id 
    && accounts[id.slice(6,7) - 1]?.added === false 
    ){
     accounts[id.slice(6,7) - 1].added = true 
-    console.log(accounts[id.slice(6,7) - 1])
+    dispatch({
+      type : 'ADD_NEW_USER',
+      accounts : accounts , 
+    })
+    users.push({
+      photoURL : photoURL , 
+      id : `random${users.length + 1}`,
+      job : 'member' , 
+      username : username
+    })
+    dispatch ({
+      type : 'ADD_NEW_USER_TO_BOARD',
+      users : users
+    })
    }else{
     alert('user already added')
    }
