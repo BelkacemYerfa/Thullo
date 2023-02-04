@@ -306,6 +306,10 @@ export const reducer = (state , action)=>{
     ...state , 
     toDoList : action.toDoList 
    }
+   case 'ADD_NEW_LIST' : return {
+    ...state ,
+    toDoList : action.toDoList
+   }
    case 'ADD_USER_TO_TASK' : return {
     ...state ,
     users : action.users

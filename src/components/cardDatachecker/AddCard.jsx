@@ -17,6 +17,7 @@ export const AddCard = ({handleToggle , listId})=>{
  }
  const HandleCardNewImage = (newCardCover)=>{
   setAddCoverImage(newCardCover)
+  setAddCover(false)
  }
   const HandleAddCard = ()=>{
     toDoList[listId.slice(4,5)-1].task.push({
@@ -71,7 +72,13 @@ export const AddCard = ({handleToggle , listId})=>{
       close
       </span>
     </motion.div>
-    <img className="" src='' alt="" />
+    {
+      addCoverImage !== null || '' ? (
+        <img className="newCardImage" src={addCoverImage} alt="" />
+      ) : (
+        <br />
+      )
+    }
     <form action="" className="CardFormat formatRename " >
      <input className="searchInput" 
      placeholder='Add card title' type="text" id="" 

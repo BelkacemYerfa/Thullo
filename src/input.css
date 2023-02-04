@@ -294,6 +294,11 @@ body:is(.tasksHolder){
     text-searchBtnBg rounded-lg cursor-pointer 
     !important
   }
+  .addListUnique{
+    @apply bg-addListBg text-sm w-[316px] px-[13px] py-2
+    text-searchBtnBg rounded-lg cursor-pointer 
+    !important
+  }
   .addanotherList{
     @apply w-[300px] bg-addListBg text-sm px-[13px] py-2
     text-searchBtnBg rounded-lg cursor-pointer 
@@ -554,7 +559,7 @@ body:is(.tasksHolder){
     bg-white !important
   }
   .deletePopCover{
-    @apply relative h-fit w-[80vw] md:w-[25vw] p-5 
+    @apply relative h-fit w-[80vw] md:w-[30vw] p-5 
     top-[20%] flex items-center
     justify-center flex-col gap-y-3 rounded-xl
     shadow-fileBox
@@ -590,5 +595,7 @@ body:is(.tasksHolder){
     bg-searchBtnBg rounded-xl text-white text-sm
     font-medium cursor-pointer !important
   }
-  
+  .newCardImage{
+    @apply h-[20vh] w-full rounded-lg !important
+  }
 }
