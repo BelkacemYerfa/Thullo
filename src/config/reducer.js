@@ -36,28 +36,32 @@ export let initialState = {
     job : 'admin' , 
     id : 'random1' , 
     username :'Belkacem' , 
-    added : true
+    added : true , 
+    addNow : true , 
   } ,
   {
     photoURL : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' , 
     id : 'random2' , 
     job : 'member' , 
     username :'kratos' ,
-    added : true
+    added : true , 
+    addNow : true , 
   },
   {
     photoURL : 'https://e1.pxfuel.com/desktop-wallpaper/147/865/desktop-wallpaper-anime-profile-pic-anime-profile.jpg' , 
     id : 'random3' , 
     job : 'member' , 
     username :'Long Zu' ,
-    added : true
+    added : true , 
+    addNow : true , 
   } ,
   {
     photoURL : 'https://i.pinimg.com/originals/64/5b/c8/645bc8822281de496b8f7110b7568c57.jpg',
     id : 'random4' ,
     job : 'member' ,
     username : 'Shido' , 
-    added : false
+    added : false , 
+    addNow : false , 
   } , 
  ] , 
  toDoList : [

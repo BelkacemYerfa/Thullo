@@ -103,18 +103,8 @@ export const File = ()=>{
             <SearchBar 
              Icon='search' 
              placeholder='User' 
-             users={accounts} 
+             users={accounts}
              />
-            <div className='addNewTag' >
-              <motion.button
-                whileTap={{
-                scale : .9
-                }}
-                type='submit'
-                className='addBtn' >
-                Invite
-              </motion.button>
-            </div>
          </motion.div>
           )
          }

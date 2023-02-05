@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useDataLayervValue  } from '../../config/dataLayer';
 
-export const UserList = ({photoURL , id , username , job , addedUser })=>{
+export const UserList = ({photoURL , id , username , job , addedUser , need })=>{
   const [{ accounts , users } , dispatch]  = useDataLayervValue()
   const addUserToTask = ()=>{
    if(
@@ -31,9 +31,17 @@ export const UserList = ({photoURL , id , username , job , addedUser })=>{
   <>
    {
     !accounts[id.slice(6,7) - 1]?.added  ? (
-      <div className="user" id={id} 
-      onClick={addUserToTask}
-      >
+      <div className="user" id={id} onClick={
+        ()=>{
+          if(accounts[id.slice(6,7)-1].id === id){
+            accounts[id.slice(6,7)-1].addNow = !accounts[id.slice(6,7)-1].addNow
+            dispatch({
+              type : 'ADD_NEW_USER' , 
+              accounts : accounts
+            })
+          }
+        }
+      } >
         <div className="userToAdd" >
         {
         photoURL ? (<img className="userImg" src={photoURL} alt="user pic" />) : (
@@ -50,7 +58,9 @@ export const UserList = ({photoURL , id , username , job , addedUser })=>{
         </div>
         {
           addedUser !== null || undefined ? 
-          accounts[id.slice(6,7) - 1]?.id === id && accounts[id.slice(6,7) - 1]?.added ? (
+          accounts[id.slice(6,7) - 1]?.id === id 
+          && accounts[id.slice(6,7) - 1]?.addNow === true 
+          && accounts[id.slice(6,7)-1].added === false ? (
               <div className='addUserToTask check' >
                 <span class="material-symbols-rounded">
                 how_to_reg
@@ -77,6 +87,22 @@ export const UserList = ({photoURL , id , username , job , addedUser })=>{
         }
       </div>
     ) : null
+   }
+   {
+     need === true ? (
+      <div className='addNewTag' 
+       onClick={addUserToTask}
+      >
+        <motion.button
+          whileTap={{
+          scale : .9
+          }}
+          type='submit'
+          className='addBtn' >
+          Invite
+        </motion.button>
+      </div>
+     ) : null 
    }
   </>
  );

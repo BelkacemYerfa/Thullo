@@ -62,6 +62,7 @@ export const SearchBar = ({Icon , placeholder , users  })=>{
               photoURL={user?.photoURL} 
               username={user?.username} 
               key={user?.id}
+              need={user.added === true ? false : true }
             />
           ))
          }
