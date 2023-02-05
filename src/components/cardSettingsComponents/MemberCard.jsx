@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion' ;
 import { AddToList } from '../addToList';
+import { useDataLayervValue } from '../../config/dataLayer';
 
-export const MemberCard = ({users})=>{
+export const MemberCard = ()=>{
+  const [{users}] = useDataLayervValue()
  return(
   <motion.div 
     initial={{ y: -20 , opacity : 0}}
@@ -15,13 +17,21 @@ export const MemberCard = ({users})=>{
         {
           users.map(user => (
             <div className='userHolder' >
-              <img 
-                className='userImage' 
-                src={user.image} 
-                alt="userImage"
-              />
+              {
+                user.photoURL ? (
+                  <img 
+                    className='userImage' 
+                    src={user.photoURL} 
+                    alt="userImage"
+                  />
+                ) : (
+                  <div className="userImg" >
+                     {user?.username.slice(0 , 2)}
+                  </div>
+                 )
+              }
               <p className='UserCommentName' >
-                {user.name}
+                {user.username}
               </p>
             </div>
           ))

@@ -90,12 +90,11 @@ export const ToDoTag = ({tag , task , id })=>{
           task?.map(task => (
           <TaskCard 
             id={task?.id}
-            title={task.title}
-            image={task.image}
-            tags={task.tags}
-            users={task.users}
-            comments={task.comments}
-            description = {task.description}
+            title={task?.title}
+            image={task?.image}
+            tags={task?.tags}
+            comments={task?.comments}
+            description = {task?.description}
             tag={tag}
           />
           ))

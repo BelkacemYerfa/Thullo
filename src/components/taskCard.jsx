@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import { useDataLayervValue } from '../config/dataLayer';
 import { CardDataDescription } from './CardDescription';
 
-export const TaskCard = ({image , id , tag , description , title , tags, users , comments})=>{
+export const TaskCard = ({image , id , tag , description , title , tags , comments})=>{
  const [CardDescription , setCardDescription] = useState(false) ; 
-
+ const [{users}] = useDataLayervValue()
  const handleCardDescription = ()=>{
   setCardDescription(!CardDescription)
  }
@@ -47,25 +48,25 @@ export const TaskCard = ({image , id , tag , description , title , tags, users ,
         users.slice(0,3).map(user => (
           <div className="imageHolder" >
             {
-              user.image ? (
+              user.photoURL ? (
               <>
                <img className="userImage image" 
-                src={user?.image}
+                src={user?.photoURL}
                 height={70} width={70}
                 alt="userImage" />
                {
                 user?.id === users[2]?.id
-                 && users?.length - 3 >= 1 
+                 && users.length - 3 >= 1 
                  && (
                 <div className="dataUserOverlay">
-                  +{users?.length - 3}
+                  +{users.length - 3}
                 </div>
                 )
                }
               </>
               ) : (
               <div className="userImg" >
-                 {user?.name.slice(0 , 2)}
+                 {user?.username.slice(0 , 2)}
               </div>
              )
             }
