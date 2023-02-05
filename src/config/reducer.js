@@ -10,25 +10,13 @@ export let initialState = {
     job : 'admin' , 
     id : 'random1' , 
     username :'Belkacem' , 
-  } , 
+  } ,
   {
     photoURL : null , 
     id : 'random2' , 
     job : 'member' , 
     username :'Aktham'
-  } , 
-  {
-    photoURL : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' , 
-    id : 'random3' , 
-    job : 'member' , 
-    username :'kratos'
-  },
-  {
-    photoURL : 'https://e1.pxfuel.com/desktop-wallpaper/147/865/desktop-wallpaper-anime-profile-pic-anime-profile.jpg' , 
-    id : 'random4' , 
-    job : 'member' , 
-    username :'Long Zu'
-  }
+  } ,
  ] ,
  accounts : [
   {
@@ -60,6 +48,14 @@ export let initialState = {
     id : 'random4' ,
     job : 'member' ,
     username : 'Shido' , 
+    added : false , 
+    addNow : false , 
+  } , 
+  {
+    photoURL : null , 
+    id : 'random5' ,
+    job : 'member' ,
+    username : 'Ayoub' ,
     added : false , 
     addNow : false , 
   } , 
@@ -364,7 +360,8 @@ export const reducer = (state , action)=>{
    }
    case 'REMOVE_USER_FROM_BOARD' : return {
     ...state ,
-    users : action.users
+    users : action.users , 
+    accounts : action.accounts
    }
    default : return state 
   }

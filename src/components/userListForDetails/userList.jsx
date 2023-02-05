@@ -1,32 +1,8 @@
 import { motion } from 'framer-motion'
 import { useDataLayervValue  } from '../../config/dataLayer';
 
-export const UserList = ({photoURL , id , username , job , addedUser , need })=>{
-  const [{ accounts , users } , dispatch]  = useDataLayervValue()
-  const addUserToTask = ()=>{
-   if(
-      accounts[id.slice(6,7) - 1]?.id === id 
-   && accounts[id.slice(6,7) - 1]?.added === false 
-   ){
-    accounts[id.slice(6,7) - 1].added = true 
-    dispatch({
-      type : 'ADD_NEW_USER',
-      accounts : accounts , 
-    })
-    users.push({
-      photoURL : photoURL , 
-      id : `random${users.length + 1}`,
-      job : 'member' , 
-      username : username
-    })
-    dispatch ({
-      type : 'ADD_NEW_USER_TO_BOARD',
-      users : users
-    })
-   }else{
-    alert('user already added')
-   }
-  }
+export const UserList = ({photoURL , id , username , job , addedUser , handleUserDat })=>{
+  const [{ accounts } , dispatch]  = useDataLayervValue()
  return(
   <>
    {
@@ -39,6 +15,9 @@ export const UserList = ({photoURL , id , username , job , addedUser , need })=>
               type : 'ADD_NEW_USER' , 
               accounts : accounts
             })
+            handleUserDat(
+              accounts[id.slice(6,7)-1]
+            )
           }
         }
       } >
@@ -87,22 +66,6 @@ export const UserList = ({photoURL , id , username , job , addedUser , need })=>
         }
       </div>
     ) : null
-   }
-   {
-     need === true ? (
-      <div className='addNewTag' 
-       onClick={addUserToTask}
-      >
-        <motion.button
-          whileTap={{
-          scale : .9
-          }}
-          type='submit'
-          className='addBtn' >
-          Invite
-        </motion.button>
-      </div>
-     ) : null 
    }
   </>
  );

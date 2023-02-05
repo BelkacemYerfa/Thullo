@@ -59,7 +59,9 @@ export const File = ()=>{
                      }
                     </>
                     ) : (
-                    <div className="userImg" >
+                    <div className="userImg" 
+                    onClick={toggleShow}
+                    >
                        {user?.username.slice(0 , 2)}
                     </div>
                    )
@@ -103,7 +105,8 @@ export const File = ()=>{
             <SearchBar 
              Icon='search' 
              placeholder='User' 
-             users={accounts}
+             usersToAdd={accounts}
+             need = {true}
              />
          </motion.div>
           )

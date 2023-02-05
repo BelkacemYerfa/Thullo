@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useDataLayervValue  } from '../../config/dataLayer';
 
 export const UserList = ({photoURL , id , username , job , addedUser })=>{
- const [{ users } , dispatch]  = useDataLayervValue();
+ const [{ accounts , users } , dispatch]  = useDataLayervValue();
  console.log(id)
  return(
    <div className="user" id={id} >
@@ -47,12 +47,21 @@ export const UserList = ({photoURL , id , username , job , addedUser })=>{
          if(job === 'member'){
           for(let i=0 ; i<users.length ; i++){
             if(users[i].id === id){
-              users.splice(i , 1)
+              accounts.push({
+                photoURL : users[i]?.photoURL , 
+                job : users[i]?.job , 
+                id : `${crypto.randomUUID()}` , 
+                username : users[i]?.username,
+                added : false , 
+                addNow : false
+              })
+              users.splice(i , 1);
             }
           }
             dispatch({
               type : 'REMOVE_USER_FROM_BOARD',
-              users : users
+              users : users , 
+              accounts : accounts
             })
          }
        }} >
