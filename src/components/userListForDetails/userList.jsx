@@ -41,13 +41,13 @@ export const UserList = ({photoURL , id , username , job , addedUser , handleUse
           && accounts[id.slice(6,7) - 1]?.addNow === true 
           && accounts[id.slice(6,7)-1].added === false ? (
               <div className='addUserToTask check' >
-                <span class="material-symbols-rounded">
+                <span className="material-symbols-rounded">
                 how_to_reg
                 </span>
               </div>
             ) : (
             <div className='addUserToTask notCheck' >
-                <span class="material-symbols-rounded">
+                <span className="material-symbols-rounded">
                   person_add
                 </span>
             </div>

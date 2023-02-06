@@ -3,10 +3,11 @@ import { motion } from 'framer-motion'
 import { useState } from 'react';
 import { SearchBar } from './search';
 import { UserSettings } from './navBarSettings/UserSettings';
+import { useDataLayervValue } from '../config/dataLayer';
 
 export const NavBar = ()=>{
- const SelectedBoard = 'All Board';
- const username = 'Kratos' ; 
+ const SelectedBoard = 'All Boards'; 
+ const [{user}] = useDataLayervValue()
  const [dropDown , setDropDown] = useState(false) ;
  const [ toggle , setToggle ] = useState(true)  ; 
   const handleToggle = ()=>{
@@ -64,10 +65,10 @@ export const NavBar = ()=>{
         <div className='userData' 
          onClick={handleToggle}
         >
-          <img className='userImage' src="https://avatarfiles.alphacoders.com/127/thumb-127272.jpg" alt="" />
+          <img className='userImage' src={user?.photoURL} alt="" />
           <div className='userInfo' >
            <p className='username' >
-             {username}
+             {user?.username}
            </p>
            <span class="material-symbols-rounded">
             arrow_drop_down

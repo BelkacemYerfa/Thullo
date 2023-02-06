@@ -221,9 +221,9 @@ body:is(.tasksHolder){
     @apply cursor-pointer text-selectionBoardColor text-sm
   }
   .member{
-    @apply cursor-pointer flex items-center border-removeBtn
-    border-solid border text-sm relative duration-500 ease-in-out
-    text-removeBtn rounded-lg px-[11.5px] py-[4.5px]
+    @apply cursor-pointer flex items-center
+    text-sm relative duration-500 ease-in-out
+    text-removeBtn rounded-lg 
     hover:text-white hover:bg-removeBtn 
     !important
   }

@@ -98,7 +98,6 @@ export const TaskCard = ({image , id , tag , description , title , tags , commen
         tag={tag}
         description={description}
         tags={tags}
-        users={users}
         comments={comments}
       />
     )

@@ -1,5 +1,9 @@
 export let initialState = {
- user : null , 
+ user : {
+  photoURL : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' , 
+  username : 'Kratos',
+  job : 'member'
+ } , 
  BoardState : {
   state : 'Public' , 
   codeState : 'public' ,
@@ -17,6 +21,12 @@ export let initialState = {
     job : 'member' , 
     username :'Aktham'
   } ,
+  {
+    photoURL : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg',
+    id: 'random3',
+    job : 'member',
+    username : 'Kratos'
+  }
  ] ,
  accounts : [
   {
@@ -155,66 +165,6 @@ export let initialState = {
           }
         ] , 
         comments : [
-          {
-            id : 'comment1' , 
-            username:'kratos' ,
-            createDate : '26 december 2022' , 
-            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
-            comment : '“The gladdest moment in human life, methinks, is a departure into unknown lands.” – Sir Richard Burton' ,
-          }
-        ] , 
-        description : 'Just A random Data for some Cases'
-      }
-    ] , 
-  },
-  {
-    id : 'list4' ,
-    tag : 'In Reviews' ,
-    task : [
-      {
-        id : 'task41' ,
-        image : null ,
-        title : 'Study' , 
-        tags : [
-          {
-            tagName : 'Front-End' , 
-            bg:'#F2C94C' , 
-            fontColor : '#D3EADD'  , 
-          },
-          {
-            tagName : 'concept' , 
-            bg:'#9B51E0' , 
-            fontColor : '#D3EADD'  , 
-          }
-        ] , 
-       comments : [
-          {
-            id : 'comment1' , 
-            username:'kratos' ,
-            createDate : '26 december 2022' , 
-            image : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' ,  
-            comment : '“The gladdest moment in human life, methinks, is a departure into unknown lands.” – Sir Richard Burton' ,
-          }
-        ] , 
-        description : 'Just A random Data for some Cases'
-      },
-      {
-        id : 'task42' ,
-        image : null ,
-        title : 'Study' , 
-        tags : [
-          {
-            tagName : 'Front-End' , 
-            bg:'#F2C94C' , 
-            fontColor : '#D3EADD'  , 
-          },
-          {
-            tagName : 'concept' , 
-            bg:'#9B51E0' , 
-            fontColor : '#D3EADD'  , 
-          }
-        ] ,
-       comments : [
           {
             id : 'comment1' , 
             username:'kratos' ,

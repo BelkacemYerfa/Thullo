@@ -103,7 +103,6 @@ export const BoardInfo = ({users , toggleShow})=>{
                   setNewBoardDescription(e.target.value)
                 }
             }}
-
             >
               { boardDescription }
             </textarea>

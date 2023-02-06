@@ -28,7 +28,7 @@ export const File = ()=>{
        }}
        onClick = {handleToggle}
        className='boardSelection' >
-        <span class="material-symbols-rounded">
+        <span className="material-symbols-rounded">
          {BoardState?.codeState}
         </span>
         <span>
@@ -77,7 +77,7 @@ export const File = ()=>{
          className="addUsersBtn" 
           onClick={handleAddToggle}
          >
-          <span class="material-symbols-rounded">
+          <span className="material-symbols-rounded">
             add
           </span>
         </motion.div>
@@ -121,7 +121,7 @@ export const File = ()=>{
       setToggleShow(true)
     }}
    className="boardSelection" >
-    <span class="material-symbols-rounded">
+    <span className="material-symbols-rounded">
       more_horiz
     </span>
     Show Menu
@@ -161,7 +161,7 @@ export const File = ()=>{
             setFileSetting(false)
           }} >
             <div className="settings tableTitle " >
-              <span class="material-symbols-rounded">
+              <span className="material-symbols-rounded">
                public
               </span>
                Public
@@ -180,7 +180,7 @@ export const File = ()=>{
             setFileSetting(false)
           }}  >
              <div className="settings tableTitle" >
-              <span class="material-symbols-rounded">
+              <span className="material-symbols-rounded">
                 lock
               </span>
               Private

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useDataLayervValue  } from '../../config/dataLayer';
 
 export const UserList = ({photoURL , id , username , job , addedUser })=>{
- const [{ accounts , users } , dispatch]  = useDataLayervValue();
+ const [{ accounts , users , user } , dispatch]  = useDataLayervValue();
  console.log(id)
  return(
    <div className="user" id={id} >
@@ -43,8 +43,13 @@ export const UserList = ({photoURL , id , username , job , addedUser })=>{
        whileTap={{
          scale : .9
        }}
-       className={job === 'admin' ? 'admin' : 'member'} onClick={()=>{
-         if(job === 'member'){
+       className={job === 'admin' ? 'admin' : 'member'}
+       style={{
+         border : job === 'member' && user?.job==='admin' ? '1px solid #EB5757' : 'none' ,
+         padding : job === 'member' && user?.job==='admin' ? '4.5px 11.5px' : '0px 0px'
+       }}
+       onClick={()=>{
+         if(job === 'member' && user?.job === 'admin'){
           for(let i=0 ; i<users.length ; i++){
             if(users[i].id === id){
               accounts.push({
@@ -65,7 +70,9 @@ export const UserList = ({photoURL , id , username , job , addedUser })=>{
             })
          }
        }} >
-         {job === 'admin' ? ('Admin') : ('Remove')}
+         {
+          job === 'admin' ? ('Admin') : user?.job === 'admin' ? ('Remove') : null
+         }
        </motion.p>) : null
      }
    </div> 

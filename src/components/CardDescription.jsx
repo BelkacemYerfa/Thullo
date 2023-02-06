@@ -7,11 +7,11 @@ import { MemberCard } from './cardSettingsComponents/MemberCard';
 import { DeletePop } from './commentsSettings/deletePop';
 import { NonComments } from './commentsSettings/nonComments';
 
-export const CardDataDescription = ({ tags , users , image , comments , description , tag , title , handleToggle , id })=>{
+export const CardDataDescription = ({ tags , image , comments , description , tag , title , handleToggle , id })=>{
   const CloseData = ()=>{
     handleToggle(false)
   }
-  const [{toDoList} , dispatch] = useDataLayervValue();
+  const [{toDoList , user} , dispatch] = useDataLayervValue();
   const [DescriptionData , setCardDescription] = useState(true) ; 
   const [newDescriptionData , setCardNewDescription] = useState(description) ;
   const [RemoveCounter , setRemoveCounter] = useState(0) ;
@@ -209,7 +209,7 @@ export const CardDataDescription = ({ tags , users , image , comments , descript
               <div className='Comments' >
                 <img 
                 className='userImage'
-                src='https://avatarfiles.alphacoders.com/127/thumb-127272.jpg' 
+                src={user?.photoURL}
                 alt="user pic" />
                 <div className='comment' >
                   <textarea 
