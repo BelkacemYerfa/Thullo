@@ -32,7 +32,19 @@ export const NavBar = ()=>{
     <div className='line'></div>
     {
       toggle && (
-        <div className='searchSettings' >
+        <motion.div
+        initial={{
+          opacity : 0 , 
+          x : 70 , 
+        }}
+        whileInView={{
+          opacity : 1 , 
+          x : 0
+        }} 
+        transition={{
+          duration : .5 , 
+        }}
+        className='searchSettings' >
       <motion.div
        whileTap={{
         scale : .9 
@@ -77,7 +89,7 @@ export const NavBar = ()=>{
         </div>
         </div>
       </div>
-    </div>
+    </motion.div>
       )
     }
     {

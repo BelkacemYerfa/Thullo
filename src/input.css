@@ -201,6 +201,12 @@ body:is(.tasksHolder){
     rounded-xl border-borderColor border z-20
     border-solid shadow-fileBox bg-white !important ; 
   }
+  .addUsersToBoard{
+    @apply absolute top-[42vh] right-0 h-fit 
+    w-[20vw] px-3 py-[9px]
+    rounded-xl border-borderColor border z-20
+    border-solid shadow-fileBox bg-white !important ; 
+  }
   .userList{
     @apply mt-[10px] border border-solid h-fit max-h-[200px] 
     overflow-x-auto border-borderColor shadow-fileBox 
@@ -391,11 +397,12 @@ body:is(.tasksHolder){
     @apply h-[190px] w-full rounded-xl !important
   }
   .Details{
-    @apply relative flex items-start flex-col-reverse gap-y-2 md:flex-row 
+    @apply relative flex items-start flex-col-reverse 
+    gap-y-2 md:flex-row 
     justify-start gap-x-5 w-full
   }
   .Content{
-    @apply basis-[70%] 
+    @apply basis-[100%] md:basis-[70%] w-full
   }
   .CardDestailTitle{
     @apply font-normal text-lg mb-1 !important
@@ -466,7 +473,7 @@ body:is(.tasksHolder){
     font-medium text-white !important
   }
   .Settings{
-    @apply relative w-full basis-[30%] p-0 md:px-1 md:py-[2px]
+    @apply relative w-full basis-0 md:basis-[30%] p-0 md:px-1 md:py-[2px]
   }
   .Cardactions{
     @apply flex gap-x-2 items-center 

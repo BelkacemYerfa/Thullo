@@ -24,7 +24,6 @@ export const BoardInfo = ({users , toggleShow})=>{
   }} 
   transition={{
     duration : .5 , 
-    
   }}
   className="board" >
     <div className="Title" >

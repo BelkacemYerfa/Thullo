@@ -346,7 +346,7 @@ export const CardDataDescription = ({ tags , image , comments , description , ta
                     </motion.div>
                     {
                       Members && action.id === 1 && (
-                        <MemberCard  />
+                        <MemberCard />
                       )
                     }
                     {

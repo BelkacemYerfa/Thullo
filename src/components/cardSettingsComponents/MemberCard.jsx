@@ -1,19 +1,25 @@
 import { motion } from 'framer-motion' ;
-import { AddToList } from '../addToList';
 import { useDataLayervValue } from '../../config/dataLayer';
+import { SearchBar } from '../search';
+import { useState } from 'react';
 
 export const MemberCard = ()=>{
-  const [{users}] = useDataLayervValue()
+  const [{users , accounts}] = useDataLayervValue();
+  const [CardMembers  ,setCardMembers] = useState(false)
+  const CardMembersSet = ()=>{
+    setCardMembers(!CardMembers)
+  }
  return(
+  <>
   <motion.div 
-    initial={{ y: -20 , opacity : 0}}
-    whileInView={{
-     y : 0  ,
-     opacity : 1
-    }}
-     transition={{ duration : .5}}
+  initial={{ y: -20 , opacity : 0}}
+  whileInView={{
+    y : 0  ,
+    opacity : 1
+  }}
+    transition={{ duration : .5}}
     className='MembersHolder' >
-     <div className='MembersDetails' >
+    <div className='MembersDetails' >
         {
           users.map(user => (
             <div className='userHolder' >
@@ -26,9 +32,9 @@ export const MemberCard = ()=>{
                   />
                 ) : (
                   <div className="userImg" >
-                     {user?.username.slice(0 , 2)}
+                    {user?.username.slice(0 , 2)}
                   </div>
-                 )
+                )
               }
               <p className='UserCommentName' >
                 {user.username}
@@ -37,7 +43,71 @@ export const MemberCard = ()=>{
           ))
         }
       </div>
-      <AddToList holder='Assign a member' />
+      <motion.div 
+      onClick={CardMembersSet}
+      whileTap={{
+        scale : .9
+      }}
+      style={{
+        width : 300 
+      }}
+      className='addList' >
+        <div className="tag" >
+          <p className="addText" >
+            Assign a member
+          </p>
+          <motion.div 
+          whileTap={{
+            scale : .9
+          }}
+          transition = {{
+            duration : .1
+          }}
+          className="spred" >
+          <span className="material-symbols-rounded">
+            add
+          </span>
+          </motion.div>
+        </div>
+      </motion.div>
     </motion.div>
+    {
+      CardMembers && (
+        <>
+         <motion.div 
+            initial ={{
+              y : 10 , 
+              opacity : 0, 
+            }} 
+            whileInView={{
+            y : 0 , 
+            opacity : 1
+            }}
+            transition={{
+            duration : .3
+            }}
+            style={{
+              zIndex : 100
+            }}
+            className="addUsersToBoard" id="adduser" >
+            <h2 className="tableTitle weight" >
+                Invite to board
+            </h2>
+            <p className="selection adjust-description" >
+                Search users you want to invite to
+            </p>
+            <SearchBar 
+              Icon='search' 
+              placeholder='User' 
+              usersToAdd={accounts}
+              need = {true}
+              />
+          </motion.div>
+          <br />
+          <br />
+        </>
+      )
+    }
+  </>
  )
 }
