@@ -5,7 +5,7 @@ import { SearchBar } from './search';
 import { UserSettings } from './navBarSettings/UserSettings';
 import { useDataLayervValue } from '../config/dataLayer';
 
-export const NavBar = ({ need })=>{
+export const NavBar = ()=>{
  const SelectedBoard = 'All Boards'; 
  const [{user}] = useDataLayervValue()
  const [dropDown , setDropDown] = useState(false) ;
@@ -16,19 +16,11 @@ export const NavBar = ({ need })=>{
   
  return (
   <motion.nav className="navBar" id='nav' >
-    <div className='logoHolder' 
-     style={{
-      width : !need ? 'fit' : '32%' ,
-     }}
-    >
+    <div className='logoHolder'>
       <img src={logo} alt="" />
-      {
-        need && (
-          <p className='boardName' >
-            Devchallenges Board
-          </p>
-        )
-      }
+      <p className='boardName' >
+        Devchallenges Board
+      </p>
     </div>
       <div className='closeBtn' onClick={()=>{
         setToggle(true)
@@ -53,8 +45,6 @@ export const NavBar = ({ need })=>{
           duration : .5 , 
         }}
         className='searchSettings' >
-        {
-          need && (
             <motion.div
               whileTap={{
                 scale : .9 
@@ -72,8 +62,6 @@ export const NavBar = ({ need })=>{
                 {SelectedBoard}
                 </span>
             </motion.div>
-          )
-        }
         <div className='closeBtn' onClick={
           ()=>{
             setToggle(false)
@@ -83,14 +71,8 @@ export const NavBar = ({ need })=>{
           close
           </span>
         </div>
-      <div className='searchHolder' 
-       style={{
-          width : !need ? '97%' : '60%' ,
-       }}
-      >
-        <div className='searcher' style={{
-          justifyContent : !need ? 'space-between' : null ,
-        }} >
+      <div className='searchHolder' >
+        <div className='searcher' >
         <SearchBar placeholder='Search' users={null} />
         <div className='userData' 
          onClick={handleToggle}
