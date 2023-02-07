@@ -1,10 +1,10 @@
 import './input.css';
-import { Home } from './pages/Home';
+import { Boards } from './pages/Home';
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Boards />
     </div>
   );
 }

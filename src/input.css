@@ -56,7 +56,7 @@ body:is(.tasksHolder){
     shadow-navBarBox z-20 !important
   }
   .logoHolder{
-    @apply cursor-pointer flex items-center md:w-[32%] justify-between
+    @apply cursor-pointer flex items-center justify-between
   }
   .boardName{
     @apply text-lg font-medium -tracking-[.035em]
@@ -70,8 +70,8 @@ body:is(.tasksHolder){
     bg-white md:bg-none h-screen md:h-fit 
     shadow-phonenavBarBox md:shadow-none px-2 
     md:px-0 top-0 right-0 md:top-0 w-[60%] md:flex-row 
-    fixed md:relative
-    md:items-center md:justify-between md:w-[65%] 
+    fixed md:relative 
+    md:items-center md:justify-between md:w-full
     !important
   }
   .boardSelection{
@@ -81,10 +81,11 @@ body:is(.tasksHolder){
     text-[12px] !important ; 
   }
   .searchHolder{
-    @apply flex items-center gap-3 w-[60%] !important
+    @apply flex items-center gap-3  !important
   }
   .searcher{
-    @apply flex md:items-center w-[150%] flex-col md:flex-row gap-11 !important
+    @apply flex md:items-center 
+    w-[150%] flex-col md:flex-row gap-24 !important
   }
   .format{
     @apply absolute md:relative top-20 md:top-0 
@@ -116,9 +117,9 @@ body:is(.tasksHolder){
     text-sm rounded -tracking-[.03em] font-medium !important
   }
   .userData{
-    @apply flex items-center
+    @apply flex items-center 
     gap-[11px] cursor-pointer absolute bottom-3 
-    md:relative md:top-0 w-fit
+    md:relative md:top-0 w-fit 
   }
   .userImage{
     @apply relative h-9 w-9 rounded-xl !important
@@ -155,6 +156,36 @@ body:is(.tasksHolder){
   }
   .LogOut{
     @apply hover:bg-red-400 !important
+  }
+  /*board section*/
+  .BoardListHome{
+    @apply w-full h-full bg-tableTasks
+  }
+  .BoardsHolder{
+    @apply w-full max-h-[100vh] flex items-start justify-center
+    py-[5vh] px-[10vh]
+  }
+  .BoardFunctionality{
+    @apply w-full max-h-full px-6 py-3
+  }
+  .addBoards{
+    @apply w-full flex items-center justify-between !important
+  }
+  .BoardToSelect{
+    @apply  p-3 shadow-descriptionBox rounded-xl bg-white
+    w-fit cursor-pointer duration-500 hover:scale-105 !important
+  }
+  .Board{
+    @apply flex flex-col gap-y-2
+  }
+  .BoardImage{
+    @apply rounded-xl h-[16vh] w-[20vw]
+  }
+  .BoardTitle{
+    @apply mt-1 text-base font-medium !important
+  }
+  .users{
+    @apply w-full flex items-center gap-x-[11px]
   }
   /*file section*/
   .file{
