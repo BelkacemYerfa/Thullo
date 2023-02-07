@@ -202,10 +202,10 @@ body:is(.tasksHolder){
     border-solid shadow-fileBox bg-white !important ; 
   }
   .addUsersToBoard{
-    @apply absolute top-[42vh] right-0 h-fit 
-    w-[20vw] px-3 py-[9px]
+    @apply absolute top-[7vh] right-0 h-fit 
+    w-[20vw] px-3 py-[9px] shadow-phonenavBarBox
     rounded-xl border-borderColor border z-20
-    border-solid shadow-fileBox bg-white !important ; 
+    border-solid bg-white !important ; 
   }
   .userList{
     @apply mt-[10px] border border-solid h-fit max-h-[200px] 

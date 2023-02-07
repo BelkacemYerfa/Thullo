@@ -16,10 +16,10 @@ export let initialState = {
     username :'Belkacem' , 
   } ,
   {
-    photoURL : null , 
+    photoURL : 'https://i.pinimg.com/originals/4f/3c/76/4f3c7690241a8956f82c3611afeae4a0.jpg' , 
     id : 'random2' , 
     job : 'member' , 
-    username :'Aktham'
+    username :'リムル・テンペスト'
   } ,
   {
     photoURL : 'https://avatarfiles.alphacoders.com/127/thumb-127272.jpg',
@@ -46,26 +46,18 @@ export let initialState = {
     addNow : true , 
   },
   {
-    photoURL : 'https://e1.pxfuel.com/desktop-wallpaper/147/865/desktop-wallpaper-anime-profile-pic-anime-profile.jpg' , 
-    id : 'random3' , 
-    job : 'member' , 
-    username :'Long Zu' ,
-    added : true , 
-    addNow : true , 
-  } ,
-  {
     photoURL : 'https://i.pinimg.com/originals/64/5b/c8/645bc8822281de496b8f7110b7568c57.jpg',
-    id : 'random4' ,
+    id : 'random3' ,
     job : 'member' ,
     username : 'Shido' , 
     added : false , 
     addNow : false , 
   } , 
   {
-    photoURL : null , 
-    id : 'random5' ,
+    photoURL : 'https://www.nautiljon.com/images/perso/00/39/kazuma_satou_13893.webp' , 
+    id : 'random4' ,
     job : 'member' ,
-    username : 'Ayoub' ,
+    username : 'Kazuma' ,
     added : false , 
     addNow : false , 
   } , 

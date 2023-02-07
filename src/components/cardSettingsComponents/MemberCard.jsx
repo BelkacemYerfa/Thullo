@@ -73,7 +73,6 @@ export const MemberCard = ()=>{
     </motion.div>
     {
       CardMembers && (
-        <>
          <motion.div 
             initial ={{
               y : 10 , 
@@ -86,15 +85,12 @@ export const MemberCard = ()=>{
             transition={{
             duration : .3
             }}
-            style={{
-              zIndex : 100
-            }}
             className="addUsersToBoard" id="adduser" >
             <h2 className="tableTitle weight" >
-                Invite to board
+             Members
             </h2>
             <p className="selection adjust-description" >
-                Search users you want to invite to
+             Assign members to this card 
             </p>
             <SearchBar 
               Icon='search' 
@@ -103,9 +99,6 @@ export const MemberCard = ()=>{
               need = {true}
               />
           </motion.div>
-          <br />
-          <br />
-        </>
       )
     }
   </>
