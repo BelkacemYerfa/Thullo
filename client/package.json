@@ -10,6 +10,7 @@
     "firebase": "^9.15.0",
     "framer-motion": "^7.10.2",
     "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
